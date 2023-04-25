@@ -14,8 +14,8 @@ jobs:
      - name: Send Email to Single Recipient
        uses: dawidd6/action-send-mail@v3.7.1
        with:
-          server_address: SMTP_SERVER_ADDRESS
-          server_port: SMTP_PORT_NUMBER
+          server_address: smtp.gmail.com
+          server_port: 465 
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           from: mail@example.com
