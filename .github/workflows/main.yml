@@ -1,0 +1,25 @@
+name: Send email
+on:
+  push:
+   branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+ send-email:
+   runs-on: windows-latest
+   steps:
+     - name: Send Email to Single Recipient
+       uses: dawidd6/action-send-mail@v3.7.1
+       with:
+          server_address: SMTP_SERVER_ADDRESS
+          server_port: SMTP_PORT_NUMBER
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: mail@example.com
+          to: recipient@example.com
+          subject: "Test email"
+          body: "This is a test email sent using the mail API."
+     
