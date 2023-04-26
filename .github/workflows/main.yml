@@ -22,8 +22,9 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: This is an example email with an attachment.
-          attachments: D:\Git2\vcollabpro\build report.txt
-          filename: buildreport.txt
+          filepath: C:\VCollab_Suite_22.3.5_Win64_221212.zip 
+          attachments: attachments.zip,git.diff,./dist/static/*.js
+          
         
       
           
