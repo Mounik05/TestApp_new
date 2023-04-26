@@ -18,8 +18,14 @@ jobs:
           server_port: 465 
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          from: mail@example.com
-          to: recipient@example.com
-          subject: "Test email"
-          body: "This is a test email sent using the mail API."
+          from: Kallepallimounika333@gmail.com
+          To: aravinthkumar@vcollab.com
+          subject: github action result
+          body: Build job of ${{github.repository}} completed successfully!
+          html_body: file://TestApp_new
+          
+
+          
+        
+          
      
