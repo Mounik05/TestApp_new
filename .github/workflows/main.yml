@@ -23,7 +23,7 @@ jobs:
           subject: Example email with attachment
           body: This is an example email with an attachment.
           filename: new.txt
-          attachments: D:\vcollabpro depency\new.txt
+          attachments: D:\a\VCollabpro depency\vcollabpro depency\new.txt
           
         
       
