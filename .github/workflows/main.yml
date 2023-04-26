@@ -21,9 +21,9 @@ jobs:
           from: Kallepallimounika333@gmail.com
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
-          body: Please see the attached file
-          attachment_path: D:\a\TestApp_new\TestApp_new\testapp depency/new.txt#send_email
-          filename: new.txt
+          body: Please find the attached document
+          attachment_path: ./testapp depency/attachement/file
+          filename: testapp depency
         
           
          
