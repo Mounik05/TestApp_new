@@ -22,8 +22,8 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: Please find the attached document
-          attachment_path: ./testapp depency/attachement/file
-          filename: testapp depency
+          attachment_path: C:\Users\mounika\yaml.txt
+          filename: yaml.txt
         
           
          
