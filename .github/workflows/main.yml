@@ -22,9 +22,9 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: This is an example email with an attachment.
-          html_body: file://vcollabpro depency
-          attachments: attachment "D:\vcollabpro depency\new.txt"
-          filename: new.txt
+          html_body: file://airbag.html
+          attachments: attachment "Desktop\airbag"
+        
           
         
       
