@@ -20,11 +20,11 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           from: Kallepallimounika333@gmail.com
           To: aravinthkumar@vcollab.com
-          subject: github action result
-          body: Build job of ${{github.repository}} completed successfully!
-          html_body: file://TestApp_new
-          
-
+          subject: Example email with attachment
+          body: This is an example email with an attachment.
+          attachments: D:\vcollabpro depency\new.txt
+          filename: new.txt
+      
           
         
           
