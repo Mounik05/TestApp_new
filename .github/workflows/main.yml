@@ -22,8 +22,8 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: Please see the attached file
-          attachment_path: ./new.txt/
-          filename: new.txt
+          attachment_path: ./TestAPP/TestApp.aps/
+          filename: TestApp.aps
           
          
           
