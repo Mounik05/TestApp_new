@@ -22,8 +22,7 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: This is an example email with an attachment.
-          filename: D:\a\VCollabpro depency\vcollabpro depency\new.txt
-          attachments: attachments ./dist/static/*.js
+          attachments: attachment "D:\a\VCollabpro depency\vcollabpro depency\new.txt"
           
         
       
