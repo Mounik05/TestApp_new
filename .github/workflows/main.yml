@@ -22,8 +22,8 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: This is an example email with an attachment.
-          filepath: file://yml.txt
-          attachments: attachments C:\Users\DELL\Desktop\actions\yml.txt
+          filepath: C:\Users\DELL\Desktop\actions
+          attachments: attachments.txtdocument
           
         
       
