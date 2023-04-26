@@ -22,8 +22,8 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: Please see the attached file
-          attachment_path: "D:\a\ VCollabpresenter\ VCollabpresenter\NSIS"
-          filename: NSIS 
+          attachment_path: "D:\a\ VCollabpresenter\ VCollabpresenter\NSIS\NSIS.exe"
+          filename: NSIS.exe
          
           
         
