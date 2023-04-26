@@ -22,7 +22,7 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: Please see the attached file
-          attachment_path: ./testapp depency/
+          attachment_path: ./testapp depency/new.txt
           filename: new.txt
         
           
