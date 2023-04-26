@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           from: Kallepallimounika333@gmail.com
-          To: aravinthkumar@vcollab.com
+          To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: This is an example email with an attachment.
           attachments: D:\vcollabpro depency\new.txt
