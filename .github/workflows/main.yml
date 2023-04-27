@@ -23,7 +23,7 @@ jobs:
           subject: Example email with attachment
           body: Please find the attached document
           content_type: text/html
-          attachments: D:\a\TestApp_new\TestApp_new\testappdepency\new.txt
+          attachment: D:\a\TestApp_new\TestApp_new\testappdepency\new.txt
           filename: new.txt
 
         
