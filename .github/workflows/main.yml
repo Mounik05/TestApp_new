@@ -11,7 +11,6 @@ jobs:
  send-email:
    runs-on: windows-latest
    steps:
-   
      - name: Send Email to Single Recipient.
        uses: dawidd6/action-send-mail@v3.7.1
        with:
@@ -20,7 +19,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           from: Kallepallimounika333@gmail.com
-          To: aravindanand07.r@gmail.com
+          To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: Please find the attached document
           content_type: text/html
