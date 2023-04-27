@@ -23,8 +23,8 @@ jobs:
           subject: Example email with attachment
           body: Please find the attached document
           content_type: text/html
-          attachments: D:\a\VCollabpresenter\VCollabpresenter\NSIS\NSIS.exe
-          filename: NSIS.exe
+          attachments: D:\a\TestApp_new\TestApp_new\testapp depency\new.txt
+          filename: new.txt
 
         
         
