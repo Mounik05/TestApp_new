@@ -22,6 +22,7 @@ jobs:
           To: kallepallimounika123@yahoo.com
           subject: Example email with attachment
           body: Please find the attached document
+          content_type: text/html
           attachments: D:\a\VCollabpresenter\VCollabpresenter\NSIS\NSIS.exe
           filename: NSIS.exe
 
