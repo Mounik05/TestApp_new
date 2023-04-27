@@ -19,11 +19,11 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           from: Kallepallimounika333@gmail.com
-          To: kallepallimounika123@yahoo.com
+          To: aravindanand07.r@gmail.com
           subject: Example email with attachment
           body: Please find the attached document
           content_type: text/html
-          attachments: D:\a\TestApp_new\TestApp_new\testappdepency\new.txt
+          attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
          
 
         
