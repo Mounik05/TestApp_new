@@ -24,7 +24,7 @@ jobs:
           from: Kallepallimounika333@gmail.com
           body: Please find the attached document
           content_type: text/html
-          attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
+          attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt,D:\a\TestApp_new\TestApp_new\testapp depency\new.txt
          
 
         
