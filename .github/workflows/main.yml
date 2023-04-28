@@ -21,7 +21,7 @@ jobs:
        run: |
            TO :'mounikakallepalli@vcollab.com'
            smtpServer = 'smtp.example.com'
-           smtpPort = 587
+           smtpPort = 25
            smtpUsername = 'sender@example.com'
            smtpPassword = 'password'
            emailFrom = 'sender@example.com'
