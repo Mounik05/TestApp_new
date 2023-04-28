@@ -30,7 +30,7 @@ jobs:
            mailMessage = New-Object System.Net.Mail.MailMessage
            mailMessage.From = $emailFrom
            mailMessage.To.Add($toEmail)
-           mailMessage.Subject = $subject
+           mailMessage.Subject = "This is the email subject"
            mailMessage.Body = "Please see attached file for commit message."
            attachment = New-Object System.Net.Mail.Attachment($attachmentPath)
            attachment.Name:$attachmentName
