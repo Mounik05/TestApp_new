@@ -11,10 +11,14 @@ jobs:
  send-email:
    runs-on: windows-latest
    steps:
-     - uses: actions/checkout@v2.3.4
-     - name: Send Email to Single person
-       uses: dawidd6/action-send-mail@v3.7.1
-       with:
+   - name: self
+     run: |
+       git log --pretty=format:"%h - %an, %ar : %s" >add files.txt
+       
+   - uses: actions/checkout@v2.3.4
+   - name: Send Email to Single person
+     uses: dawidd6/action-send-mail@v3.7.1
+     with:
           server_address: smtp.gmail.com
           server_port: 465 
           username: ${{ secrets.MAIL_USERNAME }}
