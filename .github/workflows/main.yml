@@ -19,19 +19,27 @@ jobs:
      - name: Send Email to Single person
        uses: dawidd6/action-send-mail@v3.7.1
        with:
-          server_address: smtp.gmail.com
-          server_port: 465 
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Example email with attachment
-          To: kallepallimounika123@yahoo.com
-          from: Kallepallimounika333@gmail.com
-          cc: abc@gmail.com
-          bcc: mounikakallepalli@vcollab.com
-          body: Please find the attached document
-          content_type: text/html
-          attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt,D:\a\TestApp_new\TestApp_new\testapp depency\new.txt,D:\a\VCollabpresenter\VCollabpresenter\NSIS\NSIS.exe
-         
+           toEmail:'mounikakallepalli@vcollab.com'
+           smtpServer = 'smtp.example.com'
+           smtpPort = 587
+           smtpUsername = 'sender@example.com'
+           smtpPassword = 'password'
+           emailFrom = 'sender@example.com'
+           attachmentPath = 'commit_message.txt'
+           attachmentName = 'commit_message.txt'
+           mailMessage = New-Object System.Net.Mail.MailMessage
+           mailMessage.From = $emailFrom
+           mailMessage.To.Add($toEmail)
+           mailMessage.Subject = $subject
+           mailMessage.Body = "Please see attached file for commit message."
+           attachment = New-Object System.Net.Mail.Attachment($attachmentPath)
+           attachment.Name:$attachmentName
+           mailMessage.Attachments.Add($attachment)
+           smtpClient = New-Object System.Net.Mail.SmtpClient($smtpServer, $smtpPort)
+           smtpClient.EnableSsl = $true
+           smtpClient.Credentials = $smtpCredentials
+           smtpClient.Send($mailMessage)
+                  
 
         
         
