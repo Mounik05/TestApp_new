@@ -21,9 +21,9 @@ jobs:
           git config --global user.name "Mounik05"
           git add test.txt
           git commit -m "add file"
-         
-     - uses: dawidd6/action-send-mail@v3.7.1
+          
      - name: Send Email to Single person
+       uses: dawidd6/action-send-mail@v3.7.1
        with:
            server_address: smtp.gmail.com
            server_port: 465 
