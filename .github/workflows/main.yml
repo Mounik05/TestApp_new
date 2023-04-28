@@ -30,7 +30,7 @@ jobs:
            username: ${{ secrets.MAIL_USERNAME }}
            password: ${{ secrets.MAIL_PASSWORD }}
            subject: "New commit on main branch"
-           To: kallepallimounika123@yahoo.com
+           To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            attachments: test.txt
            run: |
