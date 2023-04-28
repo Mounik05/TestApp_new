@@ -15,11 +15,11 @@ jobs:
      - name: commit file
        run: |
          git log --pretty=format:"%h - %an, %ar : %s" > file.txt 
-      
+         
+     - uses: dawidd6/action-send-mail@v3.7.1
      - name: Send Email to Single person
-       uses: dawidd6/action-send-mail@v3.7.1
-       with:
-           toEmail:'mounikakallepalli@vcollab.com'
+       run: |
+           TO :'mounikakallepalli@vcollab.com'
            smtpServer = 'smtp.example.com'
            smtpPort = 587
            smtpUsername = 'sender@example.com'
