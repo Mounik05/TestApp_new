@@ -20,8 +20,8 @@ jobs:
            server_port: 465 
            username: ${{ secrets.MAIL_USERNAME }}
            password: ${{ secrets.MAIL_PASSWORD }}
-           subject: "Commit message"
-           Body: "Please find the commit message attached below"
+           subject: "Commit message and attachment"
+           Body: "Please find the commit message and attachment attached below"
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
@@ -37,8 +37,20 @@ jobs:
           git config --global user.name "Mounik05"
           git add .
           git commit -m "upload new file" 
-          attachement: | 
-           uploadnewfile.txt
+          
+     - name: Send Email to Single person
+       uses: dawidd6/action-send-mail@v3.7.1
+       with:
+           server_address: smtp.gmail.com
+           server_port: 465 
+           username: ${{ secrets.MAIL_USERNAME }}
+           password: ${{ secrets.MAIL_PASSWORD }}
+           subject: "Commit message and attachment"
+           Body: "Please find the commit message and attachment attached below"
+           To: mounikakallepalli@vcollab.com
+           from: Kallepallimounika333@gmail.com
+           attachement: | 
+            uploadnewfile.txt
           
           
           
