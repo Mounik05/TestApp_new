@@ -15,7 +15,7 @@ jobs:
      
      - name: Create commit message file
        run: |
-         echo "${{ github.event.head_commit.message }}" > uploadnewfile.txt
+         echo "${{ github.event.head_commit.message }}" > test.txt
          
      - name: Commit message file
        run: |
@@ -36,7 +36,6 @@ jobs:
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
-           run: |
            attachement: | 
             uploadnewfile.txt
           
