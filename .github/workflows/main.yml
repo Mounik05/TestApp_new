@@ -39,8 +39,9 @@ jobs:
            content_type: text/html
            attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
            run: |
-           
-         
+            add file.txt
+           attachment_content: |
+            ${{ github.event.head_commit.message }}
           
         
       
