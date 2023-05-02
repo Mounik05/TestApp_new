@@ -15,7 +15,8 @@ jobs:
      
      - name: Create commit message file
        run: |
-        echo git log --pretty=format:"%h - %an, %ar : %s" > Testapp.txt
+        git log --pretty=format:"%h - %an, %ar : %s" > Testapp.txt
+        echo "Commit Message File Contents:"
         
      - name: Commit message file
        run: |
