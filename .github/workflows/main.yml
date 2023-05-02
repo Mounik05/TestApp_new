@@ -33,9 +33,11 @@ jobs:
            Body: "Please find the commit message attached below"
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
-           cc: aravinthkumar@vcollab.com
            attachments: |
             uploadnewfile.txt
+            file-to-attach.pdf
+          
+          
           
          
           
