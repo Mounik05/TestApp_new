@@ -37,7 +37,7 @@ jobs:
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            content_type: text/html
-           attachments: |
+           attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
             file.txt
             Add file.txt
            attachment_content: |
