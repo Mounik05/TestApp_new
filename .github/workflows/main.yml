@@ -25,17 +25,17 @@ jobs:
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            content_type: text/html
-           attachments: |
-                 D:\a\TestApp_new\TestApp_new\mailtest\test.txt
-                 D:\a\TestApp_new\TestApp_new\mailtest\test.txt\sample.txt
-   env:
+           attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
+env:
     COMMIT_MESSAGE: |
-      $(git log -1 --pretty=format:"%s%n%b")
-    run: |
-     echo "$COMMIT_MESSAGE" > D:\a\TestApp_new\TestApp_new\mailtest\test.txt\sample.txt
-     git add D:\a\TestApp_new\TestApp_new\mailtest\test.txt\sample.txt
-     git commit -m "Added commit message file"
-          
+      $(git log -1 --pretty=format:"%s%n%b")  
+      run: |
+      echo "$COMMIT_MESSAGE" > D:\a\TestApp_new\TestApp_new\mailtest\file.txt
+      git add D:\a\TestApp_new\TestApp_new\mailtest\file.txt D:\a\TestApp_new\TestApp_new\mailtest\test.txt
+      git commit -m "Added commit message file and attachment"    
+      
+                 
+
         
       
           
