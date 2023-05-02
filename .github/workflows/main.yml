@@ -26,12 +26,12 @@ jobs:
           content_type: text/html
           attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
      - name:  commit test.txt file
-       run: echo "${{ github.event.head_commit test.txt file}}" > uploadnewfile.txt
+       run: echo "${{ github.event.head_commit.message}}" > uploadnewfile.txt
      - name: Commit message file
        run: |
           git config --global user.email "mounikakallepalli333@gmail.com"
           git config --global user.name "Mounik05"
-          git add .
+          git add D:\a\TestApp_new\TestApp_new\mailtest\test.txt
           git commit -m "uploadnewfile.txt" 
         
             
