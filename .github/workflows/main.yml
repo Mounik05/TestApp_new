@@ -13,10 +13,9 @@ jobs:
    steps:
      - uses: actions/checkout@v2.3.4
      
-     - name: Create file to commit
-       run: |
-        echo "Hello, world!" > test.txt
-         
+     - name: Create commit message file
+       run: echo "${{ github.event.head_commit.message }}" > test.txt
+
      - name: Commit message file
        run: |
           git config --global user.email "mounikakallepalli333@gmail.com"
@@ -38,8 +37,6 @@ jobs:
            attachement: | 
             D:\a\TestApp_new\TestApp_new\mailtest\test.txt
             commit-message.txt
-           attachment_content: |
-            ${{ github.event.head_commit.message}
           
           
      
