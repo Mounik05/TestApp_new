@@ -15,14 +15,14 @@ jobs:
      
      - name: Create commit message file
        run: |
-         echo "${{ github.event.head_commit.message }}" > test.txt
+         echo "${{ github.event.head_commit.message }}" > sample.txt
          
      - name: Commit message file
        run: |
           git config --global user.email "mounikakallepalli333@gmail.com"
           git config --global user.name "Mounik05"
           git add .
-          git commit -m "new file" 
+          git commit -m "add sample.txt" 
           
      - name: Send Email to Single person
        uses: dawidd6/action-send-mail@v3.7.1
@@ -35,14 +35,10 @@ jobs:
            Body: "Please find the commit message and attachment attached below"
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
-           cc: aravindanand07.r@gmail.com
            content_type: text/html
-           attachments: |
-            D:\a\TestApp_new\TestApp_new\mailtest\test.txt
-            new file
+           attachments:  D:\a\TestApp_new\TestApp_new\mailtest\test.txt
            attachment_content: |
-            ${{ github.event.head_commit.message }}
-           
+            Commit message: "Add sample.txt"
          
           
         
