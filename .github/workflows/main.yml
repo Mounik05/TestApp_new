@@ -36,8 +36,7 @@ jobs:
            from: Kallepallimounika333@gmail.com
            attachement: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
            run: |
-            commit-message.txt
-          
+            
           
      
           
