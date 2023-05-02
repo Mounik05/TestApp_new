@@ -35,7 +35,7 @@ jobs:
            from: Kallepallimounika333@gmail.com
            attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
            run: |
-            test.txt
+            uploadnewfile.txt
             
           
           
