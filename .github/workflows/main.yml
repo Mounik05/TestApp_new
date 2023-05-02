@@ -21,7 +21,7 @@ jobs:
           git config --global user.email "mounikakallepalli333@gmail.com"
           git config --global user.name "Mounik05"
           git add .
-          git commit -m "Add test.txt file" 
+          git commit -m "uploadnewfile.txt" 
      
      - name: Send Email to Single person
        uses: dawidd6/action-send-mail@v3.7.1
@@ -34,8 +34,11 @@ jobs:
            Body: "Please find the attachment and commit message below"
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
+           content_type: text/html
            attachement: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
            run: |
+           attachments: |
+            uploadnewfile.txt
             
           
      
