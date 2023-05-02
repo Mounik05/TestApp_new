@@ -25,6 +25,8 @@ jobs:
           body: Please find the attached document
           content_type: text/html
           attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
+          run: |
+          
      - name:  commit test.txt file
        run: echo "${{ github.event.head_commit.message}}" > uploadnewfile.txt
        
