@@ -15,7 +15,8 @@ jobs:
      
      - name: Create commit message file
        run: |
-        echo "${{ github.event.head_commit.message }}" > Testapp.txt
+        echo git log --pretty=format:"%h - %an, %ar : %s" > Testapp.txt
+        
      - name: Commit message file
        run: |
           git config --global user.email "mounikakallepalli333@gmail.com"
