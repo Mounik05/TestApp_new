@@ -1,4 +1,4 @@
-name: Add commit message and send email
+name: Send commit message and attachment in email
 on:
   push:
    branches: [ master ]
@@ -35,7 +35,7 @@ jobs:
            from: Kallepallimounika333@gmail.com
            attachments: |
             uploadnewfile.txt
-            file-to-attach.pdf
+            attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
           
           
           
