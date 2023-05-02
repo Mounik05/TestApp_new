@@ -11,19 +11,8 @@ jobs:
  send-email:
    runs-on: windows-latest
    steps:
-     - uses: actions/checkout@v2.3.4
-     
-     - name: Create commit message file
-       run: |
-        echo "${{ github.event.head_commit.message }}" > newfile.txt
-        
-     - name: Commit message file
-       run: |
-          git config --global user.email "mounikakallepalli333@gmail.com"
-          git config --global user.name "Mounik05"
-          git add .
-          git commit -m "add newfile.txt"
-          
+     - uses: actions/checkout@v2.3.4     
+            
      - name: Send Email with Attachment
        uses: dawidd6/action-send-mail@v3.7.1
        with:
@@ -37,8 +26,8 @@ jobs:
            from: Kallepallimounika333@gmail.com
            content_type: text/html/zip/Image
            attachments: |
-             D:\a\TestApp_new\TestApp_new\Image\Capture.PNG
-             D:\a\TestApp_new\TestApp_new\newfile.txt
+             D:\a\TestApp_new\TestApp_new\TestApp\TestApp.aps
+           
         
       
           
