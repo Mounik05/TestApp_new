@@ -16,7 +16,10 @@ jobs:
      - name: Create commit message file
        run: |
         git log --pretty=format:"%h - %an, %ar : %s" > Testapp.txt
-        echo "Commit Message File Contents:"
+        From <hash> <date>
+        From: Kallepallimounika333@gmail.com
+        Date: Tue may 2 19:41:29 2023 +0530
+        Subject: Build_Automation_Test
         
      - name: Commit message file
        run: |
