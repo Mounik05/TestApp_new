@@ -24,7 +24,7 @@ jobs:
           git add .
           git add sample.txt
           git commit -m "Add and attach sample.txt"
-          git tag -a "v1.0" -m "Add and attach sample.txt"
+          git tag -a "D:\a\TestApp_new\TestApp_new\mailtest\test.txt" -m "Add and attach sample.txt"
           git push --follow-tags
           
      - name: Attach and commit file
@@ -41,7 +41,7 @@ jobs:
            content_type: text/html
            attachments: |
             sample.txt
-            .git/refs/tags/v1.0
+            .git/refs/tags/D:\a\TestApp_new\TestApp_new\mailtest\test.txt
          
           
         
