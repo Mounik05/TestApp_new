@@ -33,12 +33,8 @@ jobs:
            Body: "Please find the commit message attached below"
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
-           attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
-           attachment: New-Object System.Net.Mail.Attachment($D:\a\TestApp_new\TestApp_new\mailtest\test.txt)
-            test.txt:$test.txt
-            mailMessage.Attachments.Add($attachment)
-           
-        
+           attachments: |
+            uploadnewfile.txt
           
          
           
