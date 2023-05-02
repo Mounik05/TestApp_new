@@ -36,9 +36,10 @@ jobs:
            Body: "Please find the commit message and attachment attached below"
            To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
+           cc: aravindanand07.r@gmail.com
            content_type: text/html
-           attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
-            file.txt
+           attachments: |
+            D:\a\TestApp_new\TestApp_new\mailtest\test.txt
             Add file.txt
            attachment_content: |
             ${{ github.event.head_commit.message }}
