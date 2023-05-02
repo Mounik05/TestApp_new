@@ -15,7 +15,7 @@ jobs:
      
      - name: Create commit message file
        run: |
-         echo "${{ github.event.head_commit.message }}" > file.txt
+         echo "${{ github.event.head_commit.message }}" > test.txt
          
      - name: Commit message file
        run: |
@@ -40,7 +40,7 @@ jobs:
            attachments: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
            run: |
            attachement: | 
-            file.txt
+            add file.txt
           
          
           
