@@ -23,3 +23,10 @@ jobs:
              git add .
              git commit -m "Add changes" -a
              git push -u origin master
+             
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: TestApp_new
+          path: D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe     
+             
