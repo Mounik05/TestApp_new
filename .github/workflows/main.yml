@@ -34,4 +34,12 @@ jobs:
         with:
          name: TestApp.exe
          path:  D:\a\TestApp_new\TestApp_new\mailtest
+         
+      - name: Push changes
+        run: |
+             git config --local user.email "kallepallimounika333@gmail.com"
+             git config --local user.name "Mounik05"
+             git add .
+             git commit -m "Add changes" -a
+             git push -u origin master
      
