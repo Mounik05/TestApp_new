@@ -13,10 +13,14 @@ jobs:
    steps:
      - uses: actions/checkout@v2.3.4
      
+     
      - name: Create commit message file
        run: |
-        git log --pretty=sender mail id: "mounikakallepalli@vcollab.com" > Testapp.txt
-       
+        git log --pretty=format: " mounikakallepalli@vcollab.com - %an, %ar : %s" > Testapp.txt
+        git log --pretty=format: " %h- Mounika, %ar : %s " > Testapp.txt
+        git log --pretty=format: " %h- %an,may 3 19:41:29 2023 +0530 : %s" " > Testapp.txt
+        git log --pretty=format: "%h- %an, %ar: Build_automation_test " > Testapp.txt
+        
      - name: Commit message file
        run: |
           git config --global user.email "mounikakallepalli333@gmail.com"
