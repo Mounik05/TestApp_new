@@ -18,9 +18,10 @@ jobs:
         
       - name: Create artifact files
         run: |
-          mkdir -p  D:/a/TestApp_new/TestApp_new
-          echo "Hello world from file" > D:/a/TestApp_new/TestApp_new/file1.txt
-        
+         if (!(Test-Path -Path "D:\a\TestApp_new\TestApp_new")) {
+         mkdir -p D:\a\TestApp_new\TestApp_new
+         }
+         echo "Hello world from file" > D:\a\TestApp_new\TestApp_new\file1.txt
       
           
      
