@@ -15,10 +15,7 @@ jobs:
      
      - name: Create commit message file
        run: |
-        git log --pretty=format:"%h - %an, %ar : %s" > Testapp.txt
-        From: Kallepallimounika333@gmail.com
-        Date: Tue may 2 19:41:29 2023 +0530
-        Subject: Build_Automation_Test
+        git log --pretty=format:"mounikakallepalli@vcollab.com-Mounika,web may 3 19:41:29 2023 +0530:Build_automation_test : %s" > Testapp.txt
         
      - name: Commit message file
        run: |
