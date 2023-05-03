@@ -16,14 +16,14 @@ jobs:
       - name: Build app for release
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-      - run: mkdir -p artest
+      #- run: mkdir -p artest
 
-      - run: cp D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe artest\TestApp.exe 
+      #- run: cp D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe artest\TestApp.exe 
 
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: artest\TestApp.exe
+          path: D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe
          
       - name: Push changes
         run: |
