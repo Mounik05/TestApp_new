@@ -1,20 +1,25 @@
-name: upload artifact
+name: TestApp
 on:
   push:
-   branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  workflow_dispatch:
-
+    branches: ["master"]
 jobs:
- send-email:
-   runs-on: windows-latest
-   steps:
-     - uses: actions/checkout@v2.3.4
-     
-     - name: Upload Artifact
-       uses: actions/upload-artifact@v2
-       with:
-         name: my-artifact
-         path: D:\a\TestApp_new\TestApp_new
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+                
+      - name: setup-msbuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          msbuild-architecture: x64
+          
+      - name: Build app for release
+        run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+        
+      - name: push changes
+        run: |
+             git config --local user.email "kallepallimounika333@gmail.com"
+             git config --local user.name "Mounik05"
+             git add .
+             git commit -m "Add changes" -a
+             git push -u origin master
