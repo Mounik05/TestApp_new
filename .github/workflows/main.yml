@@ -15,11 +15,17 @@ jobs:
      
      - name: Create commit message file
        run: |
-        git log --pretty=format:"mounikakallepalli@vcollab.com"
-                                 "Mounika"
-                                 "may 3 19:41:29 2023 +0530"
-                                 "Build_automation_test"> Testapp.txt
-        
+        git log --pretty=format:"mounikakallepalli@vcollab.com" > Testapp.txt
+     - name: Create commit message file
+       run: |
+        git log --pretty=format:"Mounika" > Testapp.txt   
+     - name: Create commit message file
+       run: |
+        git log --pretty=format:"may 3 19:41:29 2023 +0530" > Testapp.txt  
+     - name: Create commit message file
+       run: |
+        git log --pretty=format:"Build_automation_test"> Testapp.txt
+                                                         
      - name: Commit message file
        run: |
           git config --global user.email "mounikakallepalli333@gmail.com"
