@@ -24,6 +24,12 @@ jobs:
              git commit -m "Add changes" -a
              git push -u origin master
              
+      - name: Create artifact files     
+        run: |   
+         mkdir -p D:\a\TestApp_new\TestApp_new
+         echo hello > D:\a\TestApp_new\TestApp_new/world.txt
+
+             
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
