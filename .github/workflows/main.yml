@@ -16,10 +16,7 @@ jobs:
      - name: Create commit message file
        run: |
         git log --pretty=sender mail id: "mounikakallepalli@vcollab.com" > Testapp.txt
-        git log --pretty=Author: "Mounika" > Testapp.txt 
-        git log --pretty=Date and Time: "may 3 19:41:29 2023 +0530" > Testapp.txt  
-        git log --pretty=message: "Build_automation_test" > Testapp.txt
-        
+       
      - name: Commit message file
        run: |
           git config --global user.email "mounikakallepalli333@gmail.com"
