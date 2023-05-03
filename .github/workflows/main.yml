@@ -26,7 +26,7 @@ jobs:
              
       - name: Create artifact files
         run: |
-          mkdir D:\a\TestApp_new\TestApp_new\x64\Release\testapp.exe
+          mkdir -p  D:\a\TestApp_new\TestApp_new\x64\Release\testapp.exe
           echo "testapp.exe file" > D:\a\TestApp_new\TestApp_new\artifact\new.txt
              
       - name: Upload artifact
