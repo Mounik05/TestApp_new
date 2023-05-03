@@ -33,7 +33,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
          name: TestApp.exe
-         path:  D:\a\TestApp_new\TestApp_new\mailtest
+         path:  D:\a\TestApp_new\TestApp_new\file1.txt
          
       - name: Push changes
         run: |
