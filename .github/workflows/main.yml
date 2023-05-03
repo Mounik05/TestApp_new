@@ -17,4 +17,4 @@ jobs:
        uses: actions/upload-artifact@v2
        with:
          name: my-artifact
-         path: D:\a\TestApp_new\TestApp_new\mailtest\test.txt
+         path: D:\a\TestApp_new\TestApp_new
