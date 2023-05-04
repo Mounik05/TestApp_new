@@ -21,7 +21,10 @@ jobs:
       - name: archive content
         uses: actions/create-archive@v2
         with:
-           filename: Testapp.exe.zip
+          files: |
+            ./Testapp.exe/*
+          format: zip
+          output: Testapp.exe/archive.zip
          
       - name: Create Release.
         id: create_release
