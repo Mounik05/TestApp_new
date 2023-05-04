@@ -24,7 +24,7 @@ jobs:
           files: |
             .\depency\*
           format: zip
-          output: Testapp.exe\archive.zip
+          output: depency\archive.zip
          
       - name: Create Release.
         id: create_release
