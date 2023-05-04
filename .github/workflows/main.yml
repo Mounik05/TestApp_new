@@ -18,8 +18,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: TestApp.exe
-      - name: archive site content
-        uses: thedoctor0/zip-release@master
+      - name: archive content
+        uses: actions/create-archive@v2
         with:
            filename: Testapp.exe.zip
          
