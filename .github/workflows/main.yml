@@ -21,16 +21,32 @@ jobs:
       #    mkdir -p artest
       #    cp D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe artest\TestApp.exe 
          
-      - name: Upload testapp.exe
+      - name: Upload Artifact-A
         uses: actions/upload-artifact@v2
         with:
           name: TestApp.exe
           path:  D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe
-      
+          
+      - name: Upload Artifact-B
+        uses: actions/upload-artifact@v2
+        with:
+          name: test.txt
+          path:  D:\a\TestApp_new\TestApp_new\mailtest\test.txt
+          
+      - name: Upload Artifact-C
+        uses: actions/upload-artifact@v2
+        with:
+          name: file1.txt
+          path:  D:\a\TestApp_new\TestApp_new\file1.txt
+          
       - name: Download artifact 
         uses: actions/download-artifact@v3
         with:
-         name: TestApp.exe
-         path:  D:\a\TestApp_new\TestApp_new\mailtest
+         name: all artifacts
+         path:  D:\a\TestApp_new\TestApp_new\artifact
+         
+      - name: Display structure of downloaded files
+        run: ls -R
+         
          
       
