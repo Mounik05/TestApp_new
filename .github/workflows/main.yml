@@ -19,7 +19,7 @@ jobs:
         with:
           name: TestApp.exe
       - name: archive site content
-        uses: actions/create-archive@v2
+        uses: thedoctor0/zip-release@master
         with:
            filename: Testapp.exe.zip
          
