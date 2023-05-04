@@ -40,7 +40,7 @@ jobs:
           path:  D:\a\TestApp_new\TestApp_new\file1.txt
           
       - name: Download artifact 
-      - uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v3
         with:
           path:  D:\a\TestApp_new\TestApp_new\artifact
          
