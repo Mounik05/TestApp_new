@@ -13,13 +13,13 @@ jobs:
         with:
           name: TestApp.exe
           path:  D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe
-
-
-      - name: Upload testapp.exe
-        uses: actions/upload-artifact@v2
+          
+      - name: Download artifact 
+        uses: actions/download-artifact@v3
         with:
-          name: TestApp.exe
-          path:  D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe
+         name: TestApp.exe
+         path:  D:\a\TestApp_new\TestApp_new\mailtest
+
 
       - name: Create Release.
         id: create_release
@@ -50,7 +50,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./Testapp.exe.zip
+          asset_path: ./mailtest/Testapp.exe.zip
           asset_name: Testapp.exe.zip
           asset_content_type: application/zip
           
