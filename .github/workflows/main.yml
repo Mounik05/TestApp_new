@@ -22,9 +22,9 @@ jobs:
         uses: actions/create-archive@v2
         with:
           files: |
-            ./Testapp.exe/*
+            .\depency\*
           format: zip
-          output: Testapp.exe/archive.zip
+          output: Testapp.exe\archive.zip
          
       - name: Create Release.
         id: create_release
