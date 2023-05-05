@@ -15,13 +15,13 @@ jobs:
 
       - name: Download Exe file
         run: |
-          Invoke-WebRequest -Uri https://github.com/Mounik05/TestApp_new/releases/download/v1.0/Testapp.exe.zip -OutFile Testapp.exe.zip
-          Expand-Archive Testapp.exe.zip - DestinationPath D:\a\new\new
-          
+          Invoke-WebRequest -Uri "https://github.com/Mounik05/TestApp_new/releases/download/v1.0/Testapp.exe.zip" -OutFile "Testapp.exe.zip"
+          Expand-Archive D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe.zip - DestinationPath "D:\a\VCollabpresenter\VCollabpresenter"
+
       - name: Copy Exe file to destination repository
         run: |
           $sourceDir = "TestApp_new"
-          $destinationDir = "$(System.DefaultWorkingDirectory)/new/Testapp_new"
+          $destinationDir = "$(System.DefaultWorkingDirectory)/VCollabpresenter/Testapp_new"
           New-Item -ItemType Directory -Path $destinationDir -Force
           Copy-Item -Path "$sourceDir/Testapp.exe" -Destination "$destinationDir/Testapp.exe" -Force
 
