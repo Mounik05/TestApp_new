@@ -15,22 +15,18 @@ jobs:
           repository: Mounik05/TestApp_new
           ref: master
 
-      - name: Checkout Destination Repository
-        uses: actions/checkout@v2.3.4
-        with:
-          repository:  Mounik05/New-repo
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: New-repo
-
       - name: Copy Testapp.exe
         run: |
-          robocopy 'TestApp_new/<source-directory>' 'New-repo/<destination-directory>' 'Testapp.exe'
+          mkdir New-repo 
+          copy '<Mounik05>\Testapp.exe' New-repo 
 
       - name: Commit and Push Changes
         run: |
-          cd 'New-repo'
+          cd New-repo 
+          git init
           git config --local user.email "Kallepallimounika333@gmail.com"
           git config --local user.name "Mounik05"
           git add .
-          git commit -m "Copy executable file from source repository"
-          git push
+          git commit -m "Copy Testapp.exe from source repository"
+          git remote add origin https://github.com/<Mounik05>/<New-repo >.git
+          git push --set-upstream origin master --force
