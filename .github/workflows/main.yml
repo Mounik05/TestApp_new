@@ -29,7 +29,7 @@ jobs:
           foreach ($file in $exeFiles) {
             Copy-Item 'D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe'  'D:\a\New-repo\New-repo'
           
-      - name: Commit and push changes
+      - name: Commit and push changes.
         run: |
             cd "D:\a\New-repo\New-repo"
             git config --local user.name "Mounik05"
