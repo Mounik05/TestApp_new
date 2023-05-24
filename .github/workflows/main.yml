@@ -31,5 +31,6 @@ jobs:
           git add -A
           git commit -m "copied"
           git push https://github.com/Mounik05/New-repo.git
+          git status
         env:
           REPO_KEY: ${{secrets.GH_PAT}}
