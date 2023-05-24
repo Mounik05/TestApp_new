@@ -8,9 +8,11 @@ jobs:
   copy_exe_file:
     runs-on: windows-latest
     
-    steps:
+    steps: 
+      - uses: actions/checkout@v2.3.4
+      
       - name: Checkout Source Repository
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
         with:
           repository: Mounik05/TestApp_new
           ref: master
