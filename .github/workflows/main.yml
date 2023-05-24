@@ -31,7 +31,6 @@ jobs:
             git init
             git config --local user.email "kallepallimounika333@gmail.com"
             git config --local user.name "Mounik05"
-            git remote set-url origin New-repo_url
             git add .
             git commit -m "Copy .exe files from source repository"
             git push -u origin master
