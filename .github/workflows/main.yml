@@ -17,10 +17,6 @@ jobs:
           repository: Mounik05/TestApp_new # Replace with the source repository URL
           ref: master
 
-      - name: Create Destination Directory
-        run: |
-          mkdir 'D:\a\New-repo\New-repo'
-          
       - name: Copy .exe files
         run: |
           Copy-Item 'D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe'  'D:\a\New-repo\New-repo'
@@ -29,7 +25,6 @@ jobs:
         run: |
             cd "D:\a\New-repo\New-repo"
             git init
-            git --version  2.6.1.windows.10
             git config --local user.email "kallepallimounika333@gmail.com"
             git config --local user.name "Mounik05"
             git remote add origin https://github.com/Mounik05/New-repo.git
