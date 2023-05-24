@@ -14,13 +14,13 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v2
         with:
-          repository: TestApp_new # Replace with the source repository URL
+          repository: Mounik05/TestApp_new # Replace with the source repository URL
           ref: master
 
       - name: Checkout destination repository
         uses: actions/checkout@v2
         with:
-          repository: New-repo # Replace with the destination repository URL
+          repository: Mounik05/New-repo # Replace with the destination repository URL
           ref: master 
 
       - name: Copy .exe files
