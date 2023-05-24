@@ -28,7 +28,7 @@ jobs:
       
       - name: Copy file to target repository
         run: |
-          xcopy /Y "D:\a\TestApp_new\TestApp_new\file.txt" "D:\a\New-repo\New-repo\test"
+          xcopy /Y "D:\a\TestApp_new\TestApp_new\file1.txt" "D:\a\New-repo\New-repo\test"
 
       - name: Commit and push changes
         run: |
