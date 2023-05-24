@@ -28,4 +28,5 @@ jobs:
           git config --local user.name "Mounik05"
           git add .
           git commit -m "Copy Testapp.exe from source repository"
+          git remote add origin https://github.com/Mounik05/New-repo.git
           git push -u origin master
