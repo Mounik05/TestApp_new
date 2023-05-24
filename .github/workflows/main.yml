@@ -20,7 +20,7 @@ jobs:
         with:
           repository:  Mounik05/New-repo
           token: ${{ secrets.GITHUB_TOKEN }}
-          path: D:\a\New-repo\New-repo
+          path: New-repo
 
       - name: Copy Testapp.exe
         run: |
