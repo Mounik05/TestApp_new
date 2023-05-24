@@ -16,7 +16,7 @@ jobs:
           ref: master
 
       - name: Checkout Destination Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
         with:
           repository:  Mounik05/New-repo
           token: ${{ secrets.GITHUB_TOKEN }}
