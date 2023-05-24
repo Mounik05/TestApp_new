@@ -31,7 +31,7 @@ jobs:
           git init
           git config --local user.email "Kallepallimounika333@gmail.com"
           git config --local user.name "Mounik05"
-          git remote add origin https://Mounik05:<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>@github.com/Mounik05/New-repo.git
+          git remote add origin https://github.com/Mounik05/New-repo.git
           git add .
           git commit -m "Copy Testapp.exe from source repository"
           git push -u origin master
