@@ -21,9 +21,10 @@ jobs:
         run: |
           mkdir 'D:\a\New-repo\New-repo'
           
-      - name: Copy files from repo to another repo.
+      - name: Copy files from one repo to another repo.
         run: | 
           cp 'D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe' 'D:\a\New-repo\New-repo'
+          cd New-repo
           git config --local user.name "Mounik05"
           git config --local user.email "kallepallimounika333@gmail.com"
           git add -A
