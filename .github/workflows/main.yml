@@ -14,10 +14,13 @@ jobs:
         with:
           repository: Mounik05/TestApp_new
           ref: master
+          
+      - name: Create Destination Directory
+        run: |
+          mkdir 'D:\a\New-repo\New-repo'
 
       - name: Copy Testapp.exe
         run: |
-          mkdir New-repo 
           copy 'D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe' New-repo 
 
       - name: Commit and Push Changes
