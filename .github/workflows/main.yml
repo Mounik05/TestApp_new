@@ -16,6 +16,10 @@ jobs:
         with:
           repository: Mounik05/TestApp_new # Replace with the source repository URL
           ref: master
+          
+      - name: Create Destination Directory
+        run: |
+          mkdir 'D:\a\New-repo\New-repo'
 
       - name: Copy .exe files
         run: |
