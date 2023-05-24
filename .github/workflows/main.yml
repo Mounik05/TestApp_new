@@ -26,15 +26,19 @@ jobs:
       #  env:
       #    REPO_KEY: ${{secrets.GH_PAT}}
       
-      - name: Copy file to target repository
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+        with:
+         repository: Mounik05/New-repo
+         path: test
+         token: ${{secrets.GH_PAT}}
+         
+      - name: Copy files from repo to another repo
         run: |
-          cp "D:\a\TestApp_new\TestApp_new\file1.txt" "D:\a\New-repo\New-repo\test"
-
-      - name: Commit and push changes
-        run: |
-          cd D:\a\New-repo\New-repo\test
-          git config --local user.email "kallepallimounika333@gmail.com"
+          cp file1.txt test\file.txt
+          cd test
           git config --local user.name "Mounik05"
+          git config --local user.email "Mounik05@github.com"
           git add -A
-          git commit -m "Copy file from source repository"
+          git commit -m "copied"
           git push
