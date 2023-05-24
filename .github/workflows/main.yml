@@ -31,7 +31,7 @@ jobs:
         with:
          repository: Mounik05/VCollabprozip
          #path: pro
-         #token: ${{secrets.GH_PAT}}
+         token: ${{secrets.GH_PAT}}
          
       #- name: Copy files from repo to another repo
       #  run: |
