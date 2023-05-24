@@ -18,7 +18,7 @@ jobs:
       - name: Copy Testapp.exe
         run: |
           mkdir New-repo 
-          copy '<Mounik05>\D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe' New-repo 
+          copy 'D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe' New-repo 
 
       - name: Commit and Push Changes
         run: |
