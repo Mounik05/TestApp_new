@@ -28,6 +28,7 @@ jobs:
       - name: Commit and push changes.
         run: |
             cd "D:\a\New-repo\New-repo"
+            git init
             git config --local user.name "Mounik05"
             git remote add origin https://github.com/Mounik05/New-repo.git
             git add .
