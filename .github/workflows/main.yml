@@ -24,6 +24,10 @@ jobs:
       - name: Copy Testapp.exe
         run: |
           copy 'D:\a\TestApp_new\TestApp_new\x64\Release\Testapp.exe' 'D:\a\New-repo\New-repo\Testapp.exe'
+          
+      - name: Verify Testapp.exe
+        run: |
+          dir 'D:\a\New-repo\New-repo\Testapp.exe'
 
       - name: Change Directory to Destination
         run: |
@@ -48,7 +52,7 @@ jobs:
 
       - name: Add Remote Origin
         run: |
-          git remote add origin https://Mounik05:<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>@github.com/Mounik05/New-repo.git
+            git remote add origin https://github.com/Mounik05/New-repo.git
 
       - name: Push Changes to Master Branch
         run: |
