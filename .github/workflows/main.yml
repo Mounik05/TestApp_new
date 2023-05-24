@@ -16,8 +16,7 @@ jobs:
         with:
           repository: Mounik05/TestApp_new # Replace with the source repository URL
           ref: master
-          token: ${{secrets.GH_PAT}}
-          
+       
       - name: Create destination directory
         run: mkdir 'D:\a\New-repo\New-repo'
 
