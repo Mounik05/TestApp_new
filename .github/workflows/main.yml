@@ -26,21 +26,15 @@ jobs:
       #  env:
       #    REPO_KEY: ${{secrets.GH_PAT}}
       
-      - name: Checkout to releasetest 
-        uses: actions/checkout@v2.3.4
-        with:
-         repository: Mounik05/New-repo
-         path: test
-         token: ${{secrets.GH_PAT}}
-         
-      - name: Copy files from repo to another repo
+      - name: Copy file to target repository
         run: |
-          cp file1.txt test\file1.txt
-          cd test
-          git config --local user.name "Mounik05"
+          xcopy /Y "D:\a\TestApp_new\TestApp_new\file.txt" "D:\a\New-repo\New-repo\test"
+
+      - name: Commit and push changes
+        run: |
+          cd D:\a\New-repo\New-repo\test
           git config --local user.email "kallepallimounika333@gmail.com"
+          git config --local user.name "Mounik05"
           git add -A
-          git commit -m "copied"
-          git push https://github.com/Mounik05/New-repo.git
-        env:
-          REPO_KEY: ${{secrets.GH_PAT}}
+          git commit -m "Copy file from source repository"
+          git push
