@@ -20,7 +20,7 @@ jobs:
       - name: Checkout destination repository
         uses: actions/checkout@v2
         with:
-          repository: Mounik05/New-repo # Replace with the destination repository URL
+          repository: New-repo # Replace with the destination repository URL
           ref: master 
 
       - name: Copy .exe files
