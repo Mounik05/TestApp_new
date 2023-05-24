@@ -22,7 +22,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          cd New-repo 
+          cd D:\a\New-repo\New-repo
           git init
           git config --local user.email "Kallepallimounika333@gmail.com"
           git config --local user.name "Mounik05"
