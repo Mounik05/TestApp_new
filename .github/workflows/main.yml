@@ -14,7 +14,8 @@ jobs:
       - name: Checkout to release
         uses: actions/checkout@v2.3.4
         with:
-         repository: Mounik05/TestApp_new
+         repository: Mounik05/New-repo
+         path: New-repo
          token: ${{secrets.GH_PAT}}
          
       - name: Copy files from repo to another repo
