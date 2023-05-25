@@ -20,8 +20,7 @@ jobs:
       - name: Check if file is modified
         id: check_file
         run: |
-         git diff --name-only origin/branch-name..HEAD -- "D:\a\TestApp_new\TestApp_new\file1.txt"
-
+              
       - name: Commit Changes
         if: steps.check_file.outputs.return-code == '0'
         run: |
