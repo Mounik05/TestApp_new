@@ -9,13 +9,20 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v2.3.4
-
-      - name: Commit file
+        with:
+         repository: Mounik05/VCollabprozip
+         #path: pro
+         token: ${{secrets.GH_PAT}}
+         
+      - name: Copy files from repo to another repo.
         run: |
-          git config user.name "Your Name"
-          git config user.email "your-email@example.com"
-          git add new.txt
-          git commit -m "Automatically commit new.txt file after push"
+          cp  x64\Release\TestApp.exe pro\TestApp.exe
+          cd  pro
+          git config --local user.name "Mounik05"
+          git config --local user.email "Mounik05@github.com"
+          git add TestApp.exe
+          git commit -m "Automatically commit TestApp.exe file after push"
           git push
+      
