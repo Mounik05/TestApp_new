@@ -19,7 +19,7 @@ jobs:
          token: ${{secrets.GH_PAT}}
          
          
-      - name: Copy files from repo to another repo and commit changes
+      - name: Copy files from repo to another repo and commit changes.
         run: |
           cp x64\Release\TestApp.exe pro\TestApp.exe
           cd pro
