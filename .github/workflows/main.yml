@@ -16,6 +16,6 @@ jobs:
         run: |
            git config user.name "Mounik05"
            git config user.email "kallepallimounika333@gmail.com"
-           git add path/to/your/file.txt
-           git commit -m "Automatically commit file.txt after push"
+           git add D:\a\TestApp_new\TestApp_new\file1.txt
+           git commit -m "Automatically commit new file after push"
            git push
