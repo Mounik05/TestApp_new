@@ -36,7 +36,7 @@ jobs:
          
       - name: Copy files from repo to another repo.
         run: |
-          cp TestApp.exe pro\TestApp.exe
+          cp x64\Release\TestApp.exe pro\TestApp.exe
           cd pro
           git config --local user.name "Mounik05"
           git config --local user.email "Mounik05@github.com"
