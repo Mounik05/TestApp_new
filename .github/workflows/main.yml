@@ -19,7 +19,7 @@ jobs:
       - name: Commit changes
         run: |
          cd D:\a\TestApp_new\TestApp_new\file1.txt
-         git add .
+         git add new.txt
          git commit -m "file1.txt changed to new.txt"
          
       - name: Push changes
