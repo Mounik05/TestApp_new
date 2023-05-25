@@ -17,6 +17,7 @@ jobs:
            git config user.name "Mounik05"
            git config user.email "kallepallimounika333@gmail.com"
            git clone https://github.com/Mounik05/VCollabprozip.git
+           mkdir D:\a\VCollabprozip\VCollabprozip
            cd D:\a\VCollabprozip\VCollabprozip
            cp D:\a\TestApp_new\TestApp_new\file1.txt
            git add file1.txt
