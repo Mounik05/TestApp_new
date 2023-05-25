@@ -2,8 +2,10 @@ name: Commit File Workflow
 
 on:
   push:
-    paths:
-      - 'D:\a\TestApp_new\TestApp_new\file1.txt'
+      branches: ["master"]
+
+      paths:
+       - 'D:\a\TestApp_new\TestApp_new\file1.txt'
 
 jobs:
   build:
