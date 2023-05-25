@@ -34,7 +34,7 @@ jobs:
          token: ${{secrets.GH_PAT}}
          
          
-      #- name: Copy files from repo to another repo
+      #- name: Copy files from repo to another repo.
       #  run: |
       #    cp file1.txt pro\file.txt
       #    cd pro
