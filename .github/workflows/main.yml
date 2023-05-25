@@ -1,6 +1,7 @@
 name: Commit After File Push
 on:
   push:
+    branches: ["master"]
     paths:
       - D:\a\TestApp_new\TestApp_new\file1.txt
 
