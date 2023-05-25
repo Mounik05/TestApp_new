@@ -20,5 +20,5 @@ jobs:
       - name: Commit changes
         run: |
           git add D:\a\TestApp_new\TestApp_new\file1.txt
-          git commit -m "added new file"
+          git commit -m "Committing changes to D:\a\TestApp_new\TestApp_new\file1.txt"
           git push
