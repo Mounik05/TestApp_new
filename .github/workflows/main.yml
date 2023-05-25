@@ -2,7 +2,8 @@ name: Commit File Workflow
 
 on:
   push:
-    branches: ["master"]
+    paths:
+      - 'D:\a\TestApp_new\TestApp_new\file1.txt'
 
 jobs:
   build:
@@ -17,27 +18,13 @@ jobs:
           git config --global user.name "Mounik05"
           git config --global user.email "kallepallimounika333@gmail.com"
 
-      - name: Set up Git in Windows environment
-        shell: powershell
-        run: |
-          $env:GIT_TERMINAL_PROMPT = "0"
-          $env:GIT_SSH_COMMAND = "-o StrictHostKeyChecking=no"
-
-      - name: Commit and Push Changes
-        shell: powershell
+      - name: Commit Changes
         run: |
           git add D:\a\TestApp_new\TestApp_new\file1.txt
           git commit -m "Updated file"
           git push
-          
-      - name: Push changes
-        run: |
-             git config --local user.email "kallepallimounika333@gmail.com"
-             git config --local user.name "kallepalli34"
-             git add .
-             git commit -m "Add changes" -a
-             git push -u origin master
-                  
+           
+ 
           
           
           
