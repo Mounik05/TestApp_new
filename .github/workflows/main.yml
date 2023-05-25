@@ -12,10 +12,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
         
-      - name: Commit file to target repository
+      - name: Set up Git
         run: |
-           git config user.name "Mounik05"
-           git config user.email "kallepallimounika333@gmail.com"
-           git add D:\a\TestApp_new\TestApp_new\file1.txt
-           git commit -m "Automatically commit new file after push"
-           git push
+          git config --global user.name "Mounik05"
+          git config --global user.email "kallepallimounika333@gmail.com"
+      
+      - name: Clone target repository
+        run: |
+          git clone https://github.com/Mounik05/VCollabprozip.git
+          cd VCollabprozip
+      
+      - name: Copy file from source to target repository
+        run: |
+          cp D:\a\TestApp_new\TestApp_new\file1.txt
+      
+      - name: Commit and push changes to target repository
+        run: |
+          git add file1.txt
+          git commit -m "Automatically commit file1.txt from source repository"
+          git push origin main
