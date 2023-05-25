@@ -17,10 +17,10 @@ jobs:
           git config --global user.name "Mounik05"
           git config --global user.email "kallepallimounika333@gmail.com"
 
-      - name: Commit changes
+      - name: Commit .exe file
         run: |
-          git add new.txt
-          git commit -m "Auto-commit after push"
+          git add D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe
+          git commit -m "Commit .exe file"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
