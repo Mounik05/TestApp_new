@@ -1,8 +1,7 @@
-name: Commit after File Push
+name: Commit After File Push
 on:
   push:
-    paths:
-      - D:\a\TestApp_new\TestApp_new\file1.txt
+     branches: ["master"]
 
 jobs:
   commit:
@@ -17,8 +16,18 @@ jobs:
           git config user.name "Mounik05"
           git config user.email "kallepallimounika333@gmail.com"
 
+      - name: Determine if the file is modified
+        id: file_changed
+        run: |
+          if (git diff --name-only HEAD~1 | findstr /C:"D:\a\TestApp_new\TestApp_new\file1.txt") (
+            echo "::set-output name=changed::true"
+          ) else (
+            echo "::set-output name=changed::false"
+          )
+
       - name: Commit changes
+        if: steps.file_changed.outputs.changed == 'true'
         run: |
           git add D:\a\TestApp_new\TestApp_new\file1.txt
-          git commit -m "Committing changes to D:\a\TestApp_new\TestApp_new\file1.txt"
+          git commit -m "Committing changes to file1.txt"
           git push
