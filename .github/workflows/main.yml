@@ -2,8 +2,6 @@ name: Commit After File Push
 on:
   push:
     branches: ["master"]
-    paths:
-      - D:\a\TestApp_new\TestApp_new\file1.txt
 
 jobs:
   commit:
@@ -20,6 +18,6 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add example.txt
-          git commit -m "Committing changes to file1.txt"
+          git add D:\a\TestApp_new\TestApp_new\file1.txt
+          git commit -m "Committing changes to file.txt"
           git push
