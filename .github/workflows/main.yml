@@ -1,33 +1,35 @@
-name: Commit and Push Workflow
+name: Commit File Workflow
 
 on:
-   push:
+  push:
     branches: ["master"]
 
 jobs:
-  commit_and_push:
+  build:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2.3.4
-        
-      - name: Set up Git
+
+      - name: Configure Git
         run: |
           git config --global user.name "Mounik05"
           git config --global user.email "kallepallimounika333@gmail.com"
-      
-      - name: Clone target repository
+
+      - name: Set up Git in Windows environment
+        shell: powershell
         run: |
-          git clone https://github.com/Mounik05/VCollabprozip.git
-          cd VCollabprozip
-      
-      - name: Copy file from source to target repository
+          $env:GIT_TERMINAL_PROMPT = "0"
+          $env:GIT_SSH_COMMAND = "-o StrictHostKeyChecking=no"
+
+      - name: Commit and Push Changes
+        shell: powershell
         run: |
-          cp D:\a\TestApp_new\TestApp_new\file1.txt
-      
-      - name: Commit and push changes to target repository
-        run: |
-          git add file1.txt
-          git commit -m "Automatically commit file1.txt from source repository"
-          git push origin main
+          git add D:\a\TestApp_new\TestApp_new\file1.txt
+          git commit -m "Updated file"
+          git push
+          
+          
+          
+          
