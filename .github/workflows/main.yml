@@ -30,6 +30,14 @@ jobs:
           git commit -m "Updated file"
           git push
           
+      - name: Push changes
+        run: |
+             git config --local user.email "kallepallimounika333@gmail.com"
+             git config --local user.name "kallepalli34"
+             git add .
+             git commit -m "Add changes" -a
+             git push -u origin master
+                  
           
           
           
