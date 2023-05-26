@@ -32,18 +32,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Commit files
+    - name: Commit Changes
       run: |
-          git config --local user.email "kallepallimounika333@gmail.com"
-          git config --local user.name "Mounik05"
           git add D:\a\TestApp_new\TestApp_new\file1.txt
           git commit -m "Updated file"
-         
-             
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-          github_token: ${{secrets.GH_PAT}} 
-          github_url: https://github.com/Mounik05/TestApp_new.git
-          branch: master
-          
+          git push
