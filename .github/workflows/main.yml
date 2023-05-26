@@ -37,20 +37,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build the installer
-        run: |
-          cd NSIS
-          makensis.exe VCollab.nsi
-
       - name: Commit files
         run: |
           git config --local user.email "Mounik05"
           git config --local user.name "kallepallimounika333@gmail.com"
           git lfs install
-          git lfs track "*VCollab.exe"
+          git lfs track "*TestApp.exe"
           git add .gitattributes
           git add .
-          git commit -m "Add changes" -a
+          git commit -m "updated file" -a
 
       - name: Push changes
         uses: ad-m/github-push-action@master
