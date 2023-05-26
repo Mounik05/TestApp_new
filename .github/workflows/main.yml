@@ -10,9 +10,26 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    
+    env:
+       Solution_Path: VCollabPro.sln
+       depency: depency\VCollabDependencyAPI
+       PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
    
     steps: 
        - uses: actions/checkout@v2.3.4
+       
+       - name: Download the file from url
+         uses: suisei-cn/actions-download-file@v1.0.1
+         with:
+           url: "https://downloads.vcollab.com/tmp/VCollabDependencyAPI.7z" 
+           target: depency
+           
+       - name: Extract zip file 
+         uses: DuckSoft/extract-7z-action@v1.0
+         with:
+           pathsource: depency\VCollabDependencyAPI.7z 
+           pathtarget: depency
        
        - name: setup-msbuild
          uses: microsoft/setup-msbuild@v1.1
@@ -22,10 +39,4 @@ jobs:
        - name: Build app for release
          run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-       - name: Push changes
-         run: |
-             git config --local user.email "kallepallimounika333@gmail.com"
-             git config --local user.name "Mounik05"
-             git add .
-             git commit -m "Add changes" -a
-             git push -u origin master
+      
