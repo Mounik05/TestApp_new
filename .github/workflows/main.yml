@@ -45,7 +45,7 @@ jobs:
           git lfs track "*TestApp.exe"
           git add.gitattributes
           git add  D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe
-          git commit -m "updated file" -a
+          git commit -m "Committing changes to D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -62,7 +62,7 @@ jobs:
          
       - name: Copy files from repo to another repo.
         run: |
-          cp Testapp.exe pro\Testapp.exe
+          cp x64\Release\TestApp.exe  pro\TestApp.exe
           cd pro
           git config --local user.name "Mounik05"
           git config --local user.email "Mounik05@github.com"
