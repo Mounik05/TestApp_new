@@ -24,7 +24,7 @@ jobs:
         } else {
          Write-Host "::set-output name=docs_changed::False"
          }
-        fi
+      
         # Set the output named "docs_changed"
         Write-Host "::set-output name=docs_changed::$HasDiff"
 
