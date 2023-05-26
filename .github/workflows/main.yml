@@ -43,7 +43,7 @@ jobs:
           git config --local user.email "aravindanand07@github.com"
           git config --local user.name "aravindanand07"
           git lfs install
-          git lfs track "*TestApp.exe"
+          git lfs track "*VCollab.exe"
           git add .gitattributes
           git add .
           git commit -m "Updated file" -a
