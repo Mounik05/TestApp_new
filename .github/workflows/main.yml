@@ -18,7 +18,7 @@ jobs:
          with:
           msbuild-architecture: x64
           
-       - name: Build app for release.
+       - name: Build app for release
          run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
      
