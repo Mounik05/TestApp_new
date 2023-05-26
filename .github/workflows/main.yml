@@ -35,7 +35,10 @@ jobs:
         run: |
           git config --local user.email "kallepallimounika333@gmail.com"
           git config --local user.name "Mounik05"
-          git add TestApp.exe
+          git lfs install
+          git lfs track "*TestApp.exe"
+          git add .gitattributes
+          git add .
           git commit -m "Commit TestApp.exe changes"
 
       - name: Push changes
