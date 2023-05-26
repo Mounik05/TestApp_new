@@ -6,56 +6,56 @@ on:
 
 jobs:
   conditional_job_check_files:
-    runs-on: 'windows-latest'
+    runs-on: windows-latest
     # Declare outputs for next jobs
     outputs:
       docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
     steps:
-    - uses: actions/checkout@v2
-      with:
-        # Checkout as many commits as needed for the diff
-        fetch-depth: 2
-    - shell: pwsh
-      id: check_file_changed
-      run: |
-        - name: Diff HEAD with the previous commit
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Check file changes
+        shell: pwsh
+        id: check_file_changed
         run: |
-          - name: Diff HEAD with the previous commit
-        run: |
+          # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
-          $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.md$' }
-          $HasDiff = $SourceDiff.Length -gt 0
+
+          # Check if the testapp.exe file has changed
+          $HasDiff = $diff -contains 'TestApp.exe'
+
+          # Set the output named "docs_changed"
           Write-Host "::set-output name=docs_changed::$HasDiff"
 
-         - name: Set outputs
-           id: set_outputs
-           run: |
-              echo "::set-output name=docs_changed::${{ steps.diff_output.outputs.docs_changed }}"
-
-# Run the job only with "docs_changed" equals "True"
   conditional_job:
-    runs-on: 'windows-latest'
-    needs: [ conditional_job_check_files ]
-    if: needs.conditional_job_check_files.outputs.docs_changed == 'True'
+    runs-on: windows-latest
+    needs: [conditional_job_check_files]
+    if: needs.conditional_job_check_files.outputs.docs_changed == 'true'
     steps:
-    #- shell: pwsh
-    - uses: actions/checkout@v2
-      
-    
-    - name: Commit files
-      run: |
-          git config --local user.email "aravindanand07@github.com"
-          git config --local user.name "aravindanand07"
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build the installer
+        run: |
+          cd NSIS
+          makensis.exe VCollab.nsi
+
+      - name: Commit files
+        run: |
+          git config --local user.email "Mounik05"
+          git config --local user.name "kallepallimounika333@gmail.com"
           git lfs install
           git lfs track "*VCollab.exe"
           git add .gitattributes
           git add .
-          git commit -m "Updated file" -a
-       
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-          github_token: ${{secrets.GH_PAT}} 
+          git commit -m "Add changes" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
           
           
           
