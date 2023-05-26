@@ -39,5 +39,4 @@ jobs:
           git add D:\a\TestApp_new\TestApp_new\file1.txt
           git commit -m "Updated file"
           git push
-          env:
-          REPO_KEY: ${{secrets.GH_PAT}}
+          
