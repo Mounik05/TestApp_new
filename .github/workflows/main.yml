@@ -27,6 +27,9 @@ jobs:
 
         # Set the output named "exe_changed"
         Write-Host "::set-output name=exe_changed::$_HasDiff"
+        
+        - name: Debug condition
+           run: echo "Condition value: ${{ needs.conditional_job_check_files.outputs.exe_changed }}"
           
   conditional_job:
     runs-on: windows-latest
