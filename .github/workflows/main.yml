@@ -34,7 +34,7 @@ jobs:
     
     - name: Build the installer
       run: | 
-           cd NSIS
+           cd TestApp_new
            makensis.exe file1.nsi
        
     - name: Commit files
