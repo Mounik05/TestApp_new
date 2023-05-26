@@ -36,6 +36,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: setup-msbuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          msbuild-architecture: x64
+          
+      - name: Build app for release
+        run: msbuild TestApp.sln -t:rebuild /p:Platform=x64/p:Configuration=Release 
 
       - name: Commit files
         run: |
