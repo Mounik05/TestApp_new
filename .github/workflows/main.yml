@@ -6,31 +6,24 @@ on:
 
 jobs:
   conditional_job_check_files:
-    runs-on: 'windows-latest'
-    # Declare outputs for next jobs
+    runs-on: windows-latest
     outputs:
-      exe_changed: $_{{ steps.check_file_changed.outputs.exe_changed }}
+      exe_changed: ${{ steps.check_file_changed.outputs.exe_changed }}
     steps:
-    - uses: actions/checkout@v2
-      with:
-        # Checkout as many commits as needed for the diff
-        fetch-depth: 2
-    - shell: pwsh
-      id: check_file_changed
-      run: |
-        # Diff HEAD with the previous commit
-        $_diff = git diff --name-only HEAD^ HEAD
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
 
-        # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-        $_SourceDiff = $_diff | Where-Object {$_ -match '^docs/' -or $_ -match '.md$_' }
-        $_HasDiff = $_SourceDiff.Length -gt 0
+      - name: Check file changes
+        shell: pwsh
+        id: check_file_changed
+        run: |
+          $_diff = git diff --name-only HEAD^ HEAD
+          $_SourceDiff = $_diff | Where-Object {$_ -match '^docs/' -or $_ -match '.md$' }
+          $_HasDiff = $_SourceDiff.Length -gt 0
+          Write-Host "::set-output name=exe_changed::$_HasDiff"
 
-        # Set the output named "exe_changed"
-        Write-Host "::set-output name=exe_changed::$_HasDiff"
-        
-        - name: Debug condition
-           run: echo "Condition value: ${{ needs.conditional_job_check_files.outputs.exe_changed }}"
-          
   conditional_job:
     runs-on: windows-latest
     needs: [conditional_job_check_files]
@@ -53,5 +46,8 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
-          
+
+      - name: Debug condition
+        run: echo "Condition value:${{ needs.conditional_job_check_files.outputs.exe_changed }}"
+ 
           
