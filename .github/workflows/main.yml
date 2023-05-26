@@ -15,27 +15,26 @@ jobs:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
     - shell: pwsh
+    - name: Check if file exists
       id: check_file_changed
       run: |
-        # Diff HEAD with the previous commit
-        $diff = git diff --name-only HEAD^ HEAD
-
-        # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-        $SourceDiff = $diff | Where-Object { $ -match '^docs/' -or $ -match '.md$' }
-        $HasDiff = $SourceDiff.Length -gt 0
-
+        # Check if a specific file exists
+        if test -f "D:\a\TestApp_new\TestApp_new\file1.txt"; then
+          echo "::set-output name=docs_changed::True"
+        else
+          echo "::set-output name=docs_changed::False"
+        fi
         # Set the output named "docs_changed"
         Write-Host "::set-output name=docs_changed::$HasDiff"
 
-  # Run the job only with "docs_changed" equals "True"
+ 
   conditional_job:
-    runs-on: 'windows-latest'
-    needs: [ conditional_job_check_files ]
+    runs-on: windows-latest
+    needs: [conditional_job_check_files]
     if: needs.conditional_job_check_files.outputs.docs_changed == 'True'
     steps:
-    #- shell: pwsh
     - uses: actions/checkout@v2
-      
+    
     - name: Build the installer
       run: | 
            cd NSIS
