@@ -22,11 +22,11 @@ jobs:
           $diff = git diff --name-only HEAD^ HEAD
           $HasDiff = $diff -contains 'TestApp.exe'
           Write-Host "::set-output name=exe_changed::$HasDiff"
-
+          
   conditional_job:
     runs-on: windows-latest
     needs: [conditional_job_check_files]
-    if: needs.conditional_job_check_files.outputs TestApp.exe_changed == 'true'
+    if: needs.conditional_job_check_files.outputs.exe_changed == 'true'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
