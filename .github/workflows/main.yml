@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
        
     env:
-       Solution_Path: VCollabPro.sln
+       Solution_Path: TestApp.sln
        depency: depency\VCollabDependencyAPI
        PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
     steps: 
@@ -36,7 +36,7 @@ jobs:
           msbuild-architecture: x64
           
       - name: Build app for release 
-        run: msbuild VCollabPro.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+        run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
       - name: Push changes
         run: |
