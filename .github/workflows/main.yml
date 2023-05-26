@@ -19,10 +19,11 @@ jobs:
       id: check_file_changed
       run: |
         # Check if a specific file exists
-        if test -f "D:\a\TestApp_new\TestApp_new\file1.txt"; then
-          echo "::set-output name=docs_changed::True"
-        else
-          echo "::set-output name=docs_changed::False"
+        if (Test-Path "D:\a\TestApp_new\TestApp_new\file1.txt") {
+        Write-Host "::set-output name=docs_changed::True"
+        } else {
+         Write-Host "::set-output name=docs_changed::False"
+         }
         fi
         # Set the output named "docs_changed"
         Write-Host "::set-output name=docs_changed::$HasDiff"
