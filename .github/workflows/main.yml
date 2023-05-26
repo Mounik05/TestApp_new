@@ -32,11 +32,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Build the installer
-      run: | 
-           cd TestApp_new
-           makensis.exe file1.nsi
-       
     - name: Commit files
       run: |
           git config --local user.email "kallepallimounika333@gmail.com"
