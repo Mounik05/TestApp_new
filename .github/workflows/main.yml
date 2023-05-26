@@ -6,22 +6,27 @@ on:
 
 jobs:
   conditional_job_check_files:
-    runs-on: windows-latest
+    runs-on: 'windows-latest'
+    # Declare outputs for next jobs
     outputs:
       exe_changed: ${{ steps.check_file_changed.outputs.exe_changed }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh
+      id: check_file_changed
+      run: |
+        # Diff HEAD with the previous commit
+        $diff = git diff --name-only HEAD^ HEAD
 
-      - name: Check file changes
-        shell: pwsh
-        id: check_file_changed
-        run: |
-          $diff = git diff --name-only HEAD^ HEAD
-          $HasDiff = $diff -contains 'TestApp.exe'
-          Write-Host "::set-output name=exe_changed::$HasDiff"
+        # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+        $SourceDiff = $diff | Where-Object { $ -match '^docs/' -or $ -match '.md$' }
+        $HasDiff = $SourceDiff.Length -gt 0
+
+        # Set the output named "exe_changed"
+        Write-Host "::set-output name=exe_changed::$HasDiff"
           
   conditional_job:
     runs-on: windows-latest
