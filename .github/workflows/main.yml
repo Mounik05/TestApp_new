@@ -1,53 +1,58 @@
-name: Commit After File Push
-
+name:  File Check Workflow
 on:
   push:
       branches: ["master"]
 
 jobs:
   conditional_job_check_files:
-    runs-on: windows-latest
+    runs-on: 'windows-latest'
+    # Declare outputs for next jobs
     outputs:
-      exe_changed: ${{ steps.check_file_changed.outputs.exe_changed }}
+      docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh
+      id: check_file_changed
+      run: |
+        # Diff HEAD with the previous commit
+        $diff = git diff --name-only HEAD^ HEAD
 
-      - name: Check file changes
-        shell: pwsh
-        id: check_file_changed
-        run: |
-          $_diff = git diff --name-only HEAD^ HEAD
-          $_SourceDiff = $_diff | Where-Object {$_ -match '^docs/' -or $_ -match '.md$' }
-          $_HasDiff = $_SourceDiff.Length -gt 0
-          Write-Host "::set-output name=exe_changed::$_HasDiff"
+        # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+        $SourceDiff = $diff | Where-Object { $ -match '^docs/' -or $ -match '.md$' }
+        $HasDiff = $SourceDiff.Length -gt 0
 
+        # Set the output named "docs_changed"
+        Write-Host "::set-output name=docs_changed::$HasDiff"
+
+  # Run the job only with "docs_changed" equals "True"
   conditional_job:
-    runs-on: windows-latest
-    needs: [conditional_job_check_files]
-    if: needs.conditional_job_check_files.outputs.exe_changed == 'true'
+    runs-on: 'windows-latest'
+    needs: [ conditional_job_check_files ]
+    if: needs.conditional_job_check_files.outputs.docs_changed == 'True'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Commit files
-        run: |
+    #- shell: pwsh
+    - uses: actions/checkout@v2
+      
+    - name: Build the installer
+      run: | 
+           cd NSIS
+           makensis.exe Testapp.nsi
+       
+    - name: Commit files
+      run: |
           git config --local user.email "kallepallimounika333@gmail.com"
           git config --local user.name "Mounik05"
           git lfs install
-          git lfs track "*TestApp.exe"
+          git lfs track "*Testapp.exe"
           git add .gitattributes
           git add .
-          git commit -m "Commit TestApp.exe changes"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-
-      - name: Debug condition
-        run: echo "Condition value:${{ needs.conditional_job_check_files.outputs.exe_changed }}"
- 
+          git commit -m "Add changes" -a
+       
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+          github_token: ${{secrets.GH_PAT}} 
           
