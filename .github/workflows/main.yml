@@ -26,11 +26,13 @@ jobs:
           $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.md$' }
           $HasDiff = $SourceDiff.Length -gt 0
           Write-Host "::set-output name=docs_changed::$HasDiff"
-          outputs:
-           docs_changed:
-          description: 'Whether files under docs/ or with .md extension have changed'
-          
-  # Run the job only with "docs_changed" equals "True"
+
+         - name: Set outputs
+           id: set_outputs
+           run: |
+              echo "::set-output name=docs_changed::${{ steps.diff_output.outputs.docs_changed }}"
+
+# Run the job only with "docs_changed" equals "True"
   conditional_job:
     runs-on: 'windows-latest'
     needs: [ conditional_job_check_files ]
