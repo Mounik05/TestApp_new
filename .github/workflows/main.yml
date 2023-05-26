@@ -25,10 +25,6 @@ jobs:
          Write-Host "::set-output name=docs_changed::False"
          }
       
-        # Set the output named "docs_changed"
-        Write-Host "::set-output name=docs_changed::$HasDiff"
-
- 
   conditional_job:
     runs-on: windows-latest
     needs: [conditional_job_check_files]
@@ -39,14 +35,14 @@ jobs:
     - name: Build the installer
       run: | 
            cd NSIS
-           makensis.exe Testapp.nsi
+           makensis.exe file1.nsi
        
     - name: Commit files
       run: |
           git config --local user.email "kallepallimounika333@gmail.com"
           git config --local user.name "Mounik05"
           git lfs install
-          git lfs track "*Testapp.exe"
+          git lfs track "*file1.exe"
           git add .gitattributes
           git add .
           git commit -m "Add changes" -a
