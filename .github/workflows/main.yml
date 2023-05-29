@@ -15,8 +15,6 @@ jobs:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
      
-   
-      
   conditional_job:
     runs-on: windows-latest
     needs: [conditional_job_check_files]
@@ -24,11 +22,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Commit Changes and push changes
-      run: |
-          git config --local user.email "kallepallimounika333@gmail.com"
-          git config --local user.name "Mounik05"
-          git add D:\a\TestApp_new\TestApp_new\file1.txt
-          git commit -m "Updated file"
-          git push
-          
+   
