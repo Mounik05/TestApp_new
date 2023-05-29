@@ -1,10 +1,10 @@
 name: File Check Workflow
 on:
- push:
-      branches: ["master"]
-env:      
- if: exists('D:\a\TestApp_new\TestApp_new\file1.txtpath/to/file.txt')
- 
+  push:
+    branches:
+      - master
+    paths:
+      - 'D:\a\TestApp_new\TestApp_new\file1.txt'
 jobs:
   conditional_job_check_files:
     runs-on: 'windows-latest'
@@ -27,17 +27,7 @@ jobs:
          Write-Host "::set-output name=docs_changed::False"
          }
          
-    - name: Check if file exists
-      id: check_file
-      run: |
-       if (Test-Path "D:\a\TestApp_new\TestApp_new\file1.txt") {
-        echo "file exists"
-        echo "VARIABLE_NAME=true" >> $GITHUB_ENV
-       } else {
-        echo "file does not exist"
-        echo "VARIABLE_NAME=false" >> $GITHUB_ENV
-       }
-     
+   
   conditional_job:
     runs-on: windows-latest
     needs: [conditional_job_check_files]
