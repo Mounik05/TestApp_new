@@ -16,7 +16,7 @@ jobs:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
      
-    - name: Check if file exists
+    - name: Check if file exists.
       id: check_file_changed
       run: |
         # Check if a specific file exists
