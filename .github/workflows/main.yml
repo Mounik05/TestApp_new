@@ -19,7 +19,7 @@ jobs:
       id: check_file_changed
       run: |
         # Check if a specific file exists
-        if (Test-Path "D:\a\TestApp_new\TestApp_new\file1.txt") {
+        if (Test-Path "D:\a\TestApp_new\TestApp_new\file2.txt") {
         Write-Host "::set-output name=docs_changed::True"
         } else {
          Write-Host "::set-output name=docs_changed::False"
