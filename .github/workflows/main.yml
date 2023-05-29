@@ -1,10 +1,11 @@
 name: File Check Workflow
 on:
-   push:
-      branches: ["master"]
-env:      
- if: exists('D:\a\TestApp_new\TestApp_new\file1.txtpath/to/file.txt')
- 
+  push:
+    branches:
+      - master
+
+if: exists('path/to/file.txt')
+
 jobs:
   conditional_job_check_files:
     runs-on: 'windows-latest'
