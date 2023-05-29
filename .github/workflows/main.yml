@@ -1,8 +1,7 @@
 name: File Check Workflow
 on:
   push:
-    branches: ["master"]
-    paths:
+   paths:
       - 'TestApp_new/TestApp_new/file1.txt'
 jobs:
   conditional_job_check_files:
