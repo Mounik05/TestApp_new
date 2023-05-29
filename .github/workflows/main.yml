@@ -37,8 +37,7 @@ jobs:
         echo "file does not exist"
         echo "VARIABLE_NAME=false" >> $GITHUB_ENV
        }
-       shell: powershell
-      
+     
   conditional_job:
     runs-on: windows-latest
     needs: [conditional_job_check_files]
