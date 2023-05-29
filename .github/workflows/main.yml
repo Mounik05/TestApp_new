@@ -1,16 +1,15 @@
 name: File Check Workflow
 on:
-  push:
-    branches:
-      - master
-
-if: exists('path/to/file.txt')
-
+ push:
+      branches: ["master"]
+env:      
+ if: exists('D:\a\TestApp_new\TestApp_new\file1.txtpath/to/file.txt')
+ 
 jobs:
   conditional_job_check_files:
     runs-on: 'windows-latest'
     # Declare outputs for next jobs
-    outputs:
+    outputs: 
       docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
     steps:
     - uses: actions/checkout@v2
