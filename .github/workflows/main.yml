@@ -1,8 +1,9 @@
 name: File Check Workflow
 on:
   push:
-     paths:
-      - 'D:\a\TestApp_new\TestApp_new\file1.txt'
+    branches: ["master"]
+    paths:
+      - 'TestApp_new/TestApp_new/file1.txt'
 jobs:
   conditional_job_check_files:
     runs-on: 'windows-latest'
