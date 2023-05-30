@@ -1,4 +1,4 @@
-name: Deploy for preview
+name: Check and Modify File
 on:
   push:
    paths:
