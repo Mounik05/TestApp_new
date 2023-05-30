@@ -13,9 +13,9 @@ jobs:
 
       - name: Modify File
         run: |
-          echo "New content" > mailtest/test.txt
+          echo "abc" > mailtest/test2.txt
 
       - name: Check if File Pushed
         id: Modify File
         run: |
-          echo "push Process success."
+          echo "push Process success"
