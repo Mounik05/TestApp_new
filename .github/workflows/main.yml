@@ -1,13 +1,14 @@
-name: File Check Workflow
+name: Deploy for preview
+
 on:
-   push:
+  push:
     paths:
       - igen/testfile.txt
     
 jobs:
-  conditional_job_check_files:
-    runs-on: 'windows-latest'
-    # Declare outputs for next jobs
+  upload:
+    runs-on: windows-latest
+ # Declare outputs for next jobs
     outputs: 
       docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
     steps:
