@@ -1,8 +1,9 @@
 name: File Check Workflow
 on:
-   push:
-    paths:
-      - igen/file1.txt
+  push:
+   branches: ["master"]
+   paths:
+      - "igen/file1.txt"
 jobs:
   conditional_job_check_files:
     runs-on: 'windows-latest'
