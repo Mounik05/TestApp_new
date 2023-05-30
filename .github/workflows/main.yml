@@ -13,12 +13,13 @@ jobs:
 
       - name: Check if File Pushed
         run: |
-          if [ -f "mailtest/test2.txt" ]; then
+          if (Test-Path "mailtest/test2.txt") {
             echo "File was pushed."
-          else
+          } else {
             echo "File was not pushed."
             exit 1
-          fi
+          }
+
 
       - name: Perform Action
         run: |
