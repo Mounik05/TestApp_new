@@ -1,5 +1,4 @@
 name: Deploy for preview
-
 on:
   push:
     paths:
