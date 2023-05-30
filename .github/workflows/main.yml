@@ -13,22 +13,18 @@ jobs:
 
       - name: Check if File Exists
         run: |
-          if test -f D:a\TestApp_new\TestApp_new\mailtest\test2.txt; then
-            echo "File exists"
-          else
+          if not exist D:a\TestApp_new\TestApp_new\mailtest\test2.txt (
             echo "File does not exist, skipping the job"
             exit 0
-          fi
+          )
 
       - name: Check File Modification
         id: check-modification
         run: |
-          if git diff --quiet --D:a\TestApp_new\TestApp_new\mailtest\test2.txt; then
-            echo "File has not been modified, skipping the job"
-            exit 0
-          fi
+          echo ::set-output name=modified::$(git log -1 --format="%cd" -- D:a\TestApp_new\TestApp_new\mailtest\test2.txt)
 
       - name: Modify File
+        if: steps.check-modification.outputs.modified != '2023-05-30'
         run: |
           echo "Perform file modification here"
           echo "123" >> D:a\TestApp_new\TestApp_new\mailtest\test2.txt
