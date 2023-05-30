@@ -16,6 +16,6 @@ jobs:
           echo "New content" > mailtest/test.txt
 
       - name: Check if File Pushed
-        needs: Modify File
+        id: Modify File
         run: |
           echo "push Process success."
