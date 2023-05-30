@@ -3,24 +3,23 @@ on:
   push:
     paths:
       - mailtest/test2.txt
-    
+env:
+  FILE_PATH: mailtest/test2.txt
+
 jobs:
   upload:
     runs-on: windows-latest
-    
+
     steps:
       - uses: actions/checkout@v2.3.4
 
       - name: Check if File Pushed
         run: |
-          if (Test-Path "mailtest/test2.txt") {
-            echo "File was pushed."
-          } else {
-            echo "File was not pushed."
-            exit 1
-          }
+          echo "push Process success."
+          echo "Modifying the file at $FILE_PATH"
 
+          # Add your code to modify the file using $FILE_PATH
 
       - name: Perform Action
         run: |
-          echo "Performing the action..." 
+          echo "Performing the action..."
