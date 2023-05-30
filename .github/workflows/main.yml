@@ -39,7 +39,7 @@ jobs:
           git config --local user.name "Mounik05"
           git commit -am "Update file" --quiet
 
-      - name: Push Changes
+      - name: Push Changes.
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
