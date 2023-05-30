@@ -1,7 +1,6 @@
 name: Check and Modify File
 on:
   push:
-   branches: ["master"]
    paths:
         - mailtest/test2.txt
 jobs:
@@ -12,19 +11,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Check if File Modified
-        id: check-modification
-        run: |
-          git diff --quiet -- mailtest\test2.txt
-          echo ::set-output name=modified::$?
-
       - name: Modify File
-        if: steps.check-modification.outputs.modified == '0'
         run: |
-          # Add your file modification steps here
-          # For example:
-          echo "123" >> mailtest\test2.txt
-
+          $content = Get-Content -Path mailtest/test2.txt
+          $content += "hello"
+          $content | Out-File -FilePath mailtest/test2.txt -Encoding utf8
+     
       - name: Commit Changes
         run: |
           git config --local user.email "kallepallimounika333@gmail.com"
