@@ -11,23 +11,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Check if File Exists
-        run: |
-          if not exist D:a\TestApp_new\TestApp_new\mailtest\test2.txt (
-            echo "File does not exist, skipping the job"
-            exit 0
-          )
-
-      - name: Check File Modification
+      - name: Check if File Modified
         id: check-modification
         run: |
-          echo ::set-output name=modified::$(git log -1 --format="%cd" -- D:a\TestApp_new\TestApp_new\mailtest\test2.txt)
+          git diff --quiet -- D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+          echo ::set-output name=modified::$?
 
       - name: Modify File
-        if: steps.check-modification.outputs.modified != '2023-05-30'
+        if: steps.check-modification.outputs.modified == '0'
         run: |
-          echo "Perform file modification here"
-          echo "123" >> D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+          # Add your file modification steps here
+          # For example:
+          echo "123" >> D:a\TestApp_new\TestApp_new\mailtest\test2.txtt
 
       - name: Commit Changes
         run: |
