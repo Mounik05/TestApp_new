@@ -13,6 +13,6 @@ jobs:
 
       - name: Check if File Pushed.
         run: |
-          echo "push Process success"   
+          echo "push Process success."   
           
      
