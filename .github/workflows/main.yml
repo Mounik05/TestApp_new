@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - mailtest/test2.txt
-       Add-Content -Path $file_path -Value "New content"
+       Add-Content -Path $D:a\TestApp_new\TestApp_new\mailtest\test2.txt -Value "123"
      
 jobs:
   upload:
