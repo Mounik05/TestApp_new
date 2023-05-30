@@ -1,8 +1,8 @@
 name: Check and Modify File
 on:
   push:
-   #paths:
-   #     - mailtest/test2.txt
+   paths:
+        - mailtest/test2.txt
 jobs:
   modify_file_job:
     runs-on: windows-latest
