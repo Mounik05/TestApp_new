@@ -3,9 +3,6 @@ on:
   push:
     paths:
       - mailtest/test2.txt
-env:
-  FILE_PATH: mailtest/test2.txt
-
 jobs:
   upload:
     runs-on: windows-latest
@@ -16,9 +13,9 @@ jobs:
       - name: Check if File Pushed
         run: |
           echo "push Process success."
-          echo "Modifying the file at $FILE_PATH"
-
-          # Add your code to modify the file using $FILE_PATH
+          
+          # Modify the file using shell commands
+          echo "1123" > mailtest/test2.txt
 
       - name: Perform Action
         run: |
