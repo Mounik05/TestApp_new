@@ -10,6 +10,11 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2.3.4
+      
+      - name: Modify File
+        run: |
+          # Modify the file directly
+          echo "123" > mailtest/test.txt
 
       - name: Check if File Pushed
         run: |
