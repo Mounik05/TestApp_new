@@ -4,25 +4,26 @@ on:
     paths:
      - mailtest/test.txt
     
+
 jobs:
-  pre-job:
+  modify-file:
     runs-on: windows-latest
     steps:
       - name: Modify File
         run: |
           echo "123" > mailtest/test.txt
-
-  upload:
-    needs: pre-job
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2.3.4
-
-          
-      - name: Commit and Push Changes
-        run: |
           git config --global user.name "Mounik05"
           git config --global user.email "kallepallimounika333@gmail.com"
           git add mailtest/test.txt
           git commit -m "Modify mailtest/test.txt"
           git push
+
+  upload:
+    needs: modify-file
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - name: Check if File Pushed
+        run: |
+          echo "push Process success."
