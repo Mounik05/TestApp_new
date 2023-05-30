@@ -2,7 +2,7 @@ name: Deploy for preview
 on:
   push:
     paths:
-     - mailtest/test.txt
+     - mailtest/test2.txt
     
 
 jobs:
@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Modify File
         run: |
-          echo "123" > mailtest/test.txt
+          echo "New content" > mailtest/test2.txt
           git config --global user.name "Mounik05"
           git config --global user.email "kallepallimounika333@gmail.com"
-          git add mailtest/test.txt
-          git commit -m "Modify mailtest/test.txt"
+          git add mailtest/test2.txt
+          git commit -m "Modify mailtest/test2.txt"
           git push
 
   upload:
