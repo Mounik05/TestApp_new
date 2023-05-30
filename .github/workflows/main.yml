@@ -1,7 +1,6 @@
 name: Deploy for preview
 on:
   push:
-    branches: ["master"]
     paths:
       - mailtest/test.txt
     
