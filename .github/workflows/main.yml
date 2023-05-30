@@ -1,6 +1,7 @@
 name: Check and Modify File
 on:
   push:
+   branches: ["master"]
    paths:
         - mailtest/test2.txt
 jobs:
