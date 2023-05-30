@@ -3,27 +3,43 @@ on:
   push:
    paths:
         - mailtest/test2.txt
-        
 jobs:
-  upload:
+  modify_file_job:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v2.3.4
-      
-      - name: Modify file if exists or modified
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check if File Exists
         run: |
-          if test -f   mailtest/test2.txt|| git diff --quiet -- mailtest/test2.txt ; then
-            echo "File exists or has been modified, proceeding with further steps"
-            echo "123" >> mailtest/test2.txt
+          if test -f D:a\TestApp_new\TestApp_new\mailtest\test2.txt; then
+            echo "File exists"
           else
-            echo "File does not exist or hasn't been modified, skipping the job"
+            echo "File does not exist, skipping the job"
             exit 0
           fi
-      - name: Commit Changes and push changes
+
+      - name: Check File Modification
+        id: check-modification
+        run: |
+          if git diff --quiet --D:a\TestApp_new\TestApp_new\mailtest\test2.txt; then
+            echo "File has not been modified, skipping the job"
+            exit 0
+          fi
+
+      - name: Modify File
+        run: |
+          echo "Perform file modification here"
+          echo "123" >> D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+
+      - name: Commit Changes
         run: |
           git config --local user.email "kallepallimounika333@gmail.com"
           git config --local user.name "Mounik05"
-          git add D:\a\TestApp_new\TestApp_new\mailtest\test2.txt
-          git commit -m "Update file"
-          git push
+          git commit -am "Update file" --quiet
+
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
