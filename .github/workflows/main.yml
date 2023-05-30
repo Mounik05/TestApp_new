@@ -1,8 +1,7 @@
 name: Check and Modify File
 on:
   push:
-   paths:
-        - mailtest/test2.txt
+  branches: ["master"]
 jobs:
   modify_file_job:
     runs-on: windows-latest
@@ -14,7 +13,7 @@ jobs:
       - name: Check file existence and modification
         shell: pwsh
         run: |
-         $filePath = "path/to/your/file.txt"
+         $filePath = "D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
          $fileExists = Test-Path $filePath
          $fileModified = $false
 
@@ -26,12 +25,12 @@ jobs:
           if ($lastModified -ne $currentDate) {
             $fileModified = $true
           }
-        }
+         }
 
-        if (!$fileExists -or !$fileModified) {
+         if (!$fileExists -or !$fileModified) {
           Write-Host "The file does not exist or has not been modified. Exiting job..."
           exit 0
-        }
+         }
 
       - name: Commit Changes
         run: |
