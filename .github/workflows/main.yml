@@ -1,7 +1,10 @@
 name: Deploy for preview
 on:
   push:
-     branches: ["master"]
+    branches: ["master"]
+    paths:
+      - mailtest/test.txt
+    
 jobs:
   upload:
     runs-on: windows-latest
