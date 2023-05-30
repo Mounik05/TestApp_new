@@ -2,11 +2,8 @@ name: Deploy for preview
 on:
   push:
    paths:
-         mailtest/test2.t
-    with open( paths, "a") as file
-    file.write("123\n")
-    
-     
+         mailtest/test2.txt
+        
 jobs:
   upload:
     runs-on: windows-latest
@@ -16,5 +13,12 @@ jobs:
       
       - name: Check if File Pushed
         run: |
-          echo "push Process success."
-
+          if git diff --name-only HEAD^ HEAD -- mailtest/test2.txt; then
+            echo "File has been modified, proceed with further steps"
+            # Add your file modification steps here
+            # For example:
+            # echo "New content" >> mailtest/test2.txt
+          else
+            echo "File exists but hasn't been modified, skipping the job"
+            exit 0
+          fi
