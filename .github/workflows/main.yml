@@ -11,12 +11,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Modify File
+      - name: Check file existence and modification
+        shell: pwsh
         run: |
-          $content = Get-Content -Path mailtest/test2.txt
-          $content += "hello"
-          $content | Out-File -FilePath mailtest/test2.txt -Encoding utf8
-     
+         $filePath = "path/to/your/file.txt"
+         $fileExists = Test-Path $filePath
+         $fileModified = $false
+
+         if ($fileExists) {
+          $file = Get-Item $filePath
+          $currentDate = Get-Date
+          $lastModified = $file.LastWriteTime
+
+          if ($lastModified -ne $currentDate) {
+            $fileModified = $true
+          }
+        }
+
+        if (!$fileExists -or !$fileModified) {
+          Write-Host "The file does not exist or has not been modified. Exiting job..."
+          exit 0
+        }
+
       - name: Commit Changes
         run: |
           git config --local user.email "kallepallimounika333@gmail.com"
