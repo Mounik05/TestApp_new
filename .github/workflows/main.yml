@@ -3,7 +3,7 @@ on:
   push:
    branches: ["master"]
    paths:
-      - 'D:\a\TestApp_new\TestApp_new\file1.txt'
+      - '- igen/file1.txt'
 jobs:
   conditional_job_check_files:
     runs-on: 'windows-latest'
