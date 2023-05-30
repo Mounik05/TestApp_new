@@ -11,16 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
 
-      - name: Modify File
-        id: modify-file
-        run: |
-          echo "New content" > mailtest/test.txt
-
       - name: Check if File Pushed
         run: |
-          echo "Checking if file was pushed..."
+          if [ -f "mailtest/test2.txt" ]; then
+            echo "File was pushed."
+          else
+            echo "File was not pushed."
+            exit 1
+          fi
 
       - name: Perform Action
-        needs: [upload, modify-file]
         run: |
-          echo "File was modified and pushed. Performing the action..."
+          echo "Performing the action..." 
