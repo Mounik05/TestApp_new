@@ -1,7 +1,8 @@
 name: File Check Workflow
 on:
   push:
-   branches: ["master"]
+   paths:
+      - mailtest/test.txt
 jobs:
   conditional_job_check_files:
     runs-on: 'windows-latest'
