@@ -14,7 +14,7 @@ jobs:
       - name: Check if File Modified
         id: check-modification
         run: |
-          git diff --quiet -- D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+          git diff --quiet -- mailtest\test2.txt
           echo ::set-output name=modified::$?
 
       - name: Modify File
@@ -22,7 +22,7 @@ jobs:
         run: |
           # Add your file modification steps here
           # For example:
-          echo "123" >> D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+          echo "123" >> mailtest\test2.txt
 
       - name: Commit Changes
         run: |
