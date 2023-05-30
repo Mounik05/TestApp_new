@@ -2,7 +2,7 @@ name: Deploy for preview
 on:
   push:
     paths:
-      - igen/testfile.txt
+      - mailtest/test.txt
     
 jobs:
   upload:
