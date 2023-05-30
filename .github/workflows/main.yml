@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - mailtest/test2.txt
+       Add-Content -Path $file_path -Value "New content"
      
 jobs:
   upload:
@@ -10,21 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.3.4
-      - name: Check if file exists
+      
+      - name: Check if File Pushed
         run: |
-          if not exist D:a\TestApp_new\TestApp_new\mailtest\test2.txt (
-            echo "File does not exist"
-            exit 1
-          )
+          echo "push Process success."
 
-      - name: Check file modification
-        id: check-modification
-        run: |
-          echo ::set-output name=modified::$(git log -1 --format="%cd" -- D:a\TestApp_new\TestApp_new\mailtest\test2.txt)
-
-      - name: Modify file
-        if: steps.check-modification.outputs.modified != '2023-05-30'
-        run: |
-          echo "Perform file modification here"
-          echo "123" >> D:a\TestApp_new\TestApp_new\mailtest\test2.txt
-       
