@@ -3,8 +3,9 @@ on:
   push:
    paths:
          mailtest/test2.t
-    with open( paths, "a") as file:
+    with open( paths, "a") as file
     file.write("123\n")
+    
      
 jobs:
   upload:
