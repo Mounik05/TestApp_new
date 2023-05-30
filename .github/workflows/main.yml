@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
 
-      - name: Check if File Pushed
+      - name: Check if File Pushed.
         run: |
           echo "push Process success"   
           
