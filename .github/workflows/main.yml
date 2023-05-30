@@ -20,3 +20,10 @@ jobs:
             echo "File does not exist or hasn't been modified, skipping the job"
             exit 0
           fi
+      - name: Commit Changes and push changes
+        run: |
+          git config --local user.email "kallepallimounika333@gmail.com"
+          git config --local user.name "Mounik05"
+          git add D:\a\TestApp_new\TestApp_new\mailtest\test2.txt
+          git commit -m "Update file"
+          git push
