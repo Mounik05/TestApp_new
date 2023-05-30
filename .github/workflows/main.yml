@@ -2,6 +2,8 @@ name: Deploy for preview
 on:
   push:
     paths:
+     # Modify the file directly
+      echo "123" > mailtest/test.txt
       - mailtest/test.txt
     
 jobs:
@@ -11,11 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
       
-      - name: Modify File
-        run: |
-          # Modify the file directly
-          echo "123" > mailtest/test.txt
-
       - name: Check if File Pushed
         run: |
           echo "push Process success." 
