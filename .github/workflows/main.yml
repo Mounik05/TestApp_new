@@ -4,17 +4,17 @@ on:
   push:
     paths:
       - mailtest/test2.txt
-    
+
 jobs:
-  upload:
+  precheck:
     runs-on: windows-latest
-    
+
     steps:
-      - uses: actions/checkout@v2.3.4
-      - name: Check if File Modified
+      - name: Check if File Exists
+        id: check_file
         run: |
-          file_path="mailtest/test2.txt"
-          if test ! -f "$file_path"; then
+          file_path=" D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
+          if [ ! -f "$file_path" ]; then
             echo "File not found, job should not start"
             exit 1
           fi
@@ -26,6 +26,11 @@ jobs:
             exit 1
           fi
 
+  upload:
+    needs: precheck
+    runs-on: windows-latest
+
+    steps:
       - name: Your job step
         run: |
-          # Perform the necessary actions for your job
+      # Perform the necessary actions for your job
