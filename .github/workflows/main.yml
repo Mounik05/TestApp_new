@@ -1,42 +1,27 @@
-name: Deploy for preview
 on:
   push:
     paths:
       - mailtest/test2.txt
 
 jobs:
- upload:
+  your_job_name:
     runs-on: windows-latest
-    if: |
-      !startsWith(github.event_name, 'pull_request') &&
-      ( !contains(runOutputs.checkFileOutput, 'modified') ||
-        contains(runOutputs.checkFileOutput, 'not_exists')
-      )
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Check if File Exists
+        run: |
+          if [ ! -f " D:a\TestApp_new\TestApp_new\mailtest\test2.txt" ]; then
+            echo "File not found, job should not start"
+            exit 1
+          fi
 
       - name: Check if File Modified
-        id: check_file
         run: |
-          $filePath = "${{ github.workspace }}/ D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
-          $output = ""
-          if (Test-Path -LiteralPath $filePath) {
-            $fileModified = (Get-Item -LiteralPath $filePath).LastWriteTime
-            $lastModified = Get-Content -LiteralPath "${{ github.workspace }}/ D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
-            if ($fileModified -le $lastModified) {
-              $output = "not_modified"
-            } else {
-              $output = "modified"
-              Set-Content -Path "${{ github.workspace }}/ D:a\TestApp_new\TestApp_new\mailtest\test2.txt" -Value $fileModified
-            }
-          } else {
-            $output = "not_exists"
-          }
-          echo "::set-output name=checkFileOutput::$output"
+          # Add your script or command to check file modification
+          if [ <file_not_modified_condition> ]; then
+            echo "File not modified, job should not start"
+            exit 1
+          fi
 
       - name: Your job step
-        if: success()
+        if: ${{ success() }}
         run: |
-          # Perform the necessary actions for your job  
-          
