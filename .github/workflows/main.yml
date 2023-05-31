@@ -13,24 +13,20 @@ jobs:
       - name: Check if File Exists
         id: check_file
         run: |
-           bash -c '
-           file_path="D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
-           if [ ! -f "$file_path" ]; then
-            echo "File not found, job should not start"
-            exit 1
-           fi
+          cmd /c "
+          file_path=D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+          if not exist "$file_path" (
+            echo File not found, job should not start
+            exit /b 1
+          )
 
-           if [ ! -f "$file_path" ]; then
-            echo "File not found, job should not start"
-            exit 1
-           fi
-          
-           last_modified=$(git log -1 --format=%ct -- "$file_path")
-           current_modified=$(git log -1 --format=%ct)
-           if [ "$last_modified" -eq "$current_modified" ]; then
-            echo "File exists but not modified, job should not start"
-            exit 1
-           fi
+          for /F %A in ('git log -1 --format=%ct -- "%file_path%"') do set last_modified=%A
+          for /F %B in ('git log -1 --format=%ct') do set current_modified=%B
+          if %last_modified% equ %current_modified% (
+            echo File exists but not modified, job should not start
+            exit /b 1
+          )
+          "
 
   upload:
     needs: precheck
