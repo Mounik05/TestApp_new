@@ -11,24 +11,21 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2.3.4
-
       - name: Check if File Modified
-        id: check_file
         run: |
-          filePath="mailtest/test2.txt"
-          fileModified=false
-          if [ -f "$filePath" ]; then
-            lastModified=$(git log -1 --format=%at -- "$filePath")
-            currentModified=$(git log -1 --format=%at)
-            if [ "$lastModified" == "$currentModified" ]; then
-              fileModified=false
-            else
-              fileModified=true
-            fi
-           fi
-          echo "::set-output name=fileModified::$fileModified"
+          file_path="mailtest/test2.txt"
+          if test ! -f "$file_path"; then
+            echo "File not found, job should not start"
+            exit 1
+          fi
+          
+          last_modified=$(git log -1 --format=%ct -- "$file_path")
+          current_modified=$(git log -1 --format=%ct)
+          if [ "$last_modified" -eq "$current_modified" ]; then
+            echo "File exists but not modified, job should not start"
+            exit 1
+          fi
 
       - name: Your job step
-        if: ${{ needs.check_file.outputs.fileModified == 'true' }}
         run: |
           # Perform the necessary actions for your job
