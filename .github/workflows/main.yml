@@ -2,7 +2,7 @@ name: Check and Modify File
 on:
   push:
     paths:
-      - D:\a\TestApp_new\TestApp_new\mailtest\test2.txt
+      - mailtest/test2.txt
 
 jobs:
  update:
