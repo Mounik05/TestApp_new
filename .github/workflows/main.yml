@@ -6,12 +6,33 @@ on:
       - mailtest/test2.txt
 
 jobs:
-  upload:
+  precheck:
     runs-on: windows-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
+    steps:
+       - uses: actions/checkout@v2.3.4
+       
+       - name: Check if File Exists
+         id: check_file
+         run: |
+          cmd /c "
+          file_path=D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+          if not exist "$file_path" (
+            echo File not found, job should not start
+            exit /b 1
+          )
+          for /F %A in ('git log -1 --format=%ct -- "%file_path%"') do set last_modified=%A
+          for /F %B in ('git log -1 --format=%ct') do set current_modified=%B
+          if %last_modified% equ %current_modified% (
+            echo File exists but not modified, job should not start
+            exit /b 1
+          )
+          "
+  upload:
+    needs: precheck
+    runs-on: windows-latest
+
+    steps:
       - name: Your job step
-        if: github.event_name == 'push' && (github.event.head_commit.modified | contains('mailtest/test2.txt') || !github.event.head_commit.modified)
+        if: github.event_name == 'push' && (contains(github.event.head_commit.modified, 'mailtest/test2.txt') || !github.event.head_commit.modified)
         run: |
