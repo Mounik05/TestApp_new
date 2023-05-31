@@ -1,33 +1,18 @@
-name: Check and Modify File
+name: Deploy for preview
 on:
   push:
-   branches: ["master"]
+    paths:
+      - mailtest/test2.txt
+    
 jobs:
-  modify_file_job:
+  upload:
     runs-on: windows-latest
-
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
 
-      - name: Check file existence and modification
-        shell: pwsh
+      - name: Check if File Pushed.
         run: |
-         $filePath = "D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
-         $fileExists = Test-Path $filePath
-         $fileModified = $false
-
-         if ($fileExists) {
-          $file = Get-Item $filePath
-          $currentDate = Get-Date
-          $lastModified = $file.LastWriteTime
-
-          if ($lastModified -ne $currentDate) {
-            $fileModified = $true
-          }
-         }
-
-         if (!$fileExists -or !$fileModified) {
-          Write-Host "The file does not exist or has not been modified. Exiting job..."
-          exit 0
-         }
+          echo "push Process success"   
+          
+     
