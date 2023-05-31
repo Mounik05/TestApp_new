@@ -2,15 +2,15 @@ name: Check and Modify File
 on:
   push:
     paths:
-      - mailtest/test2.txt
+      - D:\a\TestApp_new\TestApp_new\mailtest\test2.txt
 
 jobs:
-  your_job_name:
+ update:
     runs-on: windows-latest
     steps:
       - name: Check if File Exists
         run: |
-          if [ ! -f " D:a\TestApp_new\TestApp_new\mailtest\test2.txt" ]; then
+          if [ ! -f "D:\a\TestApp_new\TestApp_new\mailtest\test2.txt" ]; then
             echo "File not found, job should not start"
             exit 1
           fi
