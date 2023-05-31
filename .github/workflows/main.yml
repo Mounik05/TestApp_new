@@ -1,33 +1,42 @@
-name: Check and Modify File
+name: Deploy for preview
 on:
   push:
     paths:
-        - mailtest/test2.txt
-jobs:
-  modify_file_job:
-    runs-on: windows-latest
+      - mailtest/test2.txt
 
+jobs:
+ upload:
+    runs-on: windows-latest
+    if: |
+      !startsWith(github.event_name, 'pull_request') &&
+      ( !contains(runOutputs.checkFileOutput, 'modified') ||
+        contains(runOutputs.checkFileOutput, 'not_exists')
+      )
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Check if File Modified
-        id: check-modification
+        id: check_file
         run: |
-          git diff --quiet -- mailtest\test2.txt
-          echo ::set-output name=modified::$?
-      - name: Modify File
-        if: steps.check-modification.outputs.modified == '0'
+          $filePath = "${{ github.workspace }}/ D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
+          $output = ""
+          if (Test-Path -LiteralPath $filePath) {
+            $fileModified = (Get-Item -LiteralPath $filePath).LastWriteTime
+            $lastModified = Get-Content -LiteralPath "${{ github.workspace }}/ D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
+            if ($fileModified -le $lastModified) {
+              $output = "not_modified"
+            } else {
+              $output = "modified"
+              Set-Content -Path "${{ github.workspace }}/ D:a\TestApp_new\TestApp_new\mailtest\test2.txt" -Value $fileModified
+            }
+          } else {
+            $output = "not_exists"
+          }
+          echo "::set-output name=checkFileOutput::$output"
+
+      - name: Your job step
+        if: success()
         run: |
-          # Add your file modification steps here
-          # For example:
-          echo "mounika" >> mailtest\test2.txt
-      - name: Commit Changes
-        run: |
-          git config --local user.email "kallepallimounika333@gmail.com"
-          git config --local user.name "Mounik05"
-          git commit -am "Update file" --quiet
-      - name: Push Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Perform the necessary actions for your job  
+          
