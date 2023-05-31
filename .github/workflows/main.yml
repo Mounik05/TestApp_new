@@ -13,7 +13,7 @@ jobs:
       - name: Check if File Exists
         id: check_file
         run: |
-          file_path=" D:a\TestApp_new\TestApp_new\mailtest\test2.txt"
+          file_path="mailtest/test2.txt"
           if [ ! -f "$file_path" ]; then
             echo "File not found, job should not start"
             exit 1
