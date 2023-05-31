@@ -14,7 +14,7 @@ jobs:
         id: check_file
         run: |
           cmd /c "
-          file_path=D:a\TestApp_new\TestApp_new\mailtest\test2.txt
+          file_path=D:a\TestApp_new\TestApp_new\mailtest\test.txt
           if not exist "$file_path" (
             echo File not found, job should not start
             exit /b 1
