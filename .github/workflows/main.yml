@@ -6,7 +6,7 @@ on:
       - mailtest/test2.txt
 
 jobs:
- your_job_name:
+ upload:
     runs-on: windows-latest
     if: exists('mailtest/test2.txt')
 
