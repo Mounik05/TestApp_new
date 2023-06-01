@@ -15,7 +15,7 @@ jobs:
 
       - name: Check if File Exists
         run: |
-          if [ -e "mailtest/test2.txt" ]; then
+          if [ -e "D:\a\TestApp_new\TestApp_new\mailtest\test2.txt" ]; then
             echo "File found, proceeding with the job"
           else
             echo "File not found, job should not start"
