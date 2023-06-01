@@ -1,4 +1,4 @@
-name: Deploy for preview
+name: Job with File Check
 
 on:
   push:
@@ -6,30 +6,21 @@ on:
       - mailtest/test2.txt
 
 jobs:
-  precheck:
+  your_job_name:
     runs-on: windows-latest
+    if: exists('test2.txt')
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Check if File Exists
         run: |
-          file_path="mailtest/test2.txt"
-          if [ ! -f "$file_path" ]; then
+          if [ ! -f "file.txt" ]; then
             echo "File not found, job should not start"
             exit 1
           fi
 
-          last_modified=$(git log -1 --format=%ct -- "$file_path")
-          current_modified=$(git log -1 --format=%ct)
-          if [ "$last_modified" -eq "$current_modified" ]; then
-            echo "File exists but not modified, job should not start"
-            exit 1
-          fi
-
-  upload:
-    needs: precheck
-    runs-on: windows-latest
-
-    steps:
       - name: Your job step
         run: |
         
