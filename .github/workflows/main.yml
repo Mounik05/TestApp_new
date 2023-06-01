@@ -8,7 +8,7 @@ on:
 jobs:
   your_job_name:
     runs-on: windows-latest
-    if: exists('test2.txt')
+    if: exists('mailtest/test2.txt')
 
     steps:
       - name: Checkout code
@@ -16,7 +16,7 @@ jobs:
 
       - name: Check if File Exists
         run: |
-          if [ ! -f "file.txt" ]; then
+          if [ ! -f "test2.txt" ]; then
             echo "File not found, job should not start"
             exit 1
           fi
