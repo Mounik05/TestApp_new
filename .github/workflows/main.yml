@@ -6,7 +6,7 @@ on:
       - mailtest/test2.txt
 
 jobs:
-  your_job_name:
+ your_job_name:
     runs-on: windows-latest
     if: exists('mailtest/test2.txt')
 
@@ -15,15 +15,23 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check if File Exists
+        id: check_file
         run: |
-          if [ ! -f "test2.txt" ]; then
+          if [ -e "mailtest/test2.txt" ]; then
+            echo "File found, proceeding with the job"
+          else
             echo "File not found, job should not start"
             exit 1
           fi
 
       - name: Your job step
-        if: steps.check_file.outcome != 'failure'
         run: |
-        
+
+
+
+
+
+
+
         
         
