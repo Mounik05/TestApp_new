@@ -20,7 +20,7 @@ jobs:
   runs-on: windows-latest
 
   steps:
-    - name:  job step
+    - name: job step.
       if: github.event_name == 'push' && (contains(github.event.head_commit.modified, 'mailtest/test2.txt') || !github.event.head_commit.modified)
       run: |
         
