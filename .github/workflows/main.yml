@@ -22,6 +22,7 @@ jobs:
           fi
 
       - name: Your job step
+        if: steps.check_file.outcome != 'failure'
         run: |
         
         
