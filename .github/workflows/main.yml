@@ -38,20 +38,9 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-    
-      - name: Save log archive
-        uses: actions/upload-artifact@v2
+      - name: Download the file from url
+        uses: suisei-cn/actions-download-file@v1.0.1
         with:
-          name: log-archive
-          path: mailtest
-          
-      - name: Upload logs to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
-        with:
-         server: ${{ secrets.FTP_SERVER }}
-         username: ${{ secrets.FTP_USERNAME }}
-         password: ${{ secrets.FTP_PASSWORD }}
-         protocol: ftps
-         port : 2133
-         local-dir: ./mailtest/       
-         server-dir: ./test/   
+         url: https://github.com/Mounik05/TestApp_new/suites/14436198616/logs?attempt=1
+         target: mailtest    
+     
