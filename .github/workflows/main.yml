@@ -38,10 +38,10 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
 
-      - name: Save build log
-        run: |
-          # Generate the build log
-          # Save the log files to the 'logs' directory in the workspace
-          mkdir -p logarchive
-          mv "logs/build/build_log.txt" logarchive/
-        
+      - name: Download
+        uses: actions-download-file@v1
+        with:
+           name: logs/build/build_log.txt
+           target: file1.txt
+           
+           
