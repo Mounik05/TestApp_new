@@ -11,10 +11,6 @@ jobs:
   build:
     runs-on: windows-latest
        
-    env:
-       Solution_Path: TestApp.sln
-       VCDEP: depency\VCollabDependencyAPI
-       PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
     steps: 
       - uses: actions/checkout@v2.3.4
       
