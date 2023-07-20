@@ -42,6 +42,6 @@ jobs:
         run: |
           # Generate the build log
           # Save the log files to the 'logs' directory in the workspace
-          mkdir -p logs
-          mv "logs/build/build_log.txt" logs/
+          mkdir -p logarchive
+          mv "logs/build/build_log.txt" logarchive/
         
