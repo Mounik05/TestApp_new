@@ -38,7 +38,9 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
 
-      - name : move build archive
-        run: mv build/build_log.txt ${{ github.workspace }}/file1.txt
-        
+      - name : download and copy build archive
+        uses: suisei-cn/actions-download-file@v1.0.1
+        with:
+            source: build_log.txt 
+            target: file1.txt
         
