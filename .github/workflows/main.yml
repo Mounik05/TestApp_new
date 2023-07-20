@@ -38,10 +38,14 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
 
-      - name: Download
-        uses: actions-download-file@v1
+      - name: Upload logs to FTP
+        uses: wvlet/ftp-action@v1
         with:
-           name: logs/build/build_log.txt
-           target: file1.txt
-           
-           
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         protocol: ftps
+         port : 2133
+         local-dir: ./logs/       
+         server-dir: ./test/   
+
