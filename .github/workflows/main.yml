@@ -42,13 +42,15 @@ jobs:
         uses: suisei-cn/actions-download-file@v1.0.1
         with:
           url: https://example.com/build-logs.zip
-          dest: /path/to/build-logs.zip
+          dest: mailtest
        
       - name: Extract build log archive
         uses: DuckSoft/extract-7z-action@v1.0
         with:
-            src: /path/to/build-logs.zip
-            dest: /path/to/build-logs
+           pathsource: mailtest\build-logs.zip
+           pathtarget: mailtest
+           
+         
         
    
      
