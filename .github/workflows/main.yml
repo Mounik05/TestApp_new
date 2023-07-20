@@ -43,5 +43,5 @@ jobs:
           # Generate the build log
           # Save the log files to the 'logs' directory in the workspace
           mkdir -p logs
-          mv build/'D:\a\TestApp_new\TestApp_new\logs\build\build_log.txt'
+          mv "logs/build/build_log.txt" logs/
         
