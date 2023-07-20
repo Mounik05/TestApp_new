@@ -38,9 +38,10 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
 
-      - name : download and copy build archive
-        uses: suisei-cn/actions-download-file@v1.0.1
-        with:
-            source: build_log.txt 
-            target: file1.txt
+      - name: copy build log
+        run: |
+          # Generate the build log
+          # Save the log file to the root of the workspace (GitHub automatically creates the 'logs' directory for artifacts)
+          mv build/build_log.txt ${{ github.workspace }}/logs/file1.txt
+
         
