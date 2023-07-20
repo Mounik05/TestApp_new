@@ -38,14 +38,19 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
      
-      - name: Download log archive
-        uses: actions/download-file@v1.0.1
+      - name: Download build log archive
+        uses: suisei-cn/actions-download-file@v1.0.1
         with:
-          name: Build/log archive
-          target: mailtest
-        
+          url: https://example.com/build-logs.zip
+          dest: /path/to/build-logs.zip
        
-          
+      - name: Extract build log archive
+        uses: DuckSoft/extract-7z-action@v1.0
+        with:
+            src: /path/to/build-logs.zip
+            dest: /path/to/build-logs
+        
+   
      
      
      
