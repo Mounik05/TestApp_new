@@ -24,20 +24,12 @@ jobs:
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
      
       - name: Download log archive
-        uses: suisei-cn/actions-download-file@v1.0.1
+        uses: actions-download-file@v1.0.1
         with:
            url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
            target: logs
            
-      - name: Push changes
-        run: |
-             git config --local user.email "kallepallimounika333@gmail.com"
-             git config --local user.name "Mounik05"
-             git add .
-             git commit -m "Add changes" -a
-             git push -u origin master  
-           
-           
+     
      
        
            
