@@ -44,6 +44,10 @@ jobs:
            url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
            target: mailtest
            
+      - name: List directory contents
+        run: |
+          ls -R
+           
       - name: Extract zip file
         run: unzip D:\a\TestApp_new\TestApp_new\mailtest\logs.zip -d D:\a\TestApp_new\TestApp_new\logs
     
