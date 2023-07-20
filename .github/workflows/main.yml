@@ -37,10 +37,16 @@ jobs:
           
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
-        
-      - name: Download the file from url
-        uses: suisei-cn/actions-download-file@v1.0.1
+     
+      - name: Download log archive
+        uses: actions/download-file@v1.0.1
         with:
-         url: https://github.com/Mounik05/TestApp_new/suites/14436198616/logs?attempt=1
-         target: mailtest    
+          name: Build/log archive
+          target: mailtest
+        
+       
+          
+     
+     
+     
      
