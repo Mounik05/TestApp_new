@@ -38,9 +38,17 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
      
-  
-   
-     
+      - name:  Generate Logs
+        run: |
+          # Create a log archive (e.g., zip or tar) of your build logs
+          # Replace 'logs' with the folder containing your logs
+          zip -r build-logs.zip logs
+
+      - name: Upload Logs as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-logs  # Name of the artifact
+          path: build-logs.zip  # Path to the log archive you want to upload
      
      
      
