@@ -38,10 +38,10 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-      - name: Download log artifact
-        uses: actions/download-artifact@v2
+      - name: Download build log
+        uses: actions-download-file@v1.0.1
         with:
-          name: build-logs
+          name: build/build_log.txt
           path: file1.txt
          
     
