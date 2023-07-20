@@ -37,7 +37,8 @@ jobs:
           
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
-
+        
+        
       - name: Upload logs to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
