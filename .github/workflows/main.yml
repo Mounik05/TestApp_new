@@ -1,32 +1,42 @@
-name: Job with File Check
-
+name: Releases
 on:
   push:
-    paths:
-      - mailtest/test2.txt
+   branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
 
 jobs:
- upload:
+  build:
     runs-on: windows-latest
+       
+    env:
+       Solution_Path: TestApp.sln
+       VCDEP: depency\VCollabDependencyAPI
+       PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+    steps: 
+      - uses: actions/checkout@v2.3.4
+      
+      - name: Download the file from url
+        uses: suisei-cn/actions-download-file@v1.0.1
+        with:
+           url: "https://downloads.vcollab.com/tmp/VCollabDependencyAPI.7z" 
+           target: depency
+           
+      - name: Extract zip file 
+        uses: DuckSoft/extract-7z-action@v1.0
+        with:
+           pathsource: depency\VCollabDependencyAPI.7z 
+           pathtarget: depency
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Check if File Exists
-        run: |
-          if [ -e "D:\a\TestApp_new\TestApp_new\mailtest\test2.txt" ]; then
-            echo "File found, proceeding with the job"
-          else
-            echo "File not found, job should not start"
-            exit 1
-          fi
-          shell: bash
-
-      - name: Your job step
-        run: |
-
-
+      - name: setup-msbuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          msbuild-architecture: x64
+          
+      - name: Build app for release 
+        run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
 
 
 
