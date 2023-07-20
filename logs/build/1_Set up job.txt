@@ -1,0 +1,39 @@
+2023-07-20T06:21:04.9998899Z Current runner version: '2.306.0'
+2023-07-20T06:21:05.0042903Z ##[group]Operating System
+2023-07-20T06:21:05.0043526Z Microsoft Windows Server 2022
+2023-07-20T06:21:05.0044007Z 10.0.20348
+2023-07-20T06:21:05.0044367Z Datacenter
+2023-07-20T06:21:05.0044863Z ##[endgroup]
+2023-07-20T06:21:05.0045324Z ##[group]Runner Image
+2023-07-20T06:21:05.0045781Z Image: windows-2022
+2023-07-20T06:21:05.0046218Z Version: 20230706.1.0
+2023-07-20T06:21:05.0046792Z Included Software: https://github.com/actions/runner-images/blob/win22/20230706.1/images/win/Windows2022-Readme.md
+2023-07-20T06:21:05.0047625Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20230706.1
+2023-07-20T06:21:05.0048501Z ##[endgroup]
+2023-07-20T06:21:05.0049225Z ##[group]Runner Image Provisioner
+2023-07-20T06:21:05.0049656Z 2.0.238.1
+2023-07-20T06:21:05.0050033Z ##[endgroup]
+2023-07-20T06:21:05.0051503Z ##[group]GITHUB_TOKEN Permissions
+2023-07-20T06:21:05.0052437Z Actions: write
+2023-07-20T06:21:05.0052887Z Checks: write
+2023-07-20T06:21:05.0053687Z Contents: write
+2023-07-20T06:21:05.0054169Z Deployments: write
+2023-07-20T06:21:05.0054606Z Discussions: write
+2023-07-20T06:21:05.0054933Z Issues: write
+2023-07-20T06:21:05.0055361Z Metadata: read
+2023-07-20T06:21:05.0055831Z Packages: write
+2023-07-20T06:21:05.0056187Z Pages: write
+2023-07-20T06:21:05.0056584Z PullRequests: write
+2023-07-20T06:21:05.0057028Z RepositoryProjects: write
+2023-07-20T06:21:05.0057395Z SecurityEvents: write
+2023-07-20T06:21:05.0057859Z Statuses: write
+2023-07-20T06:21:05.0058260Z ##[endgroup]
+2023-07-20T06:21:05.0062984Z Secret source: Actions
+2023-07-20T06:21:05.0063739Z Prepare workflow directory
+2023-07-20T06:21:05.1339886Z Prepare all required actions
+2023-07-20T06:21:05.1590655Z Getting action download info
+2023-07-20T06:21:05.5028049Z Download action repository 'actions/checkout@v2.3.4' (SHA:5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f)
+2023-07-20T06:21:06.2419627Z Download action repository 'suisei-cn/actions-download-file@v1.0.1' (SHA:53dee21adad18cae56ed5697616485a7068f1e1a)
+2023-07-20T06:21:07.6954911Z Download action repository 'DuckSoft/extract-7z-action@v1.0' (SHA:6eaaa506b410f047eaa9b22498696aad1e19a834)
+2023-07-20T06:21:09.4669569Z Download action repository 'microsoft/setup-msbuild@v1.1' (SHA:34cfbaee7f672c76950673338facd8a73f637506)
+2023-07-20T06:21:10.0738644Z Complete job name: build

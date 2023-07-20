@@ -1,0 +1,10 @@
+2023-07-20T06:22:06.7258016Z ##[group]Run DuckSoft/extract-7z-action@v1.0
+2023-07-20T06:22:06.7258477Z with:
+2023-07-20T06:22:06.7258833Z   pathsource: depency\VCollabDependencyAPI.7z
+2023-07-20T06:22:06.7259219Z   pathtarget: depency
+2023-07-20T06:22:06.7259471Z env:
+2023-07-20T06:22:06.7259767Z   Solution_Path: TestApp.sln
+2023-07-20T06:22:06.7260125Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:22:06.7260542Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:22:06.7260929Z ##[endgroup]
+2023-07-20T06:22:06.7963801Z extracting depency\VCollabDependencyAPI.7z into depency

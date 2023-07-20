@@ -1,0 +1,9 @@
+2023-07-20T06:24:29.9528814Z Post job cleanup.
+2023-07-20T06:24:32.9076488Z [command]"C:\Program Files\Git\bin\git.exe" version
+2023-07-20T06:24:33.0041139Z git version 2.41.0.windows.1
+2023-07-20T06:24:33.0161574Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2023-07-20T06:24:33.0609344Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-07-20T06:24:33.6848088Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-07-20T06:24:33.7168901Z http.https://github.com/.extraheader
+2023-07-20T06:24:33.7222898Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2023-07-20T06:24:33.7617479Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"

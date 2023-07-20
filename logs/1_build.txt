@@ -1,0 +1,298 @@
+2023-07-20T06:20:52.7692218Z Requested labels: windows-latest
+2023-07-20T06:20:52.7692496Z Job defined at: Mounik05/TestApp_new/.github/workflows/main.yml@refs/heads/master
+2023-07-20T06:20:52.7692591Z Waiting for a runner to pick up this job...
+2023-07-20T06:20:53.3284736Z Job is waiting for a hosted runner to come online.
+2023-07-20T06:20:56.6348244Z Job is about to start running on the hosted runner: GitHub Actions 1 (hosted)
+2023-07-20T06:21:05.0008755Z Current runner version: '2.306.0'
+2023-07-20T06:21:05.0042940Z ##[group]Operating System
+2023-07-20T06:21:05.0043531Z Microsoft Windows Server 2022
+2023-07-20T06:21:05.0044013Z 10.0.20348
+2023-07-20T06:21:05.0044371Z Datacenter
+2023-07-20T06:21:05.0044868Z ##[endgroup]
+2023-07-20T06:21:05.0045328Z ##[group]Runner Image
+2023-07-20T06:21:05.0045786Z Image: windows-2022
+2023-07-20T06:21:05.0046221Z Version: 20230706.1.0
+2023-07-20T06:21:05.0046797Z Included Software: https://github.com/actions/runner-images/blob/win22/20230706.1/images/win/Windows2022-Readme.md
+2023-07-20T06:21:05.0047630Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20230706.1
+2023-07-20T06:21:05.0048544Z ##[endgroup]
+2023-07-20T06:21:05.0049231Z ##[group]Runner Image Provisioner
+2023-07-20T06:21:05.0049661Z 2.0.238.1
+2023-07-20T06:21:05.0050038Z ##[endgroup]
+2023-07-20T06:21:05.0051534Z ##[group]GITHUB_TOKEN Permissions
+2023-07-20T06:21:05.0052444Z Actions: write
+2023-07-20T06:21:05.0053241Z Checks: write
+2023-07-20T06:21:05.0053692Z Contents: write
+2023-07-20T06:21:05.0054173Z Deployments: write
+2023-07-20T06:21:05.0054609Z Discussions: write
+2023-07-20T06:21:05.0054938Z Issues: write
+2023-07-20T06:21:05.0055366Z Metadata: read
+2023-07-20T06:21:05.0055835Z Packages: write
+2023-07-20T06:21:05.0056191Z Pages: write
+2023-07-20T06:21:05.0056589Z PullRequests: write
+2023-07-20T06:21:05.0057033Z RepositoryProjects: write
+2023-07-20T06:21:05.0057399Z SecurityEvents: write
+2023-07-20T06:21:05.0057863Z Statuses: write
+2023-07-20T06:21:05.0058265Z ##[endgroup]
+2023-07-20T06:21:05.0063008Z Secret source: Actions
+2023-07-20T06:21:05.0063746Z Prepare workflow directory
+2023-07-20T06:21:05.1339926Z Prepare all required actions
+2023-07-20T06:21:05.1590741Z Getting action download info
+2023-07-20T06:21:05.5028100Z Download action repository 'actions/checkout@v2.3.4' (SHA:5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f)
+2023-07-20T06:21:06.2419713Z Download action repository 'suisei-cn/actions-download-file@v1.0.1' (SHA:53dee21adad18cae56ed5697616485a7068f1e1a)
+2023-07-20T06:21:07.6954975Z Download action repository 'DuckSoft/extract-7z-action@v1.0' (SHA:6eaaa506b410f047eaa9b22498696aad1e19a834)
+2023-07-20T06:21:09.4669618Z Download action repository 'microsoft/setup-msbuild@v1.1' (SHA:34cfbaee7f672c76950673338facd8a73f637506)
+2023-07-20T06:21:10.0738696Z Complete job name: build
+2023-07-20T06:21:10.2426543Z ##[group]Run actions/checkout@v2.3.4
+2023-07-20T06:21:10.2427014Z with:
+2023-07-20T06:21:10.2427317Z   repository: Mounik05/TestApp_new
+2023-07-20T06:21:10.2427979Z   token: ***
+2023-07-20T06:21:10.2428223Z   ssh-strict: true
+2023-07-20T06:21:10.2428528Z   persist-credentials: true
+2023-07-20T06:21:10.2428816Z   clean: true
+2023-07-20T06:21:10.2429049Z   fetch-depth: 1
+2023-07-20T06:21:10.2429315Z   lfs: false
+2023-07-20T06:21:10.2429569Z   submodules: false
+2023-07-20T06:21:10.2429831Z env:
+2023-07-20T06:21:10.2430109Z   Solution_Path: TestApp.sln
+2023-07-20T06:21:10.2430445Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:21:10.2430873Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:21:10.2431232Z ##[endgroup]
+2023-07-20T06:21:13.4303101Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2023-07-20T06:21:13.4569986Z Syncing repository: Mounik05/TestApp_new
+2023-07-20T06:21:13.4572143Z ##[group]Getting Git version info
+2023-07-20T06:21:13.4572815Z Working directory is 'D:\a\TestApp_new\TestApp_new'
+2023-07-20T06:21:14.4381993Z [command]"C:\Program Files\Git\bin\git.exe" version
+2023-07-20T06:21:14.4382449Z git version 2.41.0.windows.1
+2023-07-20T06:21:14.4383673Z ##[endgroup]
+2023-07-20T06:21:14.4384144Z Deleting the contents of 'D:\a\TestApp_new\TestApp_new'
+2023-07-20T06:21:14.4386575Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2023-07-20T06:21:14.4392914Z ##[group]Initializing the repository
+2023-07-20T06:21:14.4393417Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\TestApp_new\TestApp_new
+2023-07-20T06:21:14.4394046Z Initialized empty Git repository in D:/a/TestApp_new/TestApp_new/.git/
+2023-07-20T06:21:14.4394633Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Mounik05/TestApp_new
+2023-07-20T06:21:14.4395272Z ##[endgroup]
+2023-07-20T06:21:14.4395807Z ##[group]Disabling automatic garbage collection
+2023-07-20T06:21:14.4396522Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2023-07-20T06:21:14.4397087Z ##[endgroup]
+2023-07-20T06:21:14.4414630Z ##[group]Setting up auth
+2023-07-20T06:21:14.4418030Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2023-07-20T06:21:14.4419272Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-07-20T06:21:15.4993611Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-07-20T06:21:15.5348276Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-07-20T06:21:16.2099228Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2023-07-20T06:21:16.2483874Z ##[endgroup]
+2023-07-20T06:21:16.2484824Z ##[group]Fetching the repository
+2023-07-20T06:21:16.2503208Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +983e4cbd76354807cdd0c1ecd02ddb3241eb6eeb:refs/remotes/origin/master
+2023-07-20T06:21:17.3895966Z remote: Enumerating objects: 61, done.        
+2023-07-20T06:21:17.3896893Z remote: Counting objects:   1% (1/61)        
+2023-07-20T06:21:17.3897383Z remote: Counting objects:   3% (2/61)        
+2023-07-20T06:21:17.3903287Z remote: Counting objects:   4% (3/61)        
+2023-07-20T06:21:17.3904155Z remote: Counting objects:   6% (4/61)        
+2023-07-20T06:21:17.3904488Z remote: Counting objects:   8% (5/61)        
+2023-07-20T06:21:17.3904837Z remote: Counting objects:   9% (6/61)        
+2023-07-20T06:21:17.3905302Z remote: Counting objects:  11% (7/61)        
+2023-07-20T06:21:17.3905674Z remote: Counting objects:  13% (8/61)        
+2023-07-20T06:21:17.3906077Z remote: Counting objects:  14% (9/61)        
+2023-07-20T06:21:17.3906394Z remote: Counting objects:  16% (10/61)        
+2023-07-20T06:21:17.3906735Z remote: Counting objects:  18% (11/61)        
+2023-07-20T06:21:17.3907107Z remote: Counting objects:  19% (12/61)        
+2023-07-20T06:21:17.3907417Z remote: Counting objects:  21% (13/61)        
+2023-07-20T06:21:17.3907796Z remote: Counting objects:  22% (14/61)        
+2023-07-20T06:21:17.3908136Z remote: Counting objects:  24% (15/61)        
+2023-07-20T06:21:17.3908497Z remote: Counting objects:  26% (16/61)        
+2023-07-20T06:21:17.3908837Z remote: Counting objects:  27% (17/61)        
+2023-07-20T06:21:17.3909171Z remote: Counting objects:  29% (18/61)        
+2023-07-20T06:21:17.3909483Z remote: Counting objects:  31% (19/61)        
+2023-07-20T06:21:17.3909826Z remote: Counting objects:  32% (20/61)        
+2023-07-20T06:21:17.3910168Z remote: Counting objects:  34% (21/61)        
+2023-07-20T06:21:17.3910497Z remote: Counting objects:  36% (22/61)        
+2023-07-20T06:21:17.3911352Z remote: Counting objects:  37% (23/61)        
+2023-07-20T06:21:17.3911709Z remote: Counting objects:  39% (24/61)        
+2023-07-20T06:21:17.3913796Z remote: Counting objects:  40% (25/61)        
+2023-07-20T06:21:17.3914112Z remote: Counting objects:  42% (26/61)        
+2023-07-20T06:21:17.3914449Z remote: Counting objects:  44% (27/61)        
+2023-07-20T06:21:17.3914782Z remote: Counting objects:  45% (28/61)        
+2023-07-20T06:21:17.3915103Z remote: Counting objects:  47% (29/61)        
+2023-07-20T06:21:17.3915431Z remote: Counting objects:  49% (30/61)        
+2023-07-20T06:21:17.3915781Z remote: Counting objects:  50% (31/61)        
+2023-07-20T06:21:17.3916126Z remote: Counting objects:  52% (32/61)        
+2023-07-20T06:21:17.3916427Z remote: Counting objects:  54% (33/61)        
+2023-07-20T06:21:17.3916755Z remote: Counting objects:  55% (34/61)        
+2023-07-20T06:21:17.3917084Z remote: Counting objects:  57% (35/61)        
+2023-07-20T06:21:17.3917394Z remote: Counting objects:  59% (36/61)        
+2023-07-20T06:21:17.3917724Z remote: Counting objects:  60% (37/61)        
+2023-07-20T06:21:17.3918072Z remote: Counting objects:  62% (38/61)        
+2023-07-20T06:21:17.3918389Z remote: Counting objects:  63% (39/61)        
+2023-07-20T06:21:17.3918719Z remote: Counting objects:  65% (40/61)        
+2023-07-20T06:21:17.3919044Z remote: Counting objects:  67% (41/61)        
+2023-07-20T06:21:17.3919348Z remote: Counting objects:  68% (42/61)        
+2023-07-20T06:21:17.3919677Z remote: Counting objects:  70% (43/61)        
+2023-07-20T06:21:17.3920005Z remote: Counting objects:  72% (44/61)        
+2023-07-20T06:21:17.3920328Z remote: Counting objects:  73% (45/61)        
+2023-07-20T06:21:17.3920645Z remote: Counting objects:  75% (46/61)        
+2023-07-20T06:21:17.3920981Z remote: Counting objects:  77% (47/61)        
+2023-07-20T06:21:17.3921307Z remote: Counting objects:  78% (48/61)        
+2023-07-20T06:21:17.3922017Z remote: Counting objects:  80% (49/61)        
+2023-07-20T06:21:17.3922345Z remote: Counting objects:  81% (50/61)        
+2023-07-20T06:21:17.3922689Z remote: Counting objects:  83% (51/61)        
+2023-07-20T06:21:17.3922995Z remote: Counting objects:  85% (52/61)        
+2023-07-20T06:21:17.3923339Z remote: Counting objects:  86% (53/61)        
+2023-07-20T06:21:17.3923687Z remote: Counting objects:  88% (54/61)        
+2023-07-20T06:21:17.3924381Z remote: Counting objects:  90% (55/61)        
+2023-07-20T06:21:17.3925592Z remote: Counting objects:  91% (56/61)        
+2023-07-20T06:21:17.3925934Z remote: Counting objects:  93% (57/61)        
+2023-07-20T06:21:17.3926278Z remote: Counting objects:  95% (58/61)        
+2023-07-20T06:21:17.3926587Z remote: Counting objects:  96% (59/61)        
+2023-07-20T06:21:17.3926921Z remote: Counting objects:  98% (60/61)        
+2023-07-20T06:21:17.3927276Z remote: Counting objects: 100% (61/61)        
+2023-07-20T06:21:17.3927613Z remote: Counting objects: 100% (61/61), done.        
+2023-07-20T06:21:17.3927995Z remote: Compressing objects:   2% (1/41)        
+2023-07-20T06:21:17.3928369Z remote: Compressing objects:   4% (2/41)        
+2023-07-20T06:21:17.3928771Z remote: Compressing objects:   7% (3/41)        
+2023-07-20T06:21:17.3929105Z remote: Compressing objects:   9% (4/41)        
+2023-07-20T06:21:17.3929463Z remote: Compressing objects:  12% (5/41)        
+2023-07-20T06:21:17.3929833Z remote: Compressing objects:  14% (6/41)        
+2023-07-20T06:21:17.3930176Z remote: Compressing objects:  17% (7/41)        
+2023-07-20T06:21:17.3930527Z remote: Compressing objects:  19% (8/41)        
+2023-07-20T06:21:17.3930874Z remote: Compressing objects:  21% (9/41)        
+2023-07-20T06:21:17.3931231Z remote: Compressing objects:  24% (10/41)        
+2023-07-20T06:21:17.3931567Z remote: Compressing objects:  26% (11/41)        
+2023-07-20T06:21:17.3931924Z remote: Compressing objects:  29% (12/41)        
+2023-07-20T06:21:17.3932749Z remote: Compressing objects:  31% (13/41)        
+2023-07-20T06:21:17.3933126Z remote: Compressing objects:  34% (14/41)        
+2023-07-20T06:21:17.3933492Z remote: Compressing objects:  36% (15/41)        
+2023-07-20T06:21:17.3934070Z remote: Compressing objects:  39% (16/41)        
+2023-07-20T06:21:17.3972373Z remote: Compressing objects:  41% (17/41)        
+2023-07-20T06:21:17.3972841Z remote: Compressing objects:  43% (18/41)        
+2023-07-20T06:21:17.3987526Z remote: Compressing objects:  46% (19/41)        
+2023-07-20T06:21:17.4034312Z remote: Compressing objects:  48% (20/41)        
+2023-07-20T06:21:17.4035252Z remote: Compressing objects:  51% (21/41)        
+2023-07-20T06:21:17.4035875Z remote: Compressing objects:  53% (22/41)        
+2023-07-20T06:21:17.4036554Z remote: Compressing objects:  56% (23/41)        
+2023-07-20T06:21:17.4037105Z remote: Compressing objects:  58% (24/41)        
+2023-07-20T06:21:17.4558419Z remote: Compressing objects:  60% (25/41)        
+2023-07-20T06:21:18.9929297Z remote: Compressing objects:  63% (26/41)        
+2023-07-20T06:21:19.3796860Z remote: Compressing objects:  65% (27/41)        
+2023-07-20T06:21:19.3797620Z remote: Compressing objects:  68% (28/41)        
+2023-07-20T06:21:19.3798072Z remote: Compressing objects:  70% (29/41)        
+2023-07-20T06:21:19.3798507Z remote: Compressing objects:  73% (30/41)        
+2023-07-20T06:21:19.3798999Z remote: Compressing objects:  75% (31/41)        
+2023-07-20T06:21:19.3799436Z remote: Compressing objects:  78% (32/41)        
+2023-07-20T06:21:19.3932361Z remote: Compressing objects:  80% (33/41)        
+2023-07-20T06:21:19.3932981Z remote: Compressing objects:  82% (34/41)        
+2023-07-20T06:21:19.3933530Z remote: Compressing objects:  85% (35/41)        
+2023-07-20T06:21:19.3934069Z remote: Compressing objects:  87% (36/41)        
+2023-07-20T06:21:19.3934521Z remote: Compressing objects:  90% (37/41)        
+2023-07-20T06:21:19.3934940Z remote: Compressing objects:  92% (38/41)        
+2023-07-20T06:21:19.3935376Z remote: Compressing objects:  95% (39/41)        
+2023-07-20T06:21:19.3935769Z remote: Compressing objects:  97% (40/41)        
+2023-07-20T06:21:19.3936213Z remote: Compressing objects: 100% (41/41)        
+2023-07-20T06:21:19.3936654Z remote: Compressing objects: 100% (41/41), done.        
+2023-07-20T06:21:25.2306531Z remote: Total 61 (delta 10), reused 44 (delta 8), pack-reused 0        
+2023-07-20T06:21:25.8005164Z From https://github.com/Mounik05/TestApp_new
+2023-07-20T06:21:25.8019625Z  * [new ref]         983e4cbd76354807cdd0c1ecd02ddb3241eb6eeb -> origin/master
+2023-07-20T06:21:25.8843041Z ##[endgroup]
+2023-07-20T06:21:25.8863704Z ##[group]Determining the checkout info
+2023-07-20T06:21:25.9000539Z ##[endgroup]
+2023-07-20T06:21:25.9026083Z ##[group]Checking out the ref
+2023-07-20T06:21:25.9050750Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B master refs/remotes/origin/master
+2023-07-20T06:21:27.0221387Z branch 'master' set up to track 'origin/master'.
+2023-07-20T06:21:27.0222621Z Reset branch 'master'
+2023-07-20T06:21:27.0275624Z ##[endgroup]
+2023-07-20T06:21:27.1189135Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format='%H'
+2023-07-20T06:21:27.1555613Z '983e4cbd76354807cdd0c1ecd02ddb3241eb6eeb'
+2023-07-20T06:21:27.2225129Z ##[group]Run suisei-cn/actions-download-file@v1.0.1
+2023-07-20T06:21:27.2225615Z with:
+2023-07-20T06:21:27.2226007Z   url: https://downloads.vcollab.com/tmp/VCollabDependencyAPI.7z
+2023-07-20T06:21:27.2226426Z   target: depency
+2023-07-20T06:21:27.2226720Z   auto-match: false
+2023-07-20T06:21:27.2226958Z env:
+2023-07-20T06:21:27.2227236Z   Solution_Path: TestApp.sln
+2023-07-20T06:21:27.2227598Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:21:27.2228026Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:21:27.2228415Z ##[endgroup]
+2023-07-20T06:21:27.3370479Z URL found: https://downloads.vcollab.com/tmp/VCollabDependencyAPI.7z
+2023-07-20T06:22:00.0829003Z Download completed.
+2023-07-20T06:22:06.3659623Z File saved.
+2023-07-20T06:22:06.3660365Z 
+2023-07-20T06:22:06.3676522Z ##[warning]The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2023-07-20T06:22:06.7258056Z ##[group]Run DuckSoft/extract-7z-action@v1.0
+2023-07-20T06:22:06.7258483Z with:
+2023-07-20T06:22:06.7258838Z   pathsource: depency\VCollabDependencyAPI.7z
+2023-07-20T06:22:06.7259224Z   pathtarget: depency
+2023-07-20T06:22:06.7259476Z env:
+2023-07-20T06:22:06.7259772Z   Solution_Path: TestApp.sln
+2023-07-20T06:22:06.7260130Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:22:06.7260547Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:22:06.7260933Z ##[endgroup]
+2023-07-20T06:22:06.7963886Z extracting depency\VCollabDependencyAPI.7z into depency
+2023-07-20T06:23:34.5539304Z ##[group]Run microsoft/setup-msbuild@v1.1
+2023-07-20T06:23:34.5539841Z with:
+2023-07-20T06:23:34.5540203Z   msbuild-architecture: x64
+2023-07-20T06:23:34.5540564Z env:
+2023-07-20T06:23:34.5540957Z   Solution_Path: TestApp.sln
+2023-07-20T06:23:34.5541381Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:23:34.5541832Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:23:34.5542277Z ##[endgroup]
+2023-07-20T06:23:34.9527115Z [command]C:\ProgramData\Chocolatey\bin\vswhere.exe -products * -requires Microsoft.Component.MSBuild -property installationPath -latest
+2023-07-20T06:23:35.9938208Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+2023-07-20T06:23:36.0392177Z ##[group]Run msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+2023-07-20T06:23:36.0393127Z [36;1mmsbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true[0m
+2023-07-20T06:23:36.1338731Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2023-07-20T06:23:36.1339262Z env:
+2023-07-20T06:23:36.1339646Z   Solution_Path: TestApp.sln
+2023-07-20T06:23:36.1340053Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:23:36.1340666Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:23:36.1341122Z ##[endgroup]
+2023-07-20T06:23:40.4543318Z MSBuild version 17.6.3+07e294721 for .NET Framework
+2023-07-20T06:23:40.6863154Z Building the projects in this solution one at a time. To enable parallel build, please add the "-m" switch.
+2023-07-20T06:23:42.6059866Z Build started 7/20/2023 6:23:42 AM.
+2023-07-20T06:23:42.6667150Z 
+2023-07-20T06:23:45.9706333Z Project "D:\a\TestApp_new\TestApp_new\TestApp.sln" on node 1 (rebuild target(s)).
+2023-07-20T06:23:45.9707510Z ValidateSolutionConfiguration:
+2023-07-20T06:23:45.9708270Z   Building solution configuration "Release|x64".
+2023-07-20T06:23:56.6616317Z Project "D:\a\TestApp_new\TestApp_new\TestApp.sln" (1) is building "D:\a\TestApp_new\TestApp_new\TestApp\TestApp.vcxproj" (2) on node 1 (Rebuild target(s)).
+2023-07-20T06:23:56.6617081Z _PrepareForClean:
+2023-07-20T06:23:56.6617632Z   Deleting file "x64\Release\TestApp.tlog\TestApp.lastbuildstate".
+2023-07-20T06:23:57.1798678Z InitializeBuildStatus:
+2023-07-20T06:23:57.1799793Z   Creating "x64\Release\TestApp.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+2023-07-20T06:23:57.5567662Z ClCompile:
+2023-07-20T06:23:57.5571563Z   C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\CL.exe /c /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"pch.h" /Fp"x64\Release\TestApp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /external:W3 /Gd /TP /FC /errorReport:queue pch.cpp
+2023-07-20T06:23:58.6393223Z   pch.cpp
+2023-07-20T06:24:20.7316538Z   C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\CL.exe /c /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"x64\Release\TestApp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /external:W3 /Gd /TP /FC /errorReport:queue TestApp.cpp TestAppDlg.cpp
+2023-07-20T06:24:20.7866202Z   TestApp.cpp
+2023-07-20T06:24:21.4708629Z   TestAppDlg.cpp
+2023-07-20T06:24:21.6213035Z ResourceCompile:
+2023-07-20T06:24:21.6213822Z   C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0409" /Ix64\Release\ /nologo /fo"x64\Release\TestApp.res" TestApp.rc 
+2023-07-20T06:24:22.3117440Z Link:
+2023-07-20T06:24:22.3123024Z   C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\Include\Manifest\dpiaware.manifest" /DEBUG:FULL /PDB:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\TestApp.iobj" /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.lib" /MACHINE:X64 x64\Release\TestApp.res
+2023-07-20T06:24:22.3126647Z   x64\Release\pch.obj
+2023-07-20T06:24:22.3127486Z   x64\Release\TestApp.obj
+2023-07-20T06:24:22.3131904Z   x64\Release\TestAppDlg.obj
+2023-07-20T06:24:26.7547521Z   Generating code
+2023-07-20T06:24:27.0121883Z   Previous IPDB not found, fall back to full compilation.
+2023-07-20T06:24:27.6473739Z   All 190 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+2023-07-20T06:24:27.6598881Z   Finished generating code
+2023-07-20T06:24:29.3917127Z   TestApp.vcxproj -> D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe
+2023-07-20T06:24:29.4882401Z FinalizeBuildStatus:
+2023-07-20T06:24:29.4884638Z   Deleting file "x64\Release\TestApp.tlog\unsuccessfulbuild".
+2023-07-20T06:24:29.4900264Z   Touching "x64\Release\TestApp.tlog\TestApp.lastbuildstate".
+2023-07-20T06:24:29.4903304Z Done Building Project "D:\a\TestApp_new\TestApp_new\TestApp\TestApp.vcxproj" (Rebuild target(s)).
+2023-07-20T06:24:29.4925175Z Done Building Project "D:\a\TestApp_new\TestApp_new\TestApp.sln" (rebuild target(s)).
+2023-07-20T06:24:29.5147636Z 
+2023-07-20T06:24:29.5148308Z Build succeeded.
+2023-07-20T06:24:29.5148995Z     0 Warning(s)
+2023-07-20T06:24:29.5149552Z     0 Error(s)
+2023-07-20T06:24:29.5149929Z 
+2023-07-20T06:24:29.5150151Z Time Elapsed 00:00:46.93
+2023-07-20T06:24:29.9528854Z Post job cleanup.
+2023-07-20T06:24:32.9076557Z [command]"C:\Program Files\Git\bin\git.exe" version
+2023-07-20T06:24:33.0041231Z git version 2.41.0.windows.1
+2023-07-20T06:24:33.0161630Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2023-07-20T06:24:33.0609409Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-07-20T06:24:33.6848234Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-07-20T06:24:33.7168998Z http.https://github.com/.extraheader
+2023-07-20T06:24:33.7222948Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2023-07-20T06:24:33.7617777Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-07-20T06:24:34.4747878Z Cleaning up orphan processes
+2023-07-20T06:24:34.5293886Z Terminate orphan process: pid (556) (vctip)

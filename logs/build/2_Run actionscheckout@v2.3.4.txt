@@ -1,0 +1,159 @@
+2023-07-20T06:21:10.2426489Z ##[group]Run actions/checkout@v2.3.4
+2023-07-20T06:21:10.2427008Z with:
+2023-07-20T06:21:10.2427312Z   repository: Mounik05/TestApp_new
+2023-07-20T06:21:10.2427972Z   token: ***
+2023-07-20T06:21:10.2428218Z   ssh-strict: true
+2023-07-20T06:21:10.2428523Z   persist-credentials: true
+2023-07-20T06:21:10.2428812Z   clean: true
+2023-07-20T06:21:10.2429045Z   fetch-depth: 1
+2023-07-20T06:21:10.2429298Z   lfs: false
+2023-07-20T06:21:10.2429564Z   submodules: false
+2023-07-20T06:21:10.2429819Z env:
+2023-07-20T06:21:10.2430104Z   Solution_Path: TestApp.sln
+2023-07-20T06:21:10.2430441Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:21:10.2430868Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:21:10.2431228Z ##[endgroup]
+2023-07-20T06:21:13.4302731Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2023-07-20T06:21:13.4569943Z Syncing repository: Mounik05/TestApp_new
+2023-07-20T06:21:13.4572125Z ##[group]Getting Git version info
+2023-07-20T06:21:13.4572808Z Working directory is 'D:\a\TestApp_new\TestApp_new'
+2023-07-20T06:21:14.4381942Z [command]"C:\Program Files\Git\bin\git.exe" version
+2023-07-20T06:21:14.4382442Z git version 2.41.0.windows.1
+2023-07-20T06:21:14.4383666Z ##[endgroup]
+2023-07-20T06:21:14.4384138Z Deleting the contents of 'D:\a\TestApp_new\TestApp_new'
+2023-07-20T06:21:14.4386566Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2023-07-20T06:21:14.4392886Z ##[group]Initializing the repository
+2023-07-20T06:21:14.4393410Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\TestApp_new\TestApp_new
+2023-07-20T06:21:14.4394011Z Initialized empty Git repository in D:/a/TestApp_new/TestApp_new/.git/
+2023-07-20T06:21:14.4394628Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Mounik05/TestApp_new
+2023-07-20T06:21:14.4395267Z ##[endgroup]
+2023-07-20T06:21:14.4395802Z ##[group]Disabling automatic garbage collection
+2023-07-20T06:21:14.4396517Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2023-07-20T06:21:14.4397083Z ##[endgroup]
+2023-07-20T06:21:14.4414600Z ##[group]Setting up auth
+2023-07-20T06:21:14.4418006Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2023-07-20T06:21:14.4419263Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2023-07-20T06:21:15.4993481Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2023-07-20T06:21:15.5348188Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2023-07-20T06:21:16.2099145Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2023-07-20T06:21:16.2483814Z ##[endgroup]
+2023-07-20T06:21:16.2484817Z ##[group]Fetching the repository
+2023-07-20T06:21:16.2503171Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +983e4cbd76354807cdd0c1ecd02ddb3241eb6eeb:refs/remotes/origin/master
+2023-07-20T06:21:17.3895879Z remote: Enumerating objects: 61, done.        
+2023-07-20T06:21:17.3896886Z remote: Counting objects:   1% (1/61)        
+2023-07-20T06:21:17.3897378Z remote: Counting objects:   3% (2/61)        
+2023-07-20T06:21:17.3898116Z remote: Counting objects:   4% (3/61)        
+2023-07-20T06:21:17.3904149Z remote: Counting objects:   6% (4/61)        
+2023-07-20T06:21:17.3904484Z remote: Counting objects:   8% (5/61)        
+2023-07-20T06:21:17.3904833Z remote: Counting objects:   9% (6/61)        
+2023-07-20T06:21:17.3905297Z remote: Counting objects:  11% (7/61)        
+2023-07-20T06:21:17.3905670Z remote: Counting objects:  13% (8/61)        
+2023-07-20T06:21:17.3906073Z remote: Counting objects:  14% (9/61)        
+2023-07-20T06:21:17.3906389Z remote: Counting objects:  16% (10/61)        
+2023-07-20T06:21:17.3906732Z remote: Counting objects:  18% (11/61)        
+2023-07-20T06:21:17.3907103Z remote: Counting objects:  19% (12/61)        
+2023-07-20T06:21:17.3907414Z remote: Counting objects:  21% (13/61)        
+2023-07-20T06:21:17.3907791Z remote: Counting objects:  22% (14/61)        
+2023-07-20T06:21:17.3908132Z remote: Counting objects:  24% (15/61)        
+2023-07-20T06:21:17.3908482Z remote: Counting objects:  26% (16/61)        
+2023-07-20T06:21:17.3908833Z remote: Counting objects:  27% (17/61)        
+2023-07-20T06:21:17.3909168Z remote: Counting objects:  29% (18/61)        
+2023-07-20T06:21:17.3909480Z remote: Counting objects:  31% (19/61)        
+2023-07-20T06:21:17.3909823Z remote: Counting objects:  32% (20/61)        
+2023-07-20T06:21:17.3910165Z remote: Counting objects:  34% (21/61)        
+2023-07-20T06:21:17.3910494Z remote: Counting objects:  36% (22/61)        
+2023-07-20T06:21:17.3911339Z remote: Counting objects:  37% (23/61)        
+2023-07-20T06:21:17.3911706Z remote: Counting objects:  39% (24/61)        
+2023-07-20T06:21:17.3913781Z remote: Counting objects:  40% (25/61)        
+2023-07-20T06:21:17.3914108Z remote: Counting objects:  42% (26/61)        
+2023-07-20T06:21:17.3914446Z remote: Counting objects:  44% (27/61)        
+2023-07-20T06:21:17.3914779Z remote: Counting objects:  45% (28/61)        
+2023-07-20T06:21:17.3915087Z remote: Counting objects:  47% (29/61)        
+2023-07-20T06:21:17.3915428Z remote: Counting objects:  49% (30/61)        
+2023-07-20T06:21:17.3915778Z remote: Counting objects:  50% (31/61)        
+2023-07-20T06:21:17.3916095Z remote: Counting objects:  52% (32/61)        
+2023-07-20T06:21:17.3916423Z remote: Counting objects:  54% (33/61)        
+2023-07-20T06:21:17.3916752Z remote: Counting objects:  55% (34/61)        
+2023-07-20T06:21:17.3917080Z remote: Counting objects:  57% (35/61)        
+2023-07-20T06:21:17.3917390Z remote: Counting objects:  59% (36/61)        
+2023-07-20T06:21:17.3917718Z remote: Counting objects:  60% (37/61)        
+2023-07-20T06:21:17.3918069Z remote: Counting objects:  62% (38/61)        
+2023-07-20T06:21:17.3918386Z remote: Counting objects:  63% (39/61)        
+2023-07-20T06:21:17.3918715Z remote: Counting objects:  65% (40/61)        
+2023-07-20T06:21:17.3919041Z remote: Counting objects:  67% (41/61)        
+2023-07-20T06:21:17.3919344Z remote: Counting objects:  68% (42/61)        
+2023-07-20T06:21:17.3919668Z remote: Counting objects:  70% (43/61)        
+2023-07-20T06:21:17.3920001Z remote: Counting objects:  72% (44/61)        
+2023-07-20T06:21:17.3920301Z remote: Counting objects:  73% (45/61)        
+2023-07-20T06:21:17.3920642Z remote: Counting objects:  75% (46/61)        
+2023-07-20T06:21:17.3920977Z remote: Counting objects:  77% (47/61)        
+2023-07-20T06:21:17.3921303Z remote: Counting objects:  78% (48/61)        
+2023-07-20T06:21:17.3922007Z remote: Counting objects:  80% (49/61)        
+2023-07-20T06:21:17.3922342Z remote: Counting objects:  81% (50/61)        
+2023-07-20T06:21:17.3922685Z remote: Counting objects:  83% (51/61)        
+2023-07-20T06:21:17.3922992Z remote: Counting objects:  85% (52/61)        
+2023-07-20T06:21:17.3923336Z remote: Counting objects:  86% (53/61)        
+2023-07-20T06:21:17.3923684Z remote: Counting objects:  88% (54/61)        
+2023-07-20T06:21:17.3924374Z remote: Counting objects:  90% (55/61)        
+2023-07-20T06:21:17.3924714Z remote: Counting objects:  91% (56/61)        
+2023-07-20T06:21:17.3925931Z remote: Counting objects:  93% (57/61)        
+2023-07-20T06:21:17.3926274Z remote: Counting objects:  95% (58/61)        
+2023-07-20T06:21:17.3926584Z remote: Counting objects:  96% (59/61)        
+2023-07-20T06:21:17.3926917Z remote: Counting objects:  98% (60/61)        
+2023-07-20T06:21:17.3927273Z remote: Counting objects: 100% (61/61)        
+2023-07-20T06:21:17.3927608Z remote: Counting objects: 100% (61/61), done.        
+2023-07-20T06:21:17.3927991Z remote: Compressing objects:   2% (1/41)        
+2023-07-20T06:21:17.3928366Z remote: Compressing objects:   4% (2/41)        
+2023-07-20T06:21:17.3928767Z remote: Compressing objects:   7% (3/41)        
+2023-07-20T06:21:17.3929101Z remote: Compressing objects:   9% (4/41)        
+2023-07-20T06:21:17.3929457Z remote: Compressing objects:  12% (5/41)        
+2023-07-20T06:21:17.3929830Z remote: Compressing objects:  14% (6/41)        
+2023-07-20T06:21:17.3930165Z remote: Compressing objects:  17% (7/41)        
+2023-07-20T06:21:17.3930524Z remote: Compressing objects:  19% (8/41)        
+2023-07-20T06:21:17.3930871Z remote: Compressing objects:  21% (9/41)        
+2023-07-20T06:21:17.3931204Z remote: Compressing objects:  24% (10/41)        
+2023-07-20T06:21:17.3931563Z remote: Compressing objects:  26% (11/41)        
+2023-07-20T06:21:17.3931920Z remote: Compressing objects:  29% (12/41)        
+2023-07-20T06:21:17.3932736Z remote: Compressing objects:  31% (13/41)        
+2023-07-20T06:21:17.3933123Z remote: Compressing objects:  34% (14/41)        
+2023-07-20T06:21:17.3933488Z remote: Compressing objects:  36% (15/41)        
+2023-07-20T06:21:17.3934066Z remote: Compressing objects:  39% (16/41)        
+2023-07-20T06:21:17.3972332Z remote: Compressing objects:  41% (17/41)        
+2023-07-20T06:21:17.3972835Z remote: Compressing objects:  43% (18/41)        
+2023-07-20T06:21:17.3987511Z remote: Compressing objects:  46% (19/41)        
+2023-07-20T06:21:17.4034247Z remote: Compressing objects:  48% (20/41)        
+2023-07-20T06:21:17.4035242Z remote: Compressing objects:  51% (21/41)        
+2023-07-20T06:21:17.4035868Z remote: Compressing objects:  53% (22/41)        
+2023-07-20T06:21:17.4036545Z remote: Compressing objects:  56% (23/41)        
+2023-07-20T06:21:17.4037099Z remote: Compressing objects:  58% (24/41)        
+2023-07-20T06:21:17.4558306Z remote: Compressing objects:  60% (25/41)        
+2023-07-20T06:21:18.9929200Z remote: Compressing objects:  63% (26/41)        
+2023-07-20T06:21:19.3796775Z remote: Compressing objects:  65% (27/41)        
+2023-07-20T06:21:19.3797615Z remote: Compressing objects:  68% (28/41)        
+2023-07-20T06:21:19.3798067Z remote: Compressing objects:  70% (29/41)        
+2023-07-20T06:21:19.3798502Z remote: Compressing objects:  73% (30/41)        
+2023-07-20T06:21:19.3798994Z remote: Compressing objects:  75% (31/41)        
+2023-07-20T06:21:19.3799431Z remote: Compressing objects:  78% (32/41)        
+2023-07-20T06:21:19.3932234Z remote: Compressing objects:  80% (33/41)        
+2023-07-20T06:21:19.3932975Z remote: Compressing objects:  82% (34/41)        
+2023-07-20T06:21:19.3933526Z remote: Compressing objects:  85% (35/41)        
+2023-07-20T06:21:19.3934064Z remote: Compressing objects:  87% (36/41)        
+2023-07-20T06:21:19.3934517Z remote: Compressing objects:  90% (37/41)        
+2023-07-20T06:21:19.3934936Z remote: Compressing objects:  92% (38/41)        
+2023-07-20T06:21:19.3935372Z remote: Compressing objects:  95% (39/41)        
+2023-07-20T06:21:19.3935765Z remote: Compressing objects:  97% (40/41)        
+2023-07-20T06:21:19.3936209Z remote: Compressing objects: 100% (41/41)        
+2023-07-20T06:21:19.3936650Z remote: Compressing objects: 100% (41/41), done.        
+2023-07-20T06:21:25.2306439Z remote: Total 61 (delta 10), reused 44 (delta 8), pack-reused 0        
+2023-07-20T06:21:25.8005072Z From https://github.com/Mounik05/TestApp_new
+2023-07-20T06:21:25.8019194Z  * [new ref]         983e4cbd76354807cdd0c1ecd02ddb3241eb6eeb -> origin/master
+2023-07-20T06:21:25.8842963Z ##[endgroup]
+2023-07-20T06:21:25.8863668Z ##[group]Determining the checkout info
+2023-07-20T06:21:25.9000458Z ##[endgroup]
+2023-07-20T06:21:25.9026035Z ##[group]Checking out the ref
+2023-07-20T06:21:25.9050713Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B master refs/remotes/origin/master
+2023-07-20T06:21:27.0221299Z branch 'master' set up to track 'origin/master'.
+2023-07-20T06:21:27.0222611Z Reset branch 'master'
+2023-07-20T06:21:27.0275576Z ##[endgroup]
+2023-07-20T06:21:27.1189058Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format='%H'
+2023-07-20T06:21:27.1555526Z '983e4cbd76354807cdd0c1ecd02ddb3241eb6eeb'

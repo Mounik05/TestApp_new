@@ -1,0 +1,49 @@
+2023-07-20T06:23:36.0392124Z ##[group]Run msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+2023-07-20T06:23:36.0393051Z [36;1mmsbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true[0m
+2023-07-20T06:23:36.1338663Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2023-07-20T06:23:36.1339257Z env:
+2023-07-20T06:23:36.1339642Z   Solution_Path: TestApp.sln
+2023-07-20T06:23:36.1340048Z   VCDEP: depency\VCollabDependencyAPI
+2023-07-20T06:23:36.1340662Z   PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
+2023-07-20T06:23:36.1341117Z ##[endgroup]
+2023-07-20T06:23:40.4543230Z MSBuild version 17.6.3+07e294721 for .NET Framework
+2023-07-20T06:23:40.6863063Z Building the projects in this solution one at a time. To enable parallel build, please add the "-m" switch.
+2023-07-20T06:23:42.6059785Z Build started 7/20/2023 6:23:42 AM.
+2023-07-20T06:23:42.6667054Z 
+2023-07-20T06:23:45.9706017Z Project "D:\a\TestApp_new\TestApp_new\TestApp.sln" on node 1 (rebuild target(s)).
+2023-07-20T06:23:45.9707503Z ValidateSolutionConfiguration:
+2023-07-20T06:23:45.9708265Z   Building solution configuration "Release|x64".
+2023-07-20T06:23:56.6616234Z Project "D:\a\TestApp_new\TestApp_new\TestApp.sln" (1) is building "D:\a\TestApp_new\TestApp_new\TestApp\TestApp.vcxproj" (2) on node 1 (Rebuild target(s)).
+2023-07-20T06:23:56.6617073Z _PrepareForClean:
+2023-07-20T06:23:56.6617625Z   Deleting file "x64\Release\TestApp.tlog\TestApp.lastbuildstate".
+2023-07-20T06:23:57.1798592Z InitializeBuildStatus:
+2023-07-20T06:23:57.1799691Z   Creating "x64\Release\TestApp.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+2023-07-20T06:23:57.5567563Z ClCompile:
+2023-07-20T06:23:57.5571500Z   C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\CL.exe /c /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"pch.h" /Fp"x64\Release\TestApp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /external:W3 /Gd /TP /FC /errorReport:queue pch.cpp
+2023-07-20T06:23:58.6393123Z   pch.cpp
+2023-07-20T06:24:20.7316437Z   C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\CL.exe /c /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"x64\Release\TestApp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /external:W3 /Gd /TP /FC /errorReport:queue TestApp.cpp TestAppDlg.cpp
+2023-07-20T06:24:20.7866096Z   TestApp.cpp
+2023-07-20T06:24:21.4699667Z   TestAppDlg.cpp
+2023-07-20T06:24:21.6212933Z ResourceCompile:
+2023-07-20T06:24:21.6213778Z   C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0409" /Ix64\Release\ /nologo /fo"x64\Release\TestApp.res" TestApp.rc 
+2023-07-20T06:24:22.3117347Z Link:
+2023-07-20T06:24:22.3122939Z   C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\Include\Manifest\dpiaware.manifest" /DEBUG:FULL /PDB:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\TestApp.iobj" /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.lib" /MACHINE:X64 x64\Release\TestApp.res
+2023-07-20T06:24:22.3126628Z   x64\Release\pch.obj
+2023-07-20T06:24:22.3127476Z   x64\Release\TestApp.obj
+2023-07-20T06:24:22.3128159Z   x64\Release\TestAppDlg.obj
+2023-07-20T06:24:26.7547420Z   Generating code
+2023-07-20T06:24:27.0121781Z   Previous IPDB not found, fall back to full compilation.
+2023-07-20T06:24:27.6473655Z   All 190 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+2023-07-20T06:24:27.6598866Z   Finished generating code
+2023-07-20T06:24:29.3917040Z   TestApp.vcxproj -> D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe
+2023-07-20T06:24:29.4882322Z FinalizeBuildStatus:
+2023-07-20T06:24:29.4884598Z   Deleting file "x64\Release\TestApp.tlog\unsuccessfulbuild".
+2023-07-20T06:24:29.4900233Z   Touching "x64\Release\TestApp.tlog\TestApp.lastbuildstate".
+2023-07-20T06:24:29.4903278Z Done Building Project "D:\a\TestApp_new\TestApp_new\TestApp\TestApp.vcxproj" (Rebuild target(s)).
+2023-07-20T06:24:29.4925149Z Done Building Project "D:\a\TestApp_new\TestApp_new\TestApp.sln" (rebuild target(s)).
+2023-07-20T06:24:29.5147607Z 
+2023-07-20T06:24:29.5148297Z Build succeeded.
+2023-07-20T06:24:29.5148950Z     0 Warning(s)
+2023-07-20T06:24:29.5149547Z     0 Error(s)
+2023-07-20T06:24:29.5149863Z 
+2023-07-20T06:24:29.5150145Z Time Elapsed 00:00:46.93
