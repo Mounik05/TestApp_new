@@ -44,11 +44,8 @@ jobs:
            url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
            target: mailtest
            
-      - name: Extract zip file 
-        uses: DuckSoft/extract-7z-action@v1.0
-        with:
-           pathsource: mailtest\logs.zip 
-           pathtarget: mailtest
+      - name: Extract zip file
+        run: unzip D:\a\TestApp_new\TestApp_new\mailtest\logs.zip -d D:\a\TestApp_new\TestApp_new\logs
     
            
       - name: Push changes
