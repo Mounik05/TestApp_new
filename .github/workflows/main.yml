@@ -46,7 +46,7 @@ jobs:
            
       - name: Extract zip file
         run: |
-          Expand-Archive -Path "D:\a\TestApp_new\TestApp_new\mailtest\logs_467.zip" -DestinationPath "D:\a\TestApp_new\TestApp_new\logs"    
+          Expand-Archive -Path "D:\a\TestApp_new\TestApp_new\mailtest\logs_467(6).zip" -DestinationPath "D:\a\TestApp_new\TestApp_new\logs"    
            
            
      
