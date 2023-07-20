@@ -38,11 +38,18 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-      - name: Download log artifact
-        uses: actions/download-artifact@v2
+    
+      - name: Save build log
+        run: |
+          # Generate the build log
+          # Save the log file to the root of the workspace (GitHub automatically creates the 'logs' directory for artifacts)
+          mv build/build_log.txt ${{ github.workspace }}/logs/build_log.txt
+
+      - name: Upload log artifact
+        uses: actions/upload-artifact@v2
         with:
           name: build-logs
-          path: logs
+          path: ${{ github.workspace }}/logs/build_log.txt
           
          
     
