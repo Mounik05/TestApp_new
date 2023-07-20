@@ -44,9 +44,16 @@ jobs:
            url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
            target: logs
            
-      - name: Extract zip file
-        run: |
-          Expand-Archive -Path "D:\a\TestApp_new\TestApp_new\logs\logs.zip" -DestinationPath "D:\a\TestApp_new\TestApp_new\mailtest"    
+      - name: Upload logs to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         protocol: ftps
+         port : 2133
+         local-dir: ./logs_467.zip/       
+         server-dir: ./test/
            
      
        
