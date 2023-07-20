@@ -44,6 +44,13 @@ jobs:
            url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
            target: mailtest
            
+      - name: Extract zip file 
+        uses: DuckSoft/extract-7z-action@v1.0
+        with:
+           pathsource: mailtest\logs467.zip 
+           pathtarget: mailtest
+    
+           
       - name: Push changes
         run: |
              git config --local user.email "kallepallimounika333@gmail.com"
