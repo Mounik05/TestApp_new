@@ -42,23 +42,20 @@ jobs:
         uses: suisei-cn/actions-download-file@v1.0.1
         with:
            url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
-           target: mailtest
+           target: logs
            
-      - name: List directory contents
-        run: |
-          ls -R
+      - name: Upload logs to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         protocol: ftps
+         port : 2133
+         local-dir: ./logs/       
+         server-dir: ./test/
            
-      - name: Extract zip file
-        run: unzip D:\a\TestApp_new\TestApp_new\mailtest\logs.zip -d D:\a\TestApp_new\TestApp_new\logs
-    
-           
-      - name: Push changes
-        run: |
-             git config --local user.email "kallepallimounika333@gmail.com"
-             git config --local user.name "Mounik05"
-             git add .
-             git commit -m "Add changes" -a
-             git push -u origin master  
-           
-           
+              
        
+           
+      
