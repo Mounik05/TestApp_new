@@ -26,6 +26,6 @@ jobs:
       - name: Download log archive
         uses: suisei-cn/actions-download-file@v1.0.1
         with:
-           url: "https://api.github.com/repos/$env:GITHUB_REPOSITORY/actions/runs?event=push"
+           url: "https://github.com/repos/$env:GITHUB_REPOSITORY/actions/runs?event=push"
            target: logs
            
