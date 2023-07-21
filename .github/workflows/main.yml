@@ -23,20 +23,11 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-      - name: Download log archive
-        uses: suisei-cn/actions-download-file@v1.0.1
+      - name: PublishBuildArtifacts@1
+        id: 'Publish Log Files'
         with:
-           url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
-           target: mailtest
-           
-      - name: Extract zip file 
-        uses: DuckSoft/extract-7z-action@v1.0
-        with:
-            pathsource: https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1
-            pathtarget: mailtest
-     
-     
-            
+             pathtoPublish: '$(Build.SourcesDirectory)/https://github.com/Mounik05/TestApp_new/suites' # Replace this with the path to your log files
+             artifactName: 'LogFiles'
     
            
       
