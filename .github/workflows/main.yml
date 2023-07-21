@@ -29,13 +29,13 @@ jobs:
             TOKEN="GH_PAT"
 
            # Fetch the latest workflow run ID
-           RUN_ID=$(curl -s -H "Authorization: Bearer $TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs?event=push" | jq -r '.workflow_runs[0].id')
+           $RUN_ID = (Invoke-RestMethod -Uri "https://api.github.com/repos/$env:GITHUB_REPOSITORY/actions/runs?event=push" -Headers @{ Authorization = "Bearer $GITHUB_TOKEN" } | Select-Object -First 1).id
 
            # Fetch logs for the latest workflow run
-             LOGS=$(curl -s -H "Authorization: Bearer $TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID/logs")
+            $LOGS = (Invoke-RestMethod -Uri "https://api.github.com/repos/$env:GITHUB_REPOSITORY/actions/runs/$RUN_ID/logs" -Headers @{ Authorization = "Bearer $GITHUB_TOKEN" }).content
 
-             # Save logs to a file
-              echo "$LOGS" > logs.txt
+            # Save logs to a file
+             $LOGS | Out-File -FilePath "logs.txt"
             
             
             
