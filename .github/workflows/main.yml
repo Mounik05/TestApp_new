@@ -23,11 +23,15 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-      - name: PublishBuildArtifacts@1
-        id: 'Publish Log Files'
+      - name: Download Logs
+        uses: actions/http-client@v1
         with:
-             pathtoPublish: '$(Build.SourcesDirectory)/https://github.com/Mounik05/TestApp_new/suites' # Replace this with the path to your log files
-             artifactName: 'LogFiles'
-    
-           
-      
+          url: https://api.github.com/repos/OWNER/REPO/actions/runs/RUN_ID/logs
+          headers: |
+            Accept: application/vnd.github+json
+            Authorization: Bearer ${{ secrets.YOUR_TOKEN }}
+            X-GitHub-Api-Version: 2022-11-28
+            
+            
+            
+            
