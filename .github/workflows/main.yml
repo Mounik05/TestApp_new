@@ -24,7 +24,7 @@ jobs:
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
       - name: Download Logs
-        uses: actions/http-client@v1
+        uses: actions/http-client@latest
         with:
           url: https://api.github.com/repos/OWNER/REPO/actions/runs/RUN_ID/logs
           headers: |
