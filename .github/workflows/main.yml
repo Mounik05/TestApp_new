@@ -24,7 +24,7 @@ jobs:
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
       - name: Download Logs
-        uses: some-organization/some-action@v1.0.0
+        uses: suisei-cn/actions-download-file@v1.0.1
         with:
           url: https://api.github.com/repos/OWNER/REPO/actions/runs/RUN_ID/logs
           headers: |
