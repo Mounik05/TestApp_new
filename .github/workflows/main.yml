@@ -32,7 +32,7 @@ jobs:
       - name: Extract zip file 
         uses: DuckSoft/extract-7z-action@v1.0
         with:
-            pathsource: logs_486.zip 
+            pathsource: logs_486.zip.
             pathtarget: mailtest
      
      
