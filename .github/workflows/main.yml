@@ -26,7 +26,7 @@ jobs:
       - name: Download log archive
         uses: actions-download-file@v1.0.1
         with:
-           url: "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1" 
+           url: "https://github.com/Mounik05/TestApp_new/suites/logs" 
            target: logs
            
      
