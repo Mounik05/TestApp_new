@@ -23,16 +23,18 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
      
-      - name: Download 7z Archive
-        run: |
-          wget -O archive.7z "https://github.com/Mounik05/TestApp_new/suites/14440387898/logs?attempt=1"
-
-      - name: Extract Archive
-        uses: DuckSoft/extract-7z-action@v1.0
+            
+      - name: Upload logs to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-          pathsource: archive.7z
-          pathtarget: mailtest
-     
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         protocol: ftps
+         port : 2133
+         local-dir: ./logs_486.zip/       
+         server-dir: ./test/
+           
        
            
       
