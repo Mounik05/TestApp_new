@@ -23,6 +23,23 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-      - name: Download log archive
-        run: Build/Download log archive
+      - name: Archive logs
+        run: |
+         # Create a log directory if needed
+           mkdir -p logs
+    
+         # Move the build logs to the logs directory
+           mv code.log logs/
+    
+         # Create a tar.gz archive of the logs directory
+           tar -czf logs.tar.gz logs/
            
+           
+      - name: Upload log archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: logs
+          path: logs.tar.gz
+          
+          
+          
