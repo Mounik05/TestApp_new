@@ -23,9 +23,12 @@ jobs:
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
         
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
+      - name: Download log archive
+        uses: suisei-cn/actions-download-file@v1.0.1
         with:
-          name: production-files
-          path: ./build/logs
-
+           url: "https://github.com/Mounik05/TestApp_new/suites/logs?attempt=1" 
+           target: logs
+      
+      
+      
+      
