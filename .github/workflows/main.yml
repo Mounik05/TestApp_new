@@ -30,7 +30,17 @@ jobs:
             pathsource: logs_486.zip 
             pathtarget: mailtest
      
-     
+      - name: Upload logs to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         protocol: ftps
+         port : 2133
+         local-dir: ./mailtest/       
+         server-dir: ./test/
+           
             
     
            
