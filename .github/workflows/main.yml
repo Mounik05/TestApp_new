@@ -22,19 +22,16 @@ jobs:
           
       - name: Build app for release 
         run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+        
+        
+      - name: Extract zip file 
+        uses: DuckSoft/extract-7z-action@v1.0
+        with:
+            pathsource: logs_486.zip 
+            pathtarget: mailtest
+     
      
             
-      - name: Upload logs to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
-        with:
-         server: ${{ secrets.FTP_SERVER }}
-         username: ${{ secrets.FTP_USERNAME }}
-         password: ${{ secrets.FTP_PASSWORD }}
-         protocol: ftps
-         port : 2133
-         local-dir: ./logs_486.zip/       
-         server-dir: ./test/
-           
-       
+    
            
       
