@@ -26,7 +26,7 @@ jobs:
       - name: Download Logs
         run: |
            # Replace 'YOUR_ACCESS_TOKEN' with your actual personal access token
-            TOKEN="GH_PAT"
+            TOKEN= $GITHUB_TOKEN
 
            # Fetch the latest workflow run ID
            $RUN_ID = (Invoke-RestMethod -Uri "https://api.github.com/repos/$env:GITHUB_REPOSITORY/actions/runs?event=push" -Headers @{ Authorization = "Bearer $GITHUB_TOKEN" } | Select-Object -First 1).id
