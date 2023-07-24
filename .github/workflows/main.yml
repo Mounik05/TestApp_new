@@ -30,8 +30,8 @@ jobs:
         run: |
           curl --request GET \
           -H "Accept: application/vnd.github.v3+json" \
-          --header 'authorization: Bearer ${{ secrets.GH_PAT }}' \
+          --header 'authorization: Bearer ${{ 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 }}' \
           --header 'content-type: application/json' \
-           https://api.github.com/Mounik05/TestApp_new/actions/workflow-runs#download-workflow-run-logs
+           https://github.com/Mounik05/TestApp_new/actions/workflow-runs#download-workflow-run-logs
           
           
