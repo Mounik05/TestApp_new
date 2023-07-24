@@ -24,14 +24,14 @@ jobs:
         run: |
            msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
      
-      - name: Create Log
-        if: always() # This step will run even if previous steps fail
+      - name: create log
+        if: always()
         id: createlog
         run: |
-         curl --request GET \
+          curl --request GET \
           -H "Accept: application/vnd.github.v3+json" \
-          --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          --header "content-type: application/json" \
-          "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/logs"
-            
-            
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+           https://api.github.com/Mounik05/TestApp_new/actions/workflow-runs#download-workflow-run-logs
+          
+          
