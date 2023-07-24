@@ -29,7 +29,7 @@ jobs:
          # Make an HTTP POST request to trigger a new build using the GitHub Actions API
           curl -X POST \
           -H "Authorization: token ${{ secrets.GH_PAT }}" \
-          "https://api.github.com/repos/your-username/your-repo/actions/workflows/your-workflow-id/dispatches" \
+          "https://api.github.com/repos/your-username/your-repo/actions/workflows/your-workflow-id/dispatches" 
           -d '{"ref": "main"}'
 
       - name: Wait for the build to complete
