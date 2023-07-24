@@ -21,14 +21,12 @@ jobs:
           msbuild-architecture: x64
           
       - name: Build app for release 
-        run: msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+        run: |
+           msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+           
+      - name: print log archve
+        run: echo "Your build log archive path:${{ env.BUILD_LOG_ARCHIVE }}"
         
-      - name: Download log archive
-        uses: suisei-cn/actions-download-file@v1.0.1
-        with:
-           url: "https://github.com/Mounik05/TestApp_new/suites/logs?attempt=1" 
-           target: logs
-      
-      
-      
-      
+        
+        
+        
