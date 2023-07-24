@@ -25,7 +25,7 @@ jobs:
            msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
      
       - name: print_log_path
-        run: echo "Your build log archive path:${{ env.BUILD_LOG_ARCHIVE }}"
+        run: echo "BUILD_LOG_ARCHIVE :${{ https://github.com/Mounik05/TestApp_new/suites/14463366826/logs?attempt=1 }}"
 
       - name: Upload Log Archive
         uses: actions/upload-artifact@v2
