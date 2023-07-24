@@ -27,6 +27,12 @@ jobs:
       - name: print log archve
         run: echo "Your build log archive path:${{ env.BUILD_LOG_ARCHIVE }}"
         
+      - name: download_log
+        run: |
+          # Use the build log archive path printed in Step 1 to download the log
+          # Replace the 'download_command' with the appropriate command for your CI/CD system
+          download_command "${{ steps.print_log_path.outputs.BUILD_LOG_ARCHIVE }}"
+        
         
         
         
