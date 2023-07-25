@@ -14,7 +14,6 @@ jobs:
     steps: 
       - uses: actions/checkout@v2.3.4
       
-    
       - name: setup-msbuild
         uses: microsoft/setup-msbuild@v1.1
         with:
@@ -22,25 +21,13 @@ jobs:
           
       - name: Build app for release 
         run: |
-           msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true
+           msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true /p:build_log.yaml
+           
+           
+           
+           
+           
+           
+           
      
-      - name: Trigger build using GitHub Actions API
-        run: |
-         # Make an HTTP POST request to trigger a new build using the GitHub Actions API
-          curl -X POST \
-          -H "Authorization: token ${{ secrets.GH_PAT }}" \
-          "https://api.github.com/repos/your-username/your-repo/actions/workflows/your-workflow-id/dispatches" 
-          -d '{"ref": "main"}'
-
-      - name: Wait for the build to complete
-       # Wait for the build to complete before downloading the logs (you may need to adjust the sleep time accordingly)
-        run: sleep 60
-
-      - name: Download build logs using GitHub Actions API
-        run: |
-         # Make an HTTP GET request to download the build logs using the GitHub Actions API
-           curl -LJO \
-          -H "Authorization: token ${{ secrets.GH_PAT }}" \
-          "https://api.github.com/repos/your-username/your-repo/actions/runs/${{ github.run_id }}/logs"
-            
-
+  
