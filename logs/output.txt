@@ -1,0 +1,37 @@
+MSBuild version 17.6.3+07e294721 for .NET Framework
+Build started 7/25/2023 7:14:49 AM.
+
+     1>Project "D:\a\TestApp_new\TestApp_new\Testapp.sln" on node 1 (default targets).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Release|x64".
+     1>Project "D:\a\TestApp_new\TestApp_new\Testapp.sln" (1) is building "D:\a\TestApp_new\TestApp_new\TestApp\TestApp.vcxproj" (2) on node 1 (default targets).
+     2>InitializeBuildStatus:
+         Creating "x64\Release\TestApp.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\CL.exe /c /Zi /nologo /W3 /WX- /diagnostics:column /sdl /O2 /Oi /GL /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"x64\Release\TestApp.pch" /Fo"x64\Release\\" /Fd"x64\Release\vc142.pdb" /external:W3 /Gd /TP /FC /errorReport:queue TestApp.cpp
+         TestApp.cpp
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.29.30133\Include\Manifest\dpiaware.manifest" /DEBUG:FULL /PDB:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\TestApp.iobj" /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.lib" /MACHINE:X64 x64\Release\TestApp.res
+         x64\Release\pch.obj
+         x64\Release\TestApp.obj
+         x64\Release\TestAppDlg.obj
+         Generating code
+         0 of 190 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         Finished generating code
+         TestApp.vcxproj -> D:\a\TestApp_new\TestApp_new\x64\Release\TestApp.exe
+       FinalizeBuildStatus:
+         Deleting file "x64\Release\TestApp.tlog\unsuccessfulbuild".
+         Touching "x64\Release\TestApp.tlog\TestApp.lastbuildstate".
+     2>Done Building Project "D:\a\TestApp_new\TestApp_new\TestApp\TestApp.vcxproj" (default targets).
+     1>Done Building Project "D:\a\TestApp_new\TestApp_new\Testapp.sln" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:45.63
