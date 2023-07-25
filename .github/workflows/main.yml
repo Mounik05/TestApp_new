@@ -21,8 +21,7 @@ jobs:
           
       - name: Build app for release 
         run: |
-           msbuild  /flp:logfile=TestApp_new.yaml;verbosity=diagnostic TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true 
-           
+          msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release > build_log.txt
            
            
            
