@@ -21,9 +21,8 @@ jobs:
           
       - name: Build app for release 
         run: |
-          msbuild -t:rebuild /v:detailed /fl /flp:LogFile= mailtest.log   /p:Configuration=Release TestApp.sln
+          msbuild -t:rebuild /v:detailed /fl /flp:LogFile=mailtest.log /p:Configuration=Release TestApp.sln
             
-              
       - name: copy log files  
         run: |
           copy mailtest.log   D:\a\TestApp_new\TestApp_new\logs
