@@ -21,7 +21,7 @@ jobs:
           
       - name: Build app for release 
         run: |
-           msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release /p:LocalizedBuild=true /p:build_log.yaml
+           msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Debug > build_log.txt
            
            
            
