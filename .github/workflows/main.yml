@@ -21,8 +21,7 @@ jobs:
           
       - name: Build app for release 
         run: |
-          msbuild TestApp.sln -t:rebuild /p:Platform=x64 /p:Configuration=Release > build_log.txt
-           
+          msbuild -t:rebuild /v:detailed /fl /flp:LogFile=msbuild.log /p:Configuration=Release TestApp.sln
            
            
            
