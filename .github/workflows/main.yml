@@ -21,19 +21,21 @@ jobs:
           
       - name: Build app for release 
         run: |
-          msbuild -t:rebuild /v:detailed /fl /flp:LogFile=mailtest.log /p:Configuration=Release TestApp.sln
+          msbuild -t:rebuild /v:detailed /fl /flp:LogFile=msbuild.log /p:Configuration=Release TestApp.sln
             
-      - name: copy log files  
-        run: |
-          copy mailtest.log   D:\a\TestApp_new\TestApp_new\logs
+              
+      - name: upload files to ftp.
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         protocol: ftps
+         port : 2133
+         local-dir: ./msbuild.log/       
+         server-dir: ./test/   
           
-      - name: Push changes
-        run: |
-             git config --local user.email "kallepallimounika333@gmail.com"
-             git config --local user.name "Mounik05"
-             git add .
-             git commit -m "Add changes" -a
-             git push -u origin master
+     
      
      
            
