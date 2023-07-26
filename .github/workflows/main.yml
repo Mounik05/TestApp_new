@@ -16,17 +16,16 @@ jobs:
       
       - name: Check if file exists
         run: |
-          if [ -f "Resource.txt" ]; then
+          if [ -f "deleted-file.txt" ]; then
             echo "File exists"
           else
             echo "File does not exist"
           fi
 
       - name: Backup file
-        if: "! fileExists('Resource.txt')"
+        if: "! fileExists('deleted-file.txt')"
         run: |
-          cp Resource.txt ./backups/Resource.txt
-          
+          cp deleted-file.txt ./backups/deleted-file.txt
           
           
           
