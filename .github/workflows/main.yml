@@ -14,29 +14,25 @@ jobs:
     steps: 
       - uses: actions/checkout@v2.3.4
       
-      - name: setup-msbuild
-        uses: microsoft/setup-msbuild@v1.1
-        with:
-          msbuild-architecture: x64
-          
-      - name: Build app for release 
+      - name: Set up Git
         run: |
-          msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > output.txt -m
-          
-      - name: copy exe file
-        if: ${{ failure() }}
-        run: copy D:\a\TestApp_new\TestApp_new\output.txt D:\a\TestApp_new\TestApp_new\logs
-        
-      - name: upload files to ftp.
-        if: ${{ failure() }}
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+          git config --global user.name "Mounik05"
+          git config --global user.email "kallepallimounika333@gmail.com"
+
+      
+      - name: Create backup branch
+        run: |
+          git checkout -b backup-branch
+          git add .
+          git commit -m "Backup deleted file: ${{ github.event.ref }}"
+
+      - name: Push backup branch
+        uses: ad-m/github-push-action@v1
         with:
-         server: ${{ secrets.FTP_SERVER }}
-         username: ${{ secrets.FTP_USERNAME }}
-         password: ${{ secrets.FTP_PASSWORD }}
-         protocol: ftps
-         port : 2133
-         local-dir: ./logs/       
-         server-dir: ./test/ 
-     
-  
+          branch: backup-branch
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+          
+          
+          
+          
