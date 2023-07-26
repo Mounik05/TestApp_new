@@ -28,6 +28,7 @@ jobs:
         run: copy D:\a\TestApp_new\TestApp_new\output.txt D:\a\TestApp_new\TestApp_new\logs
         
       - name: upload files to ftp.
+        if: ${{ failure() }}
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
          server: ${{ secrets.FTP_SERVER }}
