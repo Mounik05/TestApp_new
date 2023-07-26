@@ -14,18 +14,24 @@ jobs:
     steps: 
       - uses: actions/checkout@v2.3.4
       
-      - name: Check if file exists
+      - name: Detect and Backup Deleted Files
+        id: detect-deleted
         run: |
-          if [ -f "deleted-file.txt" ]; then
-            echo "File exists"
-          else
-            echo "File does not exist"
-          fi
+          # Create a temporary directory to store deleted files
+          mkdir deleted_files
 
-      - name: Backup file
-        if: "! fileExists('deleted-file.txt')"
-        run: |
-          cp deleted-file.txt ./backups/deleted-file.txt
-          
+          # Check for deleted files between current and previous commit
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | while read -r file; do
+            if [ -f "$file" ]; then
+              echo "Backing up deleted file: $file"
+              cp "$file" deleted_files/
+            fi
+          done
+
+      - name: Upload Deleted Files Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: deleted-files
+          path: deleted_files
           
           
