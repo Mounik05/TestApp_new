@@ -23,7 +23,7 @@ jobs:
         run: |
           msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > output.txt -m
           
-      - name: copy exe filee
+      - name: copy exe file
         run: copy D:\a\TestApp_new\TestApp_new\output.txt D:\a\TestApp_new\TestApp_new\logs
         
       - name: Push changes
