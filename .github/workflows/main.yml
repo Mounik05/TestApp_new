@@ -73,14 +73,23 @@ jobs:
           draft: false
           prerelease: false
           
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
+      - name: Send email notification
+        if: always()
+        uses: dawidd6/action-send-mail@v3.7.1
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./Testapp.zip
-          asset_name: Testapp.zip
-          asset_content_type: application/zip
+          server_address: smtp.gmail.com
+          server_port: 465 
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject:  job status Notification
+          Body: |
+            Testapp build was success and files uploaded to ftp server.
+            create release asset is failure.please open the URL to see the error message:[https://github.com/Mounik05/TestApp_new/suites/14612236285/logs?attempt=1]
+          To: aravindanand07.r@gmail.com
+          cc: mounikakallepalli@vcollab.com
+          from: Kallepallimounika333@gmail.com
+          content_type: text/html
+         
       
     
          
