@@ -11,24 +11,8 @@ jobs:
   build:
     runs-on: windows-latest
        
-    env:
-       Solution_Path: Testapp.sln
-       depency: depency\VCollabDependencyAPI
-       PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
     steps: 
       - uses: actions/checkout@v2.3.4
-      
-      - uses: suisei-cn/actions-download-file@v1.0.1
-        name: Download the file from url
-        with:
-           url: "https://downloads.vcollab.com/tmp/VCollabDependencyAPI.7z" 
-           target: depency
-           
-      - name: Extract zip file 
-        uses: DuckSoft/extract-7z-action@v1.0
-        with:
-           pathsource: depency\VCollabDependencyAPI.7z 
-           pathtarget: depency
       
       - name: setup-msbuild
         uses: microsoft/setup-msbuild@v1.1
@@ -39,21 +23,6 @@ jobs:
         run: |
           msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > Testapp_log.txt -m
           
-          
-      - name: copy exe file
-        run: copy D:\a\TestApp_new\TestApp_new\Testapp_log.txt D:\a\TestApp_new\TestApp_new\logs
-        
-      - name: upload files to ftp.
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
-        with:
-         server: ${{ secrets.FTP_SERVER }}
-         username: ${{ secrets.FTP_USERNAME }}
-         password: ${{ secrets.FTP_PASSWORD }}
-         protocol: ftps
-         port : 2133
-         local-dir: ./logs/       
-         server-dir: ./test/ 
-         
       - name: send email notifiation.
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3.7.1
@@ -63,11 +32,11 @@ jobs:
            username: ${{ secrets.MAIL_USERNAME }}
            password: ${{ secrets.MAIL_PASSWORD }}
            subject: "job failure notification"
-           Body: upload files to ftp server error showing  To view the full error details, please visit the following URL:"{{ https://github.com/Mounik05/TestApp_new/suites/14606290687/logs?attempt=1 }}".
-           To: aravindanand07.r@gmail.com
-           cc: mounikakallepalli@vcollab.com
+           Body: "Testapp build was failed"
+           To: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            content_type: text/html
-                            
+           attachments: |
+                D:\a\TestApp_new\TestApp_new\Testapp_log.txt
                      
                      
