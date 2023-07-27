@@ -24,15 +24,14 @@ jobs:
           msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > Testapp_log.txt -m
           
       - name: send email notifiation.
-        if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3.7.1
         with:
            server_address: smtp.gmail.com
            server_port: 465 
            username: ${{ secrets.MAIL_USERNAME }}
            password: ${{ secrets.MAIL_PASSWORD }}
-           subject: "job failure notification"
-           Body: "Testapp build was failed"
+           subject: "job was success"
+           Body: "Testapp build was success.please find attached log file"
            To: aravindanand07.r@gmail.com
            from: Kallepallimounika333@gmail.com
            content_type: text/html
