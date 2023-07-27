@@ -24,12 +24,16 @@ jobs:
           msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > output.txt -m
            
       - name: email notifiation
-        run: |
-           - >
-            if [ "$Build_STATUS" == "failed" ]; then
-            echo "The job has failed. Please check the build logs ." | mail -s "Job Failed: ${TestApp_new}" ${{ secrets.MAIL_USERNAME }}
-            fi
-            on_success: never
-            on_failure: always
-            content_type: "text/html" 
-          
+        if: ${{ failure() }}
+        uses: dawidd6/action-send-mail@v3.7.1
+        with:
+           on_success: never
+           on_failure: always
+           server_address: smtp.gmail.com
+           server_port: 465 
+           username: ${{ secrets.MAIL_USERNAME }}
+           password: ${{ secrets.MAIL_PASSWORD }}
+           subject: The job has failed
+           Body: " echo The job has failed. Please check the build logs for more details"
+           To: mounikakallepalli@vcollab.com    
+           content_type: "text/html"
