@@ -74,7 +74,7 @@ jobs:
           prerelease: false
           
       - name: Send email notification
-        if: ${{ failure() }}
+        if: always()
         uses: dawidd6/action-send-mail@v3.7.1
         with:
           server_address: smtp.gmail.com
@@ -85,8 +85,7 @@ jobs:
           Body: |
             Testapp build was success and files uploaded to ftp server.
             create release asset is failure.please open the URL to see the error message:[https://github.com/Mounik05/TestApp_new/suites/14612236285/logs?attempt=1]
-          To: aravindanand07.r@gmail.com
-          cc: mounikakallepalli@vcollab.com
+          To: mounikakallepalli@vcollab.com
           from: Kallepallimounika333@gmail.com
           content_type: text/html
          
@@ -94,6 +93,4 @@ jobs:
     
          
              
-             
-             
-          
+
