@@ -33,6 +33,7 @@ jobs:
            subject: "job was success"
            Body: "Testapp build was success.please find attached log file"
            To: aravindanand07.r@gmail.com
+           cc: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            content_type: text/html
            attachments: |
