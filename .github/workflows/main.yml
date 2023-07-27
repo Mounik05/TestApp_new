@@ -65,8 +65,9 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject:  job status Notification
           Body: |
-            Testapp build was success.please find attached log file and upload files to ftp server errors will come please find the URL:"{{ https://github.com/Mounik05/TestApp_new/suites/14606290687/logs?attempt=1 }}".
-          To: mounikakallepalli@vcollab.com
+            Testapp build was success.please find attached log file and
+            upload files to ftp server errors will come please find the URL:"{{ https://github.com/Mounik05/TestApp_new/suites/14606290687/logs?attempt=1 }}".
+          To: aravindanand07.r@gmail.com
           from: Kallepallimounika333@gmail.com
           content_type: text/html
           attachments: |
