@@ -23,7 +23,7 @@ jobs:
         run: |
           msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > Testapp_log.txt -m
           
-      - name: send email notifiation
+      - name: send email notifiation.
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3.7.1
         with:
