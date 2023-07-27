@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
        
     env:
-       Solution_Path: VCollabPro.sln
+       Solution_Path: Testapp.sln
        depency: depency\VCollabDependencyAPI
        PYTHONPATH_64_38: depency\VCollabDependencyAPI\Python38_64bit
     steps: 
@@ -39,18 +39,18 @@ jobs:
         run: |
           msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > Testapp_log.txt -m
           
-      - name: send email notifiation.
-        uses: dawidd6/action-send-mail@v3.7.1
+          
+      - name: copy exe file
+        run: copy D:\a\TestApp_new\TestApp_new\Testapp_log.txt D:\a\TestApp_new\TestApp_new\logs
+        
+      - name: upload files to ftp.
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-           server_address: smtp.gmail.com
-           server_port: 465 
-           username: ${{ secrets.MAIL_USERNAME }}
-           password: ${{ secrets.MAIL_PASSWORD }}
-           subject: "job failure notification"
-           Body: "env path is failure"
-           To: mounikakallepalli@vcollab.com
-           from: Kallepallimounika333@gmail.com
-           content_type: text/html
-           
-           
-           
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         protocol: ftps
+         port : 2133
+         local-dir: ./logs/       
+         server-dir: ./test/ 
+  
