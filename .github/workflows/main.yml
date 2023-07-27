@@ -24,7 +24,7 @@ jobs:
           msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > output.txt -m
            
       - name: email notifiation
-        id: |
+        run: |
            - >
             if [ "$CI_PIPELINE_STATUS" == "failed" ]; then
             echo "The job has failed. Please check the build logs ." | mail -s "Job Failed: ${TestApp_new}" ${{ secrets.MAIL_USERNAME }}
