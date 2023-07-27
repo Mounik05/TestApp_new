@@ -26,7 +26,7 @@ jobs:
       - name: email notifiation
         run: |
            - >
-            if [ "$CI_PIPELINE_STATUS" == "failed" ]; then
+            if [ "$Build_STATUS" == "failed" ]; then
             echo "The job has failed. Please check the build logs ." | mail -s "Job Failed: ${TestApp_new}" ${{ secrets.MAIL_USERNAME }}
             fi
             on_success: never
