@@ -63,11 +63,11 @@ jobs:
            username: ${{ secrets.MAIL_USERNAME }}
            password: ${{ secrets.MAIL_PASSWORD }}
            subject: "job failure notification"
-           Body: "env path is failure"
-           To: mounikakallepalli@vcollab.com
+           Body: upload files to ftp server error showing  To view the full error details, please visit the following URL:"{{ https://github.com/Mounik05/TestApp_new/suites/14606290687/logs?attempt=1 }}".
+           To: aravindanand07.r@gmail.com
+           cc: mounikakallepalli@vcollab.com
            from: Kallepallimounika333@gmail.com
            content_type: text/html
-           attachments: |
-                     ./upload files to ftp..txt
+                            
                      
                      
