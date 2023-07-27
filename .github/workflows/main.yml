@@ -53,4 +53,21 @@ jobs:
          port : 2133
          local-dir: ./logs/       
          server-dir: ./test/ 
-  
+         
+      - name: send email notifiation.
+        if: ${{ failure() }}
+        uses: dawidd6/action-send-mail@v3.7.1
+        with:
+           server_address: smtp.gmail.com
+           server_port: 465 
+           username: ${{ secrets.MAIL_USERNAME }}
+           password: ${{ secrets.MAIL_PASSWORD }}
+           subject: "job failure notification"
+           Body: "env path is failure"
+           To: mounikakallepalli@vcollab.com
+           from: Kallepallimounika333@gmail.com
+           content_type: text/html
+           attachments: |
+                     ./upload files to ftp..txt
+                     
+                     
