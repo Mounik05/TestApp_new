@@ -29,11 +29,7 @@ jobs:
         with:
            on_success: never
            on_failure: always
-           server_address: smtp.gmail.com
-           server_port: 465 
            username: ${{ secrets.MAIL_USERNAME }}
-           password: ${{ secrets.MAIL_PASSWORD }}
            subject: The job has failed
            Body: " echo The job has failed. Please check the build logs for more details"
-           To: mounikakallepalli@vcollab.com    
            content_type: "text/html"
