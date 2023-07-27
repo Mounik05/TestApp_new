@@ -74,7 +74,7 @@ jobs:
           prerelease: false
           
       - name: Send email notification
-        if: always()
+        if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3.7.1
         with:
           server_address: smtp.gmail.com
