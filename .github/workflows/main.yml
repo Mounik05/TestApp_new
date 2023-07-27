@@ -14,24 +14,22 @@ jobs:
     steps: 
       - uses: actions/checkout@v2.3.4
       
-      - name: Detect and Backup Deleted Files
-        id: detect-deleted
-        run: |
-          # Create a temporary directory to store deleted files
-          mkdir deleted_files
-
-          # Check for deleted files between current and previous commit
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | while read -r file; do
-            if [ -f "$file" ]; then
-              echo "Backing up deleted file: $file"
-              cp "$file" deleted_files/
-            fi
-          done
-
-      - name: Upload Deleted Files Artifact
-        uses: actions/upload-artifact@v2
+      - name: setup-msbuild
+        uses: microsoft/setup-msbuild@v1.1
         with:
-          name: deleted-files
-          path: deleted_files
+          msbuild-architecture: x64
           
+      - name: Build app for release 
+        run: |
+          msbuild Testapp.sln /p:Configuration=Release /p:Platform=x64 > output.txt -m
+           
+      - name: email notifiation
+        id: |
+           - >
+            if [ "$CI_PIPELINE_STATUS" == "failed" ]; then
+            echo "The job has failed. Please check the build logs ." | mail -s "Job Failed: ${TestApp_new}" ${{ secrets.MAIL_USERNAME }}
+            fi
+            on_success: never
+            on_failure: always
+            content_type: "text/html" 
           
