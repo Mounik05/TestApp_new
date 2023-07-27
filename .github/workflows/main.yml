@@ -33,7 +33,7 @@ jobs:
            password: ${{ secrets.MAIL_PASSWORD }}
            subject: "job failure notification"
            Body: "Testapp build was failed"
-           To: mounikakallepalli@vcollab.com
+           To: aravindanand07.r@gmail.com
            from: Kallepallimounika333@gmail.com
            content_type: text/html
            attachments: |
