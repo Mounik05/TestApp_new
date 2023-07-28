@@ -55,24 +55,7 @@ jobs:
          local-dir: ./logs/       
          server-dir: ./test/ 
          
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v1.0.0
-          release_name: TestApp.exe
-
-          body: |
-            # Release Notes
-            This is the first release of my project.
-            ## Features
-            - first change
-            - second change
-          draft: false
-          prerelease: false
-          
+     
       - name: Send email notification
         if: always()
         uses: dawidd6/action-send-mail@v3.7.1
@@ -84,7 +67,6 @@ jobs:
           subject:  job status Notification
           Body: |
             Testapp build was success and files uploaded to ftp server.
-            create release asset is failure.please open the URL to see the error message:[https://github.com/Mounik05/TestApp_new/suites/14612236285/logs?attempt=1]
           To: mounikakallepalli@vcollab.com
           from: Kallepallimounika333@gmail.com
           content_type: text/html
