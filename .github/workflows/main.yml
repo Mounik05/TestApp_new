@@ -52,7 +52,7 @@ jobs:
          password: ${{ secrets.FTP_PASSWORD }}
          protocol: ftps
          port : 2133
-         local-dir: ./logs/       
+         local-dir: ./log/       
          server-dir: ./test/ 
          
       - name: Send email notification on success
