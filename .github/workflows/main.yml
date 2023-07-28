@@ -22,7 +22,7 @@ jobs:
       - uses: suisei-cn/actions-download-file@v1.0.1
         name: Download the file from url
         with:
-           url: "https://downloads.vcollab.com/tmp/VCollabDependencyapi.7z" 
+           url: "https://downloads.vcollab.com/tmp/VCollabDependencyapi1.7z" 
            target: depency
            
       - name: Extract zip file 
