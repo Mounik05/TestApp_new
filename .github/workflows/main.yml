@@ -76,7 +76,6 @@ jobs:
          
      
       - name: Send email notification on success
-        if: always()
         uses: dawidd6/action-send-mail@v3.7.1
         with:
           server_address: smtp.gmail.com
@@ -91,7 +90,7 @@ jobs:
           content_type: text/html
          
       - name: Send email notification on failure
-        if: always()
+        if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3.7.1
         with:
           server_address: smtp.gmail.com
