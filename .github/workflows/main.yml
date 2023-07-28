@@ -55,29 +55,6 @@ jobs:
          local-dir: ./logs/       
          server-dir: ./test/ 
          
-         
-      - name: Create Release.
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v1.0.0
-          release_name: TestApp.exe
-
-          body: |
-            # Release Notes
-
-            This is the first release of my project.
-
-            ## Features
-
-            - first change
-            - second change
-
-          draft: false
-          prerelease: false
-     
       - name: Send email notification on success
         uses: dawidd6/action-send-mail@v3.7.1
         with:
@@ -102,7 +79,7 @@ jobs:
           password: ${{ secrets.MAIL_PASSWORD }}
           subject:  job status Notification
           Body: |
-              create release asset is failure
+            Testapp build was failure
           To: mounikakallepalli@vcollab.com
           from: Kallepallimounika333@gmail.com
           content_type: text/html
